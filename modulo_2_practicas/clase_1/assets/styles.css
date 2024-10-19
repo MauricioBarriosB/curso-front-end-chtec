@@ -1,6 +1,12 @@
-body {
+body, html {
   margin: 0;
+  height: 100%;
   font-family: "Trebuchet MS", sans-serif;
+  line-height:1.6;
+}
+
+h1, h2, h3, h4 {
+  color: #0047ba;
 }
 
 .topnav {
@@ -16,7 +22,7 @@ body {
 .topnav a {
   float: left;
   display: block;
-  color: #707070;
+  color: #00a5b5;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -24,12 +30,12 @@ body {
 }
 
 .topnav a:hover {
-  color: rgb(0, 121, 177);
+  color: #0047ba;
   text-decoration: underline;
 }
 
 .topnav a.active {
-  color: #996600;
+  color: #0047ba;
 }
 
 .topnav .btn-mobile {
@@ -45,36 +51,98 @@ header {
   text-align: center;
 }
 
-section {
-  padding:20px
-}
+/* main min-height =  100vh - (h header + h footer) */
 
 main {
-  margin-bottom: 100px;
-  padding-left: 80px;
-  padding-right: 80px;
+  padding-left: 90px;
+  padding-right: 90px;
+  min-height: calc(100vh - 284px);
 }
 
-.nav {
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  background-color: lightgray;
-  padding: 10px;
-  text-align: center;
+.container {
+  display:flex;
+}
+
+article {
+  text-align:center;
+  background-color:#d3e3e6;
+  margin:10px;
+
+  max-height:200px;
+  min-width:100px;
+  max-width:200px;
+
+  padding-left:5px;
+  padding-right:5px;
+  padding-bottom:40px;
+  border-radius:8px;
+}
+
+.button-primary {
+  border-radius:8px;
+  background-color: #00a5b5;
+  color:#ffffff;
+  padding:10px;
+}
+
+.button-primary:hover {
+  background-color: #0047ba;
+}
+
+article .button-primary {
+  text-decoration: none;
+}
+
+section {
+  margin-left:40px;
+  padding-bottom:20px
 }
 
 footer {
-  position: fixed;
-  bottom: 0;
+  padding-top:60px;
+  height: 200px;
   width: 100%;
-  padding: 10px;
   text-align: center;
-  background-color:#2B3240;
+  background-color:#0047ba;
   color:#FFFFFF;
 }
 
-/*  media queries */
+form {
+  width:100%;
+  display: block;
+}
+
+textarea,
+input[type=email],
+input[type=text] {
+  width:100%;
+  height:30px;
+  margin-bottom:20px;
+  border-radius:8px;
+  max-width:600px;
+  border: 1px solid #ccc;
+}
+
+textarea:focus ,
+input[type=email]:focus ,
+input[type=text]:focus  {
+  border: 1px solid #333333 !important;
+}
+
+input[type=submit]  {
+  border: none;
+  cursor:pointer;
+  padding:20px;
+}
+
+/* Media queries */
+
+@media screen and (max-width: 900px) {
+  main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
 
 @media screen and (max-width: 600px) {
   .topnav a:not(:first-child) {
@@ -107,4 +175,27 @@ footer {
     display: block;
     text-align: left;
   }
+
+  .container {
+    flex-direction: column;
+  }
+  article, section, .sections {
+    width:100%;
+    margin:0px;
+    padding:0px;
+
+  }
+
+  article {
+    max-height:none;
+    min-width:none;
+    max-width:none;
+    padding-bottom:20px;
+  }
+
+  main {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+
 }
