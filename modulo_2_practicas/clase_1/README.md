@@ -2,7 +2,7 @@
 
 URL Github pública acceso al sitio :
 
-https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_2_practicas/clase_1/
+[link](https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_2_practicas/clase_1/){:target="_blank"}
 
 Sitio Hospital contiene:
 
