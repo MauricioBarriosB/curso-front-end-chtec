@@ -1,8 +1,6 @@
-# curso-front-end-chtec
+# Tarea práctica clase 1
 
-Tarea práctica clase 1
-
-## Sitio Hospital contiene:
+Sitio Hospital contiene:
 
 * index.html // sitio home
 
