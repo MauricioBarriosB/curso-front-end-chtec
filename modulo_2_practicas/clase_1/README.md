@@ -6,8 +6,8 @@ Tarea práctica clase 1
 
 * index.html // sitio home
 
-* team.html // pagina de equipo medico
+* team.html // página de equipo médico
 
-* contact.html // pagina de contacto
+* contact.html // página de contacto
 
-* /assets // archivos requeridos por el sitio
+* /assets // archivos JS y CSS requeridos por el sitio
