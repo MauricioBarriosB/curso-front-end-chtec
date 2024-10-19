@@ -3,19 +3,22 @@
 </html>
 <head>
   <meta charset="UTF-8" />
-  <title>HOSPITAL</title>
+  <title>{HOSPITAL}</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="assets/styles.css">
   <script src="assets/script.js"></script>
 </head>
 
 <body>
   <nav class="topnav">
-    <a id="logo-nav" href="index.html"><strong>•• HOSPITAL ••</strong></a>
-    <a href="index.html" class="active">Home</a>
+    <a id="logo-nav" href="index.html">{HOSPITAL}</a>
+    <a href="javascript:void(0)" class="active">Home</a>
     <a href="team.html">Equipo Médico</a>
     <a href="contact.html">Contacto</a>
-    <a href="#" class="btn-mobile"><strong>X</strong></a>
+    <a href="#" class="btn-mobile">•••</a>
   </nav>
 
   <main>
@@ -25,11 +28,19 @@
     </header>
 
     <div class="container">
-      <article>
-        <h3>Reservar Cita</h3>
-        <p>Agenda tu próxima cita médica presionando en el siguiente botón.</p>
-        <a class="button-primary" href="#">Ver más</a>
-      </article>
+      <div class="articles">
+        <article>
+          <h3>Reservar Cita</h3>
+          <p>Agenda tu próxima cita médica presionando en el siguiente botón.</p>
+          <a class="button-primary" href="#">Solicitar cita</a>
+        </article>
+
+        <article>
+          <h3>Directorio</h3>
+          <p>Reviza el directorio de médicos que estan a tu disposición.</p>
+          <a class="button-primary" href="#">Revisar directorio</a>
+        </article>
+      </div>
 
       <div class="sections">
         <section>
@@ -62,7 +73,7 @@
   <footer>
     <p>Pie de página, incluye enlaces rápidos, información de contacto, y redes sociales del hospital.</p>
     <p>© 2024 Hospital - Derechos Reservados.</p>
-    <p>•• HOSPITAL ••</p>
+    <p><strong>{HOSPITAL}</strong></p>
   </footer>
 </body>
 </html>

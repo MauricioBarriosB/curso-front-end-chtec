@@ -1,7 +1,9 @@
 body, html {
   margin: 0;
   height: 100%;
-  font-family: "Trebuchet MS", sans-serif;
+  font-family: "Lato", sans-serif;
+  font-weight:400;
+  font-style: normal;
   line-height:1.6;
 }
 
@@ -27,19 +29,32 @@ h1, h2, h3, h4 {
   padding: 14px 16px;
   text-decoration: none;
   font-size: 17px;
+  font-weight:900;
 }
 
 .topnav a:hover {
   color: #0047ba;
   text-decoration: underline;
+  transition: 0.3s;
 }
 
 .topnav a.active {
   color: #0047ba;
 }
 
+.topnav a.active:hover {
+  text-decoration: none;
+  cursor:default;
+}
+
 .topnav .btn-mobile {
+  text-decoration: none;
   display: none;
+}
+
+
+.topnav .btn-mobile:hover {
+  transition: none;
 }
 
 #logo-nav {
@@ -63,15 +78,19 @@ main {
   display:flex;
 }
 
+.articles {
+  height:100%;
+  min-width:100px;
+  max-width:250px;
+
+}
+
 article {
   text-align:center;
   background-color:#d3e3e6;
   margin:10px;
 
-  max-height:200px;
-  min-width:100px;
-  max-width:200px;
-
+  padding-top:5px;
   padding-left:5px;
   padding-right:5px;
   padding-bottom:40px;
@@ -87,6 +106,7 @@ article {
 
 .button-primary:hover {
   background-color: #0047ba;
+  transition: 0.3s;
 }
 
 article .button-primary {
@@ -99,6 +119,7 @@ section {
 }
 
 footer {
+  margin-top:10px;
   padding-top:60px;
   height: 200px;
   width: 100%;
@@ -109,7 +130,15 @@ footer {
 
 form {
   width:100%;
-  display: block;
+  padding-top:20px; 
+  text-align:center;
+  background-color:#d3e3e6;
+  padding-bottom:20px;
+  border-radius:8px;
+}
+
+form label {
+  text-align:left !important;
 }
 
 textarea,
@@ -119,11 +148,11 @@ input[type=text] {
   height:30px;
   margin-bottom:20px;
   border-radius:8px;
-  max-width:600px;
+  max-width:500px;
   border: 1px solid #ccc;
 }
 
-textarea:focus ,
+textarea:focus,
 input[type=email]:focus ,
 input[type=text]:focus  {
   border: 1px solid #333333 !important;
@@ -134,6 +163,13 @@ input[type=submit]  {
   cursor:pointer;
   padding:20px;
 }
+
+hr {
+  height: 0;
+  border-color:#ebe6e6;
+  border-top: 1px;
+}
+ 
 
 /* Media queries */
 
@@ -183,19 +219,31 @@ input[type=submit]  {
     width:100%;
     margin:0px;
     padding:0px;
-
   }
 
   article {
+    padding-top:5px;
+    margin-top:5px;
+    padding-bottom:30px;
+  }
+
+  .articles {
     max-height:none;
     min-width:none;
     max-width:none;
-    padding-bottom:20px;
+
   }
 
   main {
     padding-left: 10px;
     padding-right: 10px;
   }
+
+  textarea,
+  input[type=email],
+  input[type=text] {
+    width:90%
+  }
+
 
 }
