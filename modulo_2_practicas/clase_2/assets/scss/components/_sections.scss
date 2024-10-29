@@ -1,0 +1,26 @@
+@use "../modules/variables" as *;
+
+.sections {
+    &__item {
+        margin-left: $section-margin-left;
+        padding-bottom: $section-padding-bottom;
+    }
+
+    &__item__title {
+        color:$primary-color;
+    }
+
+    &__item__text {
+        color:$gray-dark-color;
+    }
+}
+
+@media screen and (max-width:$max-width-md) {
+    .sections {
+        &__item {
+            width: 100%;
+            margin: 0px;
+            padding: 0px;
+        }
+    }
+}

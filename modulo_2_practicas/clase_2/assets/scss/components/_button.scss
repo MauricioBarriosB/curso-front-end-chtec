@@ -3,12 +3,14 @@
 .button-primary {
   border-radius: $border-radius;
   background-color: $secondary-color;
+  border: $secondary-color;
   color: $white-color;
   padding: $main-padding;
   text-decoration: $btn-text-decoration;
+  cursor: pointer;
 
   &:hover {
-    background-color: $primar-color;
+    background-color: $primary-color;
     transition: $time-transition;
   }
 }

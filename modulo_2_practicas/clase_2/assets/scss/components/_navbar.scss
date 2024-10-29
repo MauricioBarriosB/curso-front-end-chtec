@@ -9,14 +9,14 @@
   padding-top: $main-padding;
   padding-bottom: $main-padding;
 
-  #logo-nav {
+  &__logo {
     margin-right: $logo-margin-right;
   }
 
-  a {
+  &__link {
     float: left;
     display: block;
-    color: $primar-color;
+    color: $primary-color;
     text-align: center;
     padding: $a-padding-y;
     text-decoration: $text-decoration;
@@ -28,53 +28,55 @@
       text-decoration: underline;
       transition: $time-transition;
     }
-
-    &.active {
-      color: $primar-color;
-    }
-
-    &.active:hover {
-      text-decoration: $text-decoration;
-      cursor: default;
-    }
   }
 
-  .btn-mobile {
+  &__active {
+    color: $primary-color;
+    transition: none;
+    color: $secondary-color;
+  }
+
+  &__active:hover {
+    text-decoration: $text-decoration;
+    cursor: default;
+  }
+
+  &__mobile {
     text-decoration: $text-decoration;
     display: none;
   }
 
-  .btn-mobile:hover {
+  &__mobile:hover {
     transition: none;
   }
 }
 
 @media screen and (max-width: $max-width-md) {
   .topnav {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left:$reset-padding-x;
+    padding-right:$reset-padding-x;
 
-    a:not(:first-child) {
+    &__link:not(:first-child) {
       display: none;
     }
 
-    a.btn-mobile {
+    .topnav__mobile {
       float: right;
       display: block;
     }
 
-    &.responsive {
+    &.topnav__responsive {
       position: relative;
+
+      .topnav__mobile {
+        margin-top: $main-padding;
+        position: absolute;
+        right: 0;
+        top: 0;
+      }
     }
 
-    &.responsive .btn-mobile {
-      margin-top: $main-padding;
-      position: absolute;
-      right: 0;
-      top: 0;
-    }
-
-    &.responsive a {
+    &.topnav__responsive a {
       float: none;
       display: block;
       text-align: left;

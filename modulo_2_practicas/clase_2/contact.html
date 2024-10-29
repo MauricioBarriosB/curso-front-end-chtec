@@ -14,54 +14,54 @@
 
 <body>
   <nav class="topnav">
-    <a id="logo-nav" href="index.html">{HOSPITAL}</a>
-    <a href="index.html">Home</a>
-    <a href="team.html">Equipo Médico</a>
-    <a href="javascript:void(0)" class="active">Contacto</a>
-    <a href="#" class="btn-mobile">•••</a>
+    <a class="topnav__link topnav__logo" href="index.html">{HOSPITAL}</a>
+    <a class="topnav__link" href="index.html">Home</a>
+    <a class="topnav__link" href="team.html">Equipo Médico</a>
+    <a class="topnav__link topnav__active" href="javascript:void(0)">Contacto</a>
+    <a class="topnav__link topnav__mobile" href="#">•••</a>
   </nav>
 
-  <main>
-    <header>
-      <h1>Vista de Contacto</h1>
-      <p>Esta página permite que los pacientes se pongan en contacto con el hospital.</p>
+  <main class="main">
+    <header class="header">
+      <h1 class="header__title">Vista de Contacto</h1>
+      <p class="header__text">Esta página permite que los pacientes se pongan en contacto con el hospital.</p>
     </header>
 
     <div class="container">
       <div class="articles">
-        <article>
-          <h3>Reservar Cita</h3>
-          <p>Agenda tu próxima cita médica presionando en el siguiente botón.</p>
+        <article class="articles__item">
+          <h3 class="articles__item__title">Reservar Cita</h3>
+          <p class="articles__item__text">Agenda tu próxima cita médica presionando en el siguiente botón.</p>
           <a class="button-primary" href="#">Solicitar cita</a>
         </article>
 
-        <article>
-          <h3>Directorio</h3>
-          <p>Reviza el directorio de médicos que estan a tu disposición.</p>
+        <article class="articles__item">
+          <h3 class="articles__item__title">Directorio</h3>
+          <p class="articles__item__text">Reviza el directorio de médicos que estan a tu disposición.</p>
           <a class="button-primary" href="#">Revisar directorio</a>
         </article>
       </div>
 
 
       <div class="sections">
-        <section>
-          <h2>Formulario de contacto</h2>
-          <p>Incluye campos para que el usuario ingrese su nombre, correo electrónico, asunto y mensaje. El formulario debe estar correctamente maquetado, pero no requiere funcionalidad backend.</p>
+        <section class="sections__item">
+          <h2 class="sections__item__title">Formulario de contacto</h2>
+          <p class="sections__item__text">Incluye campos para que el usuario ingrese su nombre, correo electrónico, asunto y mensaje. El formulario debe estar correctamente maquetado, pero no requiere funcionalidad backend.</p>
 
-          <form action="#" method="post">
+          <form class="form" action="#" method="post">
             <h1>Formulario de atención al cliente</h1>
             
-            <label for="name">Ingresar nombre:</label><br>
-            <input type="text" id="name" name="user_name" /><br>
+            <label class="form__label" for="name">Ingresar nombre:</label><br>
+            <input class="form__input" type="text" id="name" name="user_name" /><br>
 
-            <label for="mail">Ingresar correo electrónico:</label><br>
-            <input type="email" id="mail" name="user_mail" /><br>
+            <label class="form__label" for="mail">Ingresar correo electrónico:</label><br>
+            <input class="form__input" type="email" id="mail" name="user_mail" /><br>
   
-            <label for="subject">Ingresar asunto:</label><br>
-            <input type="text" name="user_subject" /><br>
+            <label class="form__label" for="subject">Ingresar asunto:</label><br>
+            <input class="form__input" type="text" name="user_subject" /><br>
 
-            <label for="msg">Ingresar mensaje:</label><br>
-            <textarea id="msg" name="user_message"></textarea><br>
+            <label class="form__label" for="msg">Ingresar mensaje:</label><br>
+            <textarea class="form__textarea" id="msg" name="user_message"></textarea><br>
 
             <input class="button-primary" type="submit" value="Enviar formulario de contacto">
           </form>
@@ -73,10 +73,10 @@
 
   </main>
 
-  <footer>
-    <p>Pie de página, incluye enlaces rápidos, información de contacto, y redes sociales del hospital.</p>
-    <p>© 2024 Hospital - Derechos Reservados.</p>
-    <p><strong>{HOSPITAL}</strong></p>
+  <footer class="footer">
+    <p class="footer__text">Pie de página, incluye enlaces rápidos, información de contacto, y redes sociales del hospital.</p>
+    <p class="footer__text">© 2024 Hospital - Derechos Reservados.</p>
+    <p class="footer__text"><strong>{HOSPITAL}</strong></p>
   </footer>
 </body>
 </html>

@@ -4,10 +4,20 @@ h1,
 h2,
 h3,
 h4 {
-  color: $primar-color;
+  color: $primary-color;
 }
 
-header {
+.header {
   padding: $header-padding;
-  text-align: center;
+
+  &__title {
+    color: $primary-color;
+    text-align: center;
+  }
+
+  &__text {
+    color: $gray-dark-color;
+    text-align: center;
+  }
+
 }

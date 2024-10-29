@@ -1,11 +1,14 @@
 @use '../modules/variables' as *;
 
-footer {
+.footer {
     margin-top:$main-padding;
     padding-top:$footer-padding-top;
     height:$footer-height;
-    width:100%;
-    text-align: center;
-    background-color:$primar-color;
-    color:$white-color;
+    width:$footer-width;
+    background-color:$primary-color;
+
+    &__text {
+        text-align: center;
+        color:$white-color;
+    }
 }
