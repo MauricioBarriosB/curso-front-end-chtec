@@ -1,0 +1,14 @@
+@use '../modules/variables' as *;
+
+.button-primary {
+  border-radius: $border-radius;
+  background-color: $secondary-color;
+  color: $white-color;
+  padding: $main-padding;
+  text-decoration: $btn-text-decoration;
+
+  &:hover {
+    background-color: $primar-color;
+    transition: $time-transition;
+  }
+}

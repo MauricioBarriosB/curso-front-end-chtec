@@ -1,0 +1,42 @@
+@use '../modules/variables' as *;
+
+ // main min-height =  100vh - (h header + h footer) 
+  
+  main {
+    padding-left:$main-padding-x;
+    padding-right:$main-padding-x;
+    min-height: calc(100vh - 284px);
+  }
+  
+  .container {
+    display:flex;
+  }
+  
+  section {
+    margin-left:$section-margin-left;
+    padding-bottom:$section-padding-bottom;
+  }
+  
+  @media screen and (max-width:$max-width-lg) {
+    main {
+      padding-left: $main-padding;
+      padding-right: $main-padding;
+    }
+  }
+  
+  @media screen and (max-width:$max-width-md) {
+    .content {
+      padding-left: 0px;
+      padding-right: 0px;
+    }
+  
+    .container {
+      flex-direction: column;
+    }
+  
+    main {
+      padding-left: $main-padding;
+      padding-right: $main-padding;
+    }
+  
+  }
