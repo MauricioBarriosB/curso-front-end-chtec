@@ -1,0 +1,54 @@
+// Color variables 
+
+$primar-color: #0047ba;
+$secondary-color:#00a5b5;
+$gray-light-color:#ebe6e6;
+$gray-dark-color:#333333;
+$white-color:#fff;
+
+// Body variables 
+
+$body-margin: 0;
+$body-height: 100%;
+$body-font-family: "Lato", sans-serif;
+$body-font-weight:400;
+$body-font-style: normal;
+$body-line-height:1.6;
+
+// Generic variables 
+
+$time-transition:0.3s;
+$border-radius:8px;
+$text-decoration:none;
+$btn-text-decoration:none;
+$generic-box-shadow:0 4px 4px rgba(0, 0, 0, 0.1);
+
+// Header variables 
+
+$logo-margin-right:100px;
+$header-padding:20px;
+$main-padding:10px;
+$main-padding-x:90px;
+$nav-x-padding:80px;
+$a-padding-y:14px 16px;
+
+// Containers variables 
+
+$section-margin-left:40px;
+$section-padding-bottom:20px;
+
+$article-min-width:100px;
+$article-max-width:250px;
+
+$article-padding-y:40px;
+$article-padding:5px;
+
+// Footer variables 
+
+$footer-padding-top:60px;
+$footer-height:200px;
+
+// @media variables 
+
+$max-width-lg:1024px;
+$max-width-md:768px;

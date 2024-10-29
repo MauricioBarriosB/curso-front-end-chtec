@@ -1,0 +1,13 @@
+@use '../modules/variables' as *;
+
+h1,
+h2,
+h3,
+h4 {
+  color: $primar-color;
+}
+
+header {
+  padding: $header-padding;
+  text-align: center;
+}

@@ -1,0 +1,83 @@
+@use "../modules/variables" as *;
+
+.topnav {
+  overflow: hidden;
+  background-color: $white-color;
+  padding-left: $nav-x-padding;
+  padding-right: $nav-x-padding;
+  box-shadow: $generic-box-shadow;
+  padding-top: $main-padding;
+  padding-bottom: $main-padding;
+
+  #logo-nav {
+    margin-right: $logo-margin-right;
+  }
+
+  a {
+    float: left;
+    display: block;
+    color: $primar-color;
+    text-align: center;
+    padding: $a-padding-y;
+    text-decoration: $text-decoration;
+    font-size: 17px;
+    font-weight: 900;
+
+    &:hover {
+      color: $secondary-color;
+      text-decoration: underline;
+      transition: $time-transition;
+    }
+
+    &.active {
+      color: $primar-color;
+    }
+
+    &.active:hover {
+      text-decoration: $text-decoration;
+      cursor: default;
+    }
+  }
+
+  .btn-mobile {
+    text-decoration: $text-decoration;
+    display: none;
+  }
+
+  .btn-mobile:hover {
+    transition: none;
+  }
+}
+
+@media screen and (max-width: $max-width-md) {
+  .topnav {
+    padding-left: 0px;
+    padding-right: 0px;
+
+    a:not(:first-child) {
+      display: none;
+    }
+
+    a.btn-mobile {
+      float: right;
+      display: block;
+    }
+
+    &.responsive {
+      position: relative;
+    }
+
+    &.responsive .btn-mobile {
+      margin-top: $main-padding;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+
+    &.responsive a {
+      float: none;
+      display: block;
+      text-align: left;
+    }
+  }
+}

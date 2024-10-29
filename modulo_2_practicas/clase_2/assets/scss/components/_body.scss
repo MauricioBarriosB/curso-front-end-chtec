@@ -1,0 +1,11 @@
+@use '../modules/variables' as *;
+
+body,
+html {
+    margin: $body-margin;
+    height: $body-height;
+    font-family: $body-font-family;
+    font-weight: $body-font-weight;
+    font-style: $body-font-style;
+    line-height: $body-line-height;
+}
