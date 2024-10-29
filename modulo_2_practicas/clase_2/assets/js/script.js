@@ -1,6 +1,6 @@
 window.addEventListener("load", (event) => {
 
-  const button = document.querySelector(".btn-mobile");
+  const button = document.querySelector(".topnav__mobile");
 
   button.addEventListener("click", (event) => {
     event.preventDefault();
@@ -8,7 +8,7 @@ window.addEventListener("load", (event) => {
     const topnav = document.querySelector(".topnav");
     
     if (topnav.className === "topnav") {
-      topnav.className += " responsive";
+      topnav.className += " topnav__responsive";
     } else {
       topnav.className = "topnav";
     }

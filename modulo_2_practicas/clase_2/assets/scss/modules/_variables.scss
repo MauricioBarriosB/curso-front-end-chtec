@@ -1,6 +1,6 @@
 // Color variables 
 
-$primar-color: #0047ba;
+$primary-color: #0047ba;
 $secondary-color:#00a5b5;
 $gray-light-color:#ebe6e6;
 $gray-dark-color:#333333;
@@ -42,11 +42,14 @@ $article-max-width:250px;
 
 $article-padding-y:40px;
 $article-padding:5px;
+$reset-padding-x:0px;
 
 // Footer variables 
 
 $footer-padding-top:60px;
 $footer-height:200px;
+$footer-width:100%;
+$footer-height-y:284px;
 
 // @media variables 
 

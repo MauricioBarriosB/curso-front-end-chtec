@@ -14,39 +14,39 @@
 
 <body>
   <nav class="topnav">
-    <a id="logo-nav" href="index.html">{HOSPITAL}</a>
-    <a href="javascript:void(0)" class="active">Home</a>
-    <a href="team.html">Equipo Médico</a>
-    <a href="contact.html">Contacto</a>
-    <a href="#" class="btn-mobile">•••</a>
+    <a class="topnav__link topnav__logo" href="index.html">{HOSPITAL}</a>
+    <a class="topnav__link topnav__active" href="javascript:void(0)">Home</a>
+    <a class="topnav__link" href="team.html">Equipo Médico</a>
+    <a class="topnav__link" href="contact.html">Contacto</a>
+    <a class="topnav__link topnav__mobile" href="#">•••</a>
   </nav>
 
-  <main>
-    <header>
-      <h1>Sección de bienvenida</h1>
-      <p>Incluir un breve mensaje o intrucción que dé la bienvenida a los usuarios y explique la misión y visión del hospital.</p>
+  <main class="main">
+    <header class="header">
+      <h1 class="header__title">Sección de bienvenida</h1>
+      <p class="header__text">Incluir un breve mensaje o intrucción que dé la bienvenida a los usuarios y explique la misión y visión del hospital.</p>
     </header>
 
     <div class="container">
       <div class="articles">
-        <article>
-          <h3>Reservar Cita</h3>
-          <p>Agenda tu próxima cita médica presionando en el siguiente botón.</p>
+        <article class="articles__item">
+          <h3 class="articles__item__title">Reservar Cita</h3>
+          <p class="articles__item__text">Agenda tu próxima cita médica presionando en el siguiente botón.</p>
           <a class="button-primary" href="#">Solicitar cita</a>
         </article>
 
-        <article>
-          <h3>Directorio</h3>
-          <p>Reviza el directorio de médicos que estan a tu disposición.</p>
+        <article class="articles__item">
+          <h3 class="articles__item__title">Directorio</h3>
+          <p class="articles__item__text">Reviza el directorio de médicos que estan a tu disposición.</p>
           <a class="button-primary" href="#">Revisar directorio</a>
         </article>
       </div>
 
       <div class="sections">
-        <section>
-          <h2>Sección de servicios</h2>
-          <p>Muestra al menos tres servicios médicos que ofrece el hospital (consultas, urgencias, especialidades). Cada servicio debe estar representado por un ícono o imagen y una breve descripción.</p>
-          <ol>
+        <section class="sections__item">
+          <h2 class="sections__item__title">Sección de servicios</h2>
+          <p class="sections__item__text">Muestra al menos tres servicios médicos que ofrece el hospital (consultas, urgencias, especialidades). Cada servicio debe estar representado por un ícono o imagen y una breve descripción.</p>
+          <ol class="sections__item__ol">
             <li>Descripción servicio número 1</li>
             <li>Descripción servicio número 2</li>
             <li>Descripción servicio número 3</li>
@@ -54,10 +54,10 @@
           </ol>
         </section>
 
-        <section>
-          <h2>Testimonios de pacientes</h2>
-          <p>Incluye algunos comentarios de pacientes satisfechos para generar confianza.</p>
-          <ol>
+        <section class="sections__item">
+          <h2 class="sections__item__title">Testimonios de pacientes</h2>
+          <p class="sections__item__text">Incluye algunos comentarios de pacientes satisfechos para generar confianza.</p>
+          <ol class="sections__item__ol">
             <li>Testionio paciente número 1</li>
             <li>Testionio paciente número 1</li>
             <li>Testionio paciente número 1</li>
@@ -70,10 +70,10 @@
 
   </main>
 
-  <footer>
-    <p>Pie de página, incluye enlaces rápidos, información de contacto, y redes sociales del hospital.</p>
-    <p>© 2024 Hospital - Derechos Reservados.</p>
-    <p><strong>{HOSPITAL}</strong></p>
+  <footer class="footer">
+    <p class="footer__text">Pie de página, incluye enlaces rápidos, información de contacto, y redes sociales del hospital.</p>
+    <p class="footer__text">© 2024 Hospital - Derechos Reservados.</p>
+    <p class="footer__text"><strong>{HOSPITAL}</strong></p>
   </footer>
 </body>
 </html>
