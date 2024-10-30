@@ -1,4 +1,4 @@
-// Color variables 
+// Color variables:
 
 $primary-color: #0047ba;
 $secondary-color:#00a5b5;
@@ -6,52 +6,65 @@ $gray-light-color:#ebe6e6;
 $gray-dark-color:#333333;
 $white-color:#fff;
 
-// Body variables 
+// Body variables: 
 
 $body-margin: 0;
 $body-height: 100%;
 $body-font-family: "Lato", sans-serif;
+$text-decoration:none;
 $body-font-weight:400;
 $body-font-style: normal;
 $body-line-height:1.6;
 
-// Generic variables 
+// Button variables: 
+
+$btn-text-decoration:none;
+$btn-font-size:16px;
+
+// Generic variables: 
 
 $time-transition:0.3s;
 $border-radius:8px;
-$text-decoration:none;
-$btn-text-decoration:none;
-$generic-box-shadow:0 4px 4px rgba(0, 0, 0, 0.1);
 
-// Header variables 
+// Navbar variables: 
 
 $logo-margin-right:100px;
+$logo-margin-left:20px;
+$nav-x-padding:80px;
+$nav-box-shadow:0 4px 4px rgba(0, 0, 0, 0.1);
+$a-padding-y:14px 16px;
+
+// Header variables: 
+
 $header-padding:20px;
 $main-padding:10px;
 $main-padding-x:90px;
-$nav-x-padding:80px;
-$a-padding-y:14px 16px;
 
-// Containers variables 
+// Section variables: 
 
 $section-margin-left:40px;
 $section-padding-bottom:20px;
 
+// Article variables: 
+
 $article-min-width:100px;
 $article-max-width:250px;
-
 $article-padding-y:40px;
 $article-padding:5px;
 $reset-padding-x:0px;
 
-// Footer variables 
+// Footer variables: 
 
 $footer-padding-top:60px;
 $footer-height:200px;
 $footer-width:100%;
 $footer-height-y:284px;
+$footer-height-logo:60px;
+$footer-margin-logo:10px;
+$footer-height-offset:40px;
 
-// @media variables 
+// @media variables: 
 
 $max-width-lg:1024px;
 $max-width-md:768px;
+$max-width-sm:380px;

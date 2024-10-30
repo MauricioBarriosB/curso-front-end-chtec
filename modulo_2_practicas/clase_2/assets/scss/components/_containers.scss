@@ -20,7 +20,23 @@
   }
   
   @media screen and (max-width:$max-width-md) {
+    .content {
+      padding-left: 5px;
+      padding-right: 5px;
+    }
+  
+    .container {
+      flex-direction: column;
+    }
+  
+    .main {
+      padding-left: $main-padding;
+      padding-right: $main-padding;
+    }
+  
+  }
 
+  @media screen and (max-width:$max-width-sm) {
     .content {
       padding-left: 0px;
       padding-right: 0px;
@@ -31,8 +47,8 @@
     }
   
     .main {
-      padding-left: $main-padding;
-      padding-right: $main-padding;
+      padding-left: $main-padding - 5;
+      padding-right: $main-padding - 5;
     }
   
   }

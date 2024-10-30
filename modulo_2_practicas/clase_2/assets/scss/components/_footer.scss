@@ -6,9 +6,26 @@
     height:$footer-height;
     width:$footer-width;
     background-color:$primary-color;
+    text-align: center;
 
-    &__text {
-        text-align: center;
+    &__text{
         color:$white-color;
+    }
+
+    &__logo{
+        margin:$footer-margin-logo;
+        height:$footer-height-logo;
+    }
+}
+
+@media screen and (max-width: $max-width-md) {
+    .footer {
+        padding-top:$footer-padding-top - $footer-height-offset;
+        height:$footer-height + $footer-height-offset;
+
+        &__logo{
+            height:$footer-height-logo - 20;
+            margin:5px;
+        }
     }
 }
