@@ -3,7 +3,7 @@
 </html>
 <head>
   <meta charset="UTF-8" />
-  <title>{HOSPITAL}</title>
+  <title>LIV Hospital</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,11 +14,15 @@
 
 <body>
   <nav class="topnav">
-    <a class="topnav__link topnav__logo" href="index.html">{HOSPITAL}</a>
+    <a class="topnav__logo" href="index.html">
+      <img class="topnav__logo__image" src="assets/images/logo.svg">
+    </a>
     <a class="topnav__link" href="index.html">Home</a>
     <a class="topnav__link" href="team.html">Equipo Médico</a>
     <a class="topnav__link topnav__active" href="javascript:void(0)">Contacto</a>
-    <a class="topnav__link topnav__mobile" href="#">•••</a>
+    <a class="topnav__link topnav__mobile" href="#">
+      <img class="topnav__mobile__image" src="assets/images/menu_icon.svg">
+    </a>
   </nav>
 
   <main class="main">
@@ -48,7 +52,7 @@
           <h2 class="sections__item__title">Formulario de contacto</h2>
           <p class="sections__item__text">Incluye campos para que el usuario ingrese su nombre, correo electrónico, asunto y mensaje. El formulario debe estar correctamente maquetado, pero no requiere funcionalidad backend.</p>
 
-          <form class="form" action="#" method="post">
+          <form class="form">
             <h1>Formulario de atención al cliente</h1>
             
             <label class="form__label" for="name">Ingresar nombre:</label><br>
@@ -76,7 +80,7 @@
   <footer class="footer">
     <p class="footer__text">Pie de página, incluye enlaces rápidos, información de contacto, y redes sociales del hospital.</p>
     <p class="footer__text">© 2024 Hospital - Derechos Reservados.</p>
-    <p class="footer__text"><strong>{HOSPITAL}</strong></p>
+    <img class="footer__logo" src="assets/images/logo_white.svg">
   </footer>
 </body>
 </html>

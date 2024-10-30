@@ -18,7 +18,12 @@ html {
   padding-bottom: 10px;
 }
 .topnav__logo {
+  float: left;
+  display: block;
   margin-right: 100px;
+}
+.topnav__logo img {
+  height: 50px;
 }
 .topnav__link {
   float: left;
@@ -51,6 +56,9 @@ html {
 .topnav__mobile:hover {
   transition: none;
 }
+.topnav__mobile img {
+  height: 30px;
+}
 
 @media screen and (max-width: 768px) {
   .topnav {
@@ -59,6 +67,9 @@ html {
   }
   .topnav__link:not(:first-child) {
     display: none;
+  }
+  .topnav__logo {
+    margin-left: 20px;
   }
   .topnav .topnav__mobile {
     float: right;
@@ -116,8 +127,8 @@ h4 {
 }
 @media screen and (max-width: 768px) {
   .content {
-    padding-left: 0px;
-    padding-right: 0px;
+    padding-left: 5px;
+    padding-right: 5px;
   }
   .container {
     flex-direction: column;
@@ -125,6 +136,19 @@ h4 {
   .main {
     padding-left: 10px;
     padding-right: 10px;
+  }
+}
+@media screen and (max-width: 380px) {
+  .content {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+  .container {
+    flex-direction: column;
+  }
+  .main {
+    padding-left: 5px;
+    padding-right: 5px;
   }
 }
 .sections__item {
@@ -218,6 +242,7 @@ h4 {
   color: #fff;
   padding: 10px;
   text-decoration: none;
+  font-size: 16px;
   cursor: pointer;
 }
 .button-primary:hover {
@@ -231,8 +256,23 @@ h4 {
   height: 200px;
   width: 100%;
   background-color: #0047ba;
+  text-align: center;
 }
 .footer__text {
-  text-align: center;
   color: #fff;
+}
+.footer__logo {
+  margin: 10px;
+  height: 60px;
+}
+
+@media screen and (max-width: 768px) {
+  .footer {
+    padding-top: 20px;
+    height: 240px;
+  }
+  .footer__logo {
+    height: 40px;
+    margin: 5px;
+  }
 }/*# sourceMappingURL=styles.css.map */
