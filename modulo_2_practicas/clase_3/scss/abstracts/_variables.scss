@@ -1,5 +1,26 @@
+// fonts :
+
 $font-family-sans-serif: "Lato", sans-serif;
+
+// colors :
+
 $blue:#0047ba !default;
+
+// animation :
+
 $time-transition:0.3s;
-$border-radius:8px;
-$nav-box-shadow:0 4px 4px rgb(0, 0, 0);
+
+// nav :
+
+$nav-box-shadow:0 4px 4px rgba(0, 0, 0, 0.068);
+
+// buttons :
+
+$btn-primary-padding:12px;
+
+// testimonial :
+
+$testimonial-padding-y:4rem;
+$testimonial-letter-spacing: -.05rem;
+$testimonial-box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.075);
+$testimonial-border-radius:8px;
