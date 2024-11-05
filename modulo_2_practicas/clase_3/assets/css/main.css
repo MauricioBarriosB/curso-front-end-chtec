@@ -11542,9 +11542,9 @@ body, html {
 }
 
 .navbar {
-  box-shadow: 0 4px 4px rgb(0, 0, 0);
+  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.068);
 }
-.navbar .container-fluid #logo, .navbar .container-sm #logo, .navbar .container-md #logo, .navbar .container-lg #logo, .navbar .container-xl #logo, .navbar .container-xxl #logo {
+.navbar .container-fluid .navbar__logo, .navbar .container-sm .navbar__logo, .navbar .container-md .navbar__logo, .navbar .container-lg .navbar__logo, .navbar .container-xl .navbar__logo, .navbar .container-xxl .navbar__logo {
   max-height: 50px;
   margin-right: 60px;
   margin-left: 30px;
@@ -11559,6 +11559,9 @@ body, html {
   text-decoration: underline;
   transition: 0.3s;
 }
+.navbar i {
+  font-size: 20px;
+}
 
 .footer {
   margin-top: 10px;
@@ -11569,15 +11572,23 @@ body, html {
   text-align: center;
   color: white;
 }
+.footer__logo {
+  max-width: 80px;
+  padding-top: 1rem;
+}
+
+.btn-primary {
+  padding: 12px;
+}
 
 .carousel {
   margin-bottom: 4rem;
 }
 .carousel #carousel-item-1 {
-  background-image: url("../../images/11198.jpg");
+  background-image: url("../../assets/images/11198.jpg");
 }
 .carousel #carousel-item-2 {
-  background-image: url("../../images/2148168440.jpg");
+  background-image: url("../../assets/images/2148168440.jpg");
 }
 .carousel #carousel-item-1,
 .carousel #carousel-item-2 {
@@ -11604,6 +11615,29 @@ body, html {
     line-height: 1.4;
   }
 }
+.testimonial {
+  padding-top: 4rem;
+  padding-bottom: 4rem;
+}
+.testimonial__heading {
+  letter-spacing: -0.05rem;
+}
+.testimonial img {
+  border-radius: 8px;
+  box-shadow: 4px 4px 6px rgba(0, 0, 0, 0.075);
+  border: 1px solid #adb5bd;
+}
+
+@media (min-width: 40em) {
+  .testimonial__heading {
+    font-size: 50px;
+  }
+}
+@media (min-width: 62em) {
+  .testimonial__heading {
+    margin-top: 1rem;
+  }
+}
 .marketing .col-lg-4 {
   margin-bottom: 2.5rem;
   text-align: center;
@@ -11612,24 +11646,4 @@ body, html {
 .marketing .col-lg-4 p {
   margin-right: 0.75rem;
   margin-left: 0.75rem;
-}
-
-.featurette {
-  padding-top: 4rem;
-  padding-bottom: 4rem;
-}
-
-.featurette-heading {
-  letter-spacing: -0.05rem;
-}
-
-@media (min-width: 40em) {
-  .featurette-heading {
-    font-size: 50px;
-  }
-}
-@media (min-width: 62em) {
-  .featurette-heading {
-    margin-top: 1rem;
-  }
 }/*# sourceMappingURL=main.css.map */

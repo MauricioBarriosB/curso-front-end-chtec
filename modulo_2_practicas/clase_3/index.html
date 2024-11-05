@@ -1,41 +1,33 @@
 <!doctype html>
-<html lang="en" data-bs-theme="auto">
-
+<html lang="es">
 <head>
-
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>LIV Hospital</title>
-
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css"
-    rel="stylesheet">
-  <link
-    href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
-    rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
   <link href="assets/css/main.css" rel="stylesheet">
 </head>
 
 <body>
 
-
-
   <header>
     <nav class="navbar navbar-expand-sm">
       <div class="container-fluid">
-        <img id="logo" src="images/logo.svg">
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavbar">
+        <img class="navbar__logo" src="assets/images/logo.svg">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible-navbar">
           <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="collapsibleNavbar">
+        <div class="collapse navbar-collapse" id="collapsible-navbar">
           <ul class="navbar-nav">
             <li class="nav-item">
-              <a class="nav-link" href="#">Home</a>
+              <a class="nav-link" href="index.html"> <i class="las la-home"></i> Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Equipo médico</a>
+              <a class="nav-link" href="personas.html"> <i class="las la-user-friends"></i> Personas</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#">Contacto</a>
+              <a class="nav-link" href="contacto.html"> <i class="las la-inbox"></i> Contacto</a>
             </li>
           </ul>
         </div>
@@ -90,57 +82,61 @@
       <div class="row">
 
         <div class="col-lg-4">
-          <i class="las la-ambulance la-4x text-primary mb-2"></i>
-          <h3 class="fw-normal text-primary">Servicio de Traslado</h3>
-          <p>Descripción Servicio de Traslado Pacientes</p>
-          <p><a class="btn btn-primary p-3" href="#">Ver más detalle &raquo;</a></p>
+          <div class="card p-2">
+            <i class="las la-ambulance la-4x text-primary mb-2"></i>
+            <h3 class="fw-normal text-primary">Servicio de Traslado</h3>
+            <p>Descripción Servicio de Traslado Pacientes</p>
+            <p><a class="btn btn-primary" href="#">Ver más detalle &raquo;</a></p>
+          </div>
         </div>
 
         <div class="col-lg-4">
-          <i class="las la-stethoscope la-4x text-primary mb-2"></i>
-          <h3 class="fw-normal text-primary">Chequeo Médico</h3>
-          <p>Descripción Chequeo Médico Personalizado</p>
-          <p><a class="btn btn-primary p-3" href="#">Ver más detalle &raquo;</a></p>
+          <div class="card p-2">
+            <i class="las la-stethoscope la-4x text-primary mb-2"></i>
+            <h3 class="fw-normal text-primary">Chequeo Médico</h3>
+            <p>Descripción Chequeo Médico Personalizado</p>
+            <p><a class="btn btn-primary" href="#">Ver más detalle &raquo;</a></p>
+          </div>
         </div>
 
         <div class="col-lg-4">
-          <i class="las la-procedures la-4x text-primary mb-2"></i>
-          <h3 class="fw-normal text-primary">Atención Hospitalaria</h3>
-          <p>Descripción Atención Hospitalaria Inmediata</p>
-          <p><a class="btn btn-primary p-3" href="#">Ver más detalle &raquo;</a></p>
+          <div class="card p-2">
+            <i class="las la-procedures la-4x text-primary mb-2"></i>
+            <h3 class="fw-normal text-primary">Atención Hospitalaria</h3>
+            <p>Descripción Atención Hospitalaria Inmediata</p>
+            <p><a class="btn btn-primary" href="#">Ver más detalle &raquo;</a></p>
+          </div>
         </div>
 
       </div>
 
-      <div class="row featurette">
+      <div class="row testimonial">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Cabecera Testimonio 1. <span class="text-body-secondary">Subtexto.</span></h2>
+          <h2 class="testimonial__heading">Cabecera Testimonio 1. <span class="text-body-secondary">Subtexto.</span></h2>
           <p class="lead">Descripción del paciente, algun testimononial número 1.</p>
         </div>
         <div class="col-md-5">
-          <img src="images/2979.jpg" width="400" height="200">
+          <img class="testimonial__img" src="assets/images/2979.jpg" width="400" height="200">
         </div>
       </div>
 
-
-
-      <div class="row featurette">
+      <div class="row testimonial">
         <div class="col-md-7 order-md-2">
-          <h2 class="featurette-heading">Cabecera Testimonio 2. <span class="text-body-secondary">Subtexto.</span></h2>
+          <h2 class="testimonial__heading">Cabecera Testimonio 2. <span class="text-body-secondary">Subtexto.</span></h2>
           <p class="lead">Descripción del paciente, algun testimononial número 2.</p>
         </div>
         <div class="col-md-5 order-md-1">
-          <img src="images/30.jpeg" width="400" height="200">
+          <img class="testimonial__img" src="assets/images/30.jpg" width="400" height="200">
         </div>
       </div>
 
-      <div class="row featurette">
+      <div class="row testimonial">
         <div class="col-md-7">
-          <h2 class="featurette-heading">Cabecera Testimonio 3. <span class="text-body-secondary">Subtexto.</span></h2>
+          <h2 class="testimonial__heading">Cabecera Testimonio 3. <span class="text-body-secondary">Subtexto.</span></h2>
           <p class="lead">Descripción del paciente, algun testimononial número 3.</p>
         </div>
         <div class="col-md-5">
-          <img src="images/40.jpg" width="400" height="200">
+          <img class="testimonial__img" src="assets/images/40.jpg" width="400" height="200">
         </div>
       </div>
 
@@ -155,7 +151,7 @@
         <div class="card-body">
           <h3 class="card-title">Anticiapa tu Hora de Atención</h3>
           <p class="card-text">Elige horario preferencial de lunes a jueves.</p>
-          <a href="#" class="btn btn-primary p-3"> <b>Haz tu reserva aquí</b></a>
+          <a href="#" class="btn btn-primary"> <b>Haz tu reserva aquí</b></a>
         </div>
         <div class="card-footer text-body-secondary">
           Disponibilidad Inmediata
@@ -163,22 +159,21 @@
       </div>
     </div>
 
+  </main>
 
     <footer class="footer">
       <div class="container">
         <p>Pie de página, incluye enlaces rápidos, información de contacto, y redes sociales del hospital.</p>
         <i class="lab la-google-plus-g la-3x p-2"></i>
-        <i class="lab la-facebook  la-3x p-2"></i>
-        <i class="lab la-twitter  la-3x p-2"></i>
-        <i class="lab la-vimeo-v  la-3x p-2"></i>
-        <i class="lab la-pinterest  la-3x p-2"></i>
-        <i class="lab la-blogger-b  la-3x p-2"></i>
+        <i class="lab la-facebook la-3x p-2"></i>
+        <i class="lab la-twitter la-3x p-2"></i>
+        <i class="lab la-vimeo-v la-3x p-2"></i>
+        <i class="lab la-pinterest la-3x p-2"></i>
+        <i class="lab la-blogger-b la-3x p-2"></i>
         <p>© 2024 LIV Hospital - Derechos Reservados.</p>
-        <img src="images/logo_white.svg" width="80">
+        <img class="footer__logo" src="assets/images/logo_white.svg">
       </div>
     </footer>
-  </main>
-
   <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>
 </html>

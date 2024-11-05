@@ -6,4 +6,9 @@
     background-color: $primary;
     text-align: center;
     color:white;
+
+    &__logo{
+        max-width:80px;
+        padding-top: 1rem;
+    }
 }
