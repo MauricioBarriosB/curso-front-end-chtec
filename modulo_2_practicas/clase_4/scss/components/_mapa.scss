@@ -1,0 +1,9 @@
+.mapa {
+    width :$mapa-width;
+    height: $mapa-height;
+    border:1px solid $gray-400;
+    -moz-border-radius:$mapa-border-radius;
+    border-radius:$mapa-border-radius;
+    overflow: hidden;
+    box-shadow: $mapa-box-shadow;
+}
