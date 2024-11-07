@@ -2,6 +2,6 @@ Enlace cuenta pública gitbub (repositorio de todos modulos/prácticas del curso
 
 https://github.com/MauricioBarriosB/curso-front-end-chtec.git
 
-Enlace tarea práctica modulo 2, clase 1:
+Enlace tarea práctica modulo 2, clase 3:
 
-https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_2_practicas/clase_1
+https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_2_practicas/clase_3
