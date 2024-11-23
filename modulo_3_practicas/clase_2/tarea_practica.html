@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Actividad Practica</title>
+</head>
+<body>
+  <h1>Actividad Practica</h1>
+<script>
+/*
+let edad = prompt("ingresar edad");
+
+if (Number(edad) < 18) {
+  alert('eres MENOR  de edad');
+} else {
+  alert('eres MAYOR de edad');
+}
+*/
+
+//Ejercicios con Arreglos:
+
+let arreglo = [5,2,6,-2,9,70,8,4];
+//1. Suma de Elementos de un Arreglo:
+let acumulador = 0;
+for(let i = 0; i<arreglo.length; i++){
+    acumulador = acumulador + arreglo[i];
+}
+
+
+
+console.log("La suma total de los elementos es: " + acumulador);
+
+//2. Encontrar el Valor Máximo en un Arreglo:
+let mayor = 0;
+for(let i = 0; i<arreglo.length; i++){
+    if(i==0){
+        mayor = arreglo[0];
+    }else{
+        if(arreglo[i]>mayor){
+            mayor = arreglo[i];
+        }
+    }
+}
+console.log("El número mayor del arreglo es: " + mayor);
+
+
+
+
+let cyear = new Date().getFullYear();
+
+let  totalNumeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
+
+for (let i = 0; i < totalNumeros.length; i++) {
+  if (totalNumeros[i] % 2 === 0) {
+      console.log("Numero par -> ", totalNumeros[i]);
+  } 
+}
+
+for (let i = 1; i <= 20; i++) {
+  if (i % 2 === 0) {
+      console.log("Numero par -> ", i);
+  } 
+}
+
+</script>
+
+</body>
+</html>

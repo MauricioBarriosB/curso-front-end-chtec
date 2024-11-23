@@ -1,0 +1,15 @@
+PS C:\PROYECTOS\curso-front-end-chtec\modulo_3_practicas\clase_3> node app.js
+
+
+Gestor de Tareas:
+1. Agregar Tarea
+2. Ver Tareas
+3. Eliminar Tarea
+4. Salir
+Selecciona una opción:
+
+
+/////////////////////////////////////////////////////////
+
+
+se incluyen en tareas.json

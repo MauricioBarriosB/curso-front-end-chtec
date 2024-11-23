@@ -1,0 +1,10 @@
+[
+  {
+    "nombre": "Estudiar JavaScript",
+    "completada": false
+  },
+  {
+    "nombre": "tarea numero 1",
+    "completada": false
+  }
+]

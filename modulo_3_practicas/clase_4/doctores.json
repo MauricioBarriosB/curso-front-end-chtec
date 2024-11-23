@@ -1,0 +1,20 @@
+[
+    {
+        "rut": "12.345.678-9",
+        "nombre": "Juan",
+        "apellido": "Pérez",
+        "edad": 45
+    },
+    {
+        "rut": "98.765.432-1",
+        "nombre": "María",
+        "apellido": "Gómez",
+        "edad": 38
+    },
+    {
+        "rut": "11.223.344-5",
+        "nombre": "Carlos",
+        "apellido": "Ramírez",
+        "edad": 50
+    }
+]
