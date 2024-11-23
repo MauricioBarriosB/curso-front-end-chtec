@@ -26,7 +26,7 @@ Sitio Hospital Actualización JS - Página Personas:
 
 * Loops: mediante loop for each he poblado el contenedor DIV de doctores dinámicamente. 
 
-* Condicionales: he agregado la condición item.disponible para renderizar solo los doctores que tengan ese como valor verdadero (en el archivo JSON).
+* Condicionales: he agregado la condición item.disponible para renderizar solo los doctores que tengan ese campo como valor verdadero (en el archivo JSON).
 
 * Alert: he integrado una ventana de alerta referenciando la información del doctor presionando el botón "Ver más detalle".
 
