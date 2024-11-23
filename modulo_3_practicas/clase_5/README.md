@@ -26,10 +26,8 @@ Sitio Hospital Actualización JS - Página Personas:
 
 * Loops: mediante loop for each he poblado el contenedor DIV de doctores dinámicamente. 
 
-* Condicionales: he agregador la condición item.disponible para renderizar solo los doctores que tengan ese como valor verdadero (en el archivo JSON).
+* Condicionales: he agregado la condición item.disponible para renderizar solo los doctores que tengan ese como valor verdadero (en el archivo JSON).
+
+* Alert: he integrado una ventana de alerta referenciando la información del doctor presionando el botón "Ver más detalle".
 
 * Debugger y manejo de errores: he utilizado catch error y console log para registrar errores desde el fetch de datos y otros.
-
-Recursos:
-
-https://www.freecodecamp.org/espanol/news/expresiones-regulares-regex-en-javascript-manual-para-principiantes/
