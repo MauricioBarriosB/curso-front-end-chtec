@@ -1,0 +1,137 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIV Hospital</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-sm">
+      <div class="container-fluid">
+        <img class="navbar__logo" src="assets/images/logo.svg">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible-navbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsible-navbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"> <i class="las la-home"></i> Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personas.html"> <i class="las la-user-friends"></i> Personas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html"> <i class="las la-inbox"></i> Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reservas.html"> <i class="las la-calendar-check"></i> Reservas</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+  <div class="container py-4">
+    <div class="row text-center">
+       <h1 class="text-primary">Reserva de Horas</h1>
+       <h2 class="text-primary">Anticipa tu horario de atención</h2>
+    </div>
+  </div>
+
+    <div class="container pb-4">
+
+      <div class="card text-center">
+        <div class="card-header">
+          Presiona el botón para solicitar hora
+      
+        </div>
+        <div class="card-body">
+
+            <a id="btn-booking" href="#" class="btn btn-primary"> <b>Ingresar Hora a Reservar</b></a>
+
+        </div>
+        <div class="card-footer text-body-secondary">
+          <p class="fw-bold text-primary m-0">Gracias por su preferencia.</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <img class="footer__logo mb-5" src="assets/images/logo_white.svg">
+      
+      <div class="pb-4">
+        <div class="d-inline-block"><i class="las la-phone"></i> 800 600 2010 </div>
+        <div class="d-inline-block"><i class="las la-envelope ps-4"></i> contacto@livhospital.com </div>
+        <div class="d-inline-block"><i class="las la-map-marker ps-4"></i> Av. Salud 1234, Santiago, Chile </div>
+      </div>
+
+      <i class="lab la-google-plus-g la-3x p-2"></i>
+      <i class="lab la-facebook la-3x p-2"></i>
+      <i class="lab la-twitter la-3x p-2"></i>
+      <i class="lab la-vimeo-v la-3x p-2"></i>
+      <i class="lab la-pinterest la-3x p-2"></i>
+      <i class="lab la-blogger-b la-3x p-2"></i>
+      <p>Síguenos en nustras redes sociales</p>
+      <p>© 2024 LIV Hospital - Derechos Reservados.</p>
+
+    </div>
+  </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(event) {
+    console.log('Page loadaed...')
+    let userName, userEmail, userPhone;
+
+    const regexName = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$/i;
+    const regexEmal = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const regexPhone = /^[0-9\s]*$/;
+
+    const btnBooking = document.querySelector('#btn-booking')
+
+    btnBooking.addEventListener('click',()=>{
+        console.log('Button clicked...')
+
+        // * Obtener los datos desde la funcion getUserPromData :
+
+        userName  = getUserPromData('nombre',regexName)
+        userEmail = getUserPromData('email',regexEmal)
+        userPhone = getUserPromData('teléfono',regexPhone)
+
+        console.log('>>> Nombre de usuario :', userName)
+        console.log('>>> Email de usuario :', userEmail)
+        console.log('>>> Teléfono de usuario :', userPhone)
+
+        if (!userName && !userEmail && !userPhone) console.log('Sin ingreso de datos...')
+    });
+
+    function getUserPromData(type, regex) {
+        const prompErrorMsg = '¡Por favor, debe ingresar un '+ type + ' válido!'
+        let inputUser = window.prompt('Ingrese su ' + type  + '. Su información será validada solo si es ingresada: ')
+
+        // * Para efectos prácticos, retornar valor solo si es ingresado y cumple con la Expresion Regular :
+
+        if (inputUser && !regex.test(inputUser)) {
+            alert(prompErrorMsg)
+            console.log(prompErrorMsg)
+            return getUserPromData(type, regex)
+        }
+        return inputUser
+    }
+});
+</script>
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,91 @@
+[
+    {
+        "rut": "12.345.678-9",
+        "nombre": "Samuel",
+        "apellido": "Neil",
+        "edad": 35,
+        "especialidad": "Especialista en Cardiología",
+        "foto" : "medico2.jpg",
+        "disponible" : true
+    },
+
+    {
+        "rut": "13.345.678-9",
+        "nombre": "José",
+        "apellido": "Smith",
+        "edad": 45,
+        "especialidad": "Especialista en Pediatría",
+        "foto" : "medico3.jpg",
+        "disponible" : true
+    },
+
+    {
+        "rut": "12.345.678-9",
+        "nombre": "John",
+        "apellido": "Doe",
+        "edad": 33,
+        "especialidad": "Especialista en Neurología",
+        "foto" : "medico1.jpg",
+        "disponible" : true
+    },
+
+    {
+        "rut": "11.345.678-9",
+        "nombre": "Regina",
+        "apellido": "Neil",
+        "edad": 45,
+        "especialidad": "Médico General",
+        "foto" : "medico4.jpg",
+        "disponible" : true
+    },
+
+    {
+        "rut": "11.223.344-5",
+        "nombre": "Carlos",
+        "apellido": "Ramírez",
+        "edad": 50,
+        "especialidad": "Fonoaudiología",
+        "foto" : "medico1.jpg",
+        "disponible" : false
+    },
+
+    {
+        "rut": "12.345.678-9",
+        "nombre": "Pedro",
+        "apellido": "Rodriguez",
+        "edad": 55,
+        "especialidad": "Fonoaudiología",
+        "foto" : "medico5.jpg",
+        "disponible" : true
+    },
+
+    {
+        "rut": "14.345.678-9",
+        "nombre": "Erica",
+        "apellido": "Soto",
+        "edad": 41,
+        "especialidad": "Especialista en Neurología",
+        "foto" : "medico6.jpg",
+        "disponible" : true
+    },
+    
+    {
+        "rut": "12.345.678-9",
+        "nombre": "Juan",
+        "apellido": "Pérez",
+        "edad": 45,
+        "especialidad": "Fonoaudiología",
+        "foto" : "medico1.jpg",
+        "disponible" : false
+    },
+
+    {
+        "rut": "98.765.432-1",
+        "nombre": "María",
+        "apellido": "Gómez",
+        "edad": 38,
+        "especialidad": "Fonoaudiología",
+        "foto" : "medico1.jpg",
+        "disponible" : false
+    }
+]

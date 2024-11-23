@@ -1,0 +1,37 @@
+.testimonial {
+    padding-top: $testimonial-padding-y;
+    padding-bottom: $testimonial-padding-y;
+    
+    &__heading {
+        letter-spacing:$testimonial-letter-spacing;
+    }
+
+    img {
+        border-radius: $testimonial-border-radius;
+        box-shadow: $testimonial-box-shadow;
+        border: 1px solid $gray-500;
+    }
+}
+
+
+@media (min-width: 40em) {
+    .testimonial__heading {
+        font-size: 50px;
+    }
+}
+
+@media (min-width: 62em) {
+    .testimonial__heading {
+        margin-top: 1rem;
+    }
+}
+
+.marketing .col-lg-4 {
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.marketing .col-lg-4 p {
+    margin-right: .75rem;
+    margin-left: .75rem;
+}
