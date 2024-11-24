@@ -61,9 +61,9 @@
             <hr>
 
             <h3>Datos a solicitar</h3>
-            <p>Nombre </p>
-            <p>Email </p>
-            <p>Teléfono </p>
+            <p>• Nombre <span id="span-name"></span></p>
+            <p>• Email <span id="span-email"></span></p>
+            <p>• Teléfono <span id="span-phone"></span></p>
           
         </div>
         <div class="card-footer text-body-secondary">
@@ -101,10 +101,13 @@ document.addEventListener("DOMContentLoaded",function(event) {
     console.log('Page loadaed...')
     let userName, userEmail, userPhone;
 
-    const regexName = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$/i;
-    const regexEmal = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+    const regexName  = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$/i;
+    const regexEmal  = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
     const regexPhone = /^[0-9\s]*$/;
 
+    const spanName = document.querySelector('#span-name')
+    const spanEmail = document.querySelector('#span-email')
+    const spanPhone = document.querySelector('#span-phone')
     const btnBooking = document.querySelector('#btn-booking')
 
     btnBooking.addEventListener('click',()=>{
@@ -112,29 +115,36 @@ document.addEventListener("DOMContentLoaded",function(event) {
 
         // * Obtener los datos desde la funcion getUserPromData :
 
-        userName  = getUserPromData('nombre',regexName)
-        userEmail = getUserPromData('email',regexEmal)
-        userPhone = getUserPromData('teléfono',regexPhone)
+        userName  = getUserPromptData('nombre',regexName)
+        userEmail = getUserPromptData('email',regexEmal)
+        userPhone = getUserPromptData('teléfono',regexPhone)
+
+        // * Renderizar en el DOM con las variables de usario :
+
+        spanName.innerHTML  = (userName)  ? `: <strong> ${userName}  </strong>` : ': Sin info.'
+        spanEmail.innerHTML = (userEmail) ? `: <strong> ${userEmail} </strong>` : ': Sin info.'
+        spanPhone.innerHTML = (userPhone) ? `: <strong> ${userPhone} </strong>` : ': Sin info.'
+
+        // * Mostrar variables por consola :
 
         console.log('>>> Nombre de usuario :', userName)
         console.log('>>> Email de usuario :', userEmail)
         console.log('>>> Teléfono de usuario :', userPhone)
-
-        if (!userName && !userEmail && !userPhone) console.log('Sin ingreso de datos...')
     });
 
-    function getUserPromData(type, regex) {
+    function getUserPromptData(type, regex) {
         const prompErrorMsg = '¡Por favor, debe ingresar un '+ type + ' válido!'
         let inputUser = window.prompt('Ingrese su ' + type  + '. Su información será validada solo si es ingresada: ')
 
-        // * Para efectos prácticos, retornar valor solo si es ingresado y cumple con la Expresion Regular :
+        // * Para efectos prácticos, retornar valor solo si es ingresado y si cumple con la RegEx :
 
         if (inputUser && !regex.test(inputUser)) {
             alert(prompErrorMsg)
             console.log(prompErrorMsg)
-            return getUserPromData(type, regex)
+            return getUserPromptData(type, regex)
+        } else {
+          return inputUser
         }
-        return inputUser
     }
 });
 </script>

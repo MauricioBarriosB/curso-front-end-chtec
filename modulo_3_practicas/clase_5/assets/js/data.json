@@ -45,7 +45,7 @@
         "apellido": "Ramírez",
         "edad": 50,
         "especialidad": "Fonoaudiología",
-        "foto" : "medico1.jpg",
+        "foto" : "medico5.jpg",
         "disponible" : false
     },
 
@@ -74,7 +74,7 @@
         "nombre": "Juan",
         "apellido": "Pérez",
         "edad": 45,
-        "especialidad": "Fonoaudiología",
+        "especialidad": "Médico General",
         "foto" : "medico1.jpg",
         "disponible" : false
     },
@@ -85,7 +85,7 @@
         "apellido": "Gómez",
         "edad": 38,
         "especialidad": "Fonoaudiología",
-        "foto" : "medico1.jpg",
+        "foto" : "medico4.jpg",
         "disponible" : false
     }
 ]

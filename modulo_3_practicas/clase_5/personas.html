@@ -126,7 +126,7 @@
                   <div class="card-body">
                     <h5 class="card-title text-primary">${item.nombre} ${item.apellido}</h5>
                     <p class="card-text">${item.especialidad}.</p>
-                    <a href="javascript:void(0);" onclick="alert('Detalle doctor ${item.nombre} ${item.apellido}. Especialidad: ${item.especialidad}.');" 
+                    <a href="javascript:void(0);" onclick="alert('• Detalle doctor ${item.nombre} ${item.apellido} | ${item.especialidad}.');" 
                     class="btn btn-primary">Ver más detalle &raquo;</a>
                   </div>
                   </div>
@@ -138,9 +138,9 @@
             } 
         });
       })
-      .catch(error => {
-        console.error('Data load Error:', error);
-      });
+    .catch(error => {
+      console.error('Data load Error:', error);
+    });
 });
 
 </script>
