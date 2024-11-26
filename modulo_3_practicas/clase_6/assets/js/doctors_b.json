@@ -1,0 +1,97 @@
+[
+    {
+        "rut": "12.345.678-9",
+        "fname": "Samuel",
+        "lname": "Neil",
+        "age": 35,
+        "specialty_id": 1,
+        "photo" : "medico2.jpg",
+        "available" : true,
+        "experience": 6,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "samuel@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "rut": "13.345.678-9",
+        "fname": "José",
+        "lname": "Smith",
+        "age": 45,
+        "specialty_id": 2,
+        "photo" : "medico3.jpg",
+        "available" : true,
+        "experience": 6,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "smith@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "rut": "12.345.678-9",
+        "fname": "John",
+        "lname": "Doe",
+        "age": 33,
+        "specialty_id": 3,
+        "photo" : "medico1.jpg",
+        "available" : true,
+        "experience": 6,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "john@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "rut": "11.345.678-9",
+        "fname": "Regina",
+        "lname": "Neil",
+        "age": 45,
+        "specialty_id": 4,
+        "photo" : "medico4.jpg",
+        "available" : true,
+        "experience": 6,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "regina@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "rut": "11.223.344-5",
+        "fname": "Jorge",
+        "lname": "Berrios",
+        "age": 50,
+        "specialty_id": 5,
+        "photo" : "medico5.jpg",
+        "available" : false,
+        "experience": 1,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "cramirez@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    }
+
+]

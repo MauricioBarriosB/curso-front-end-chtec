@@ -1,0 +1,61 @@
+[
+    {
+        "id": 1,
+        "name": "Cardiología",
+        "description": "Descripción Especialidad Cardiología"
+    },
+
+    {
+        "id": 2,
+        "name": "Pediatría",
+        "description": "Descripción Especialidad Pediatría"
+    },
+
+    {
+        "id": 3,
+        "name": "Neurología",
+        "description": "Descripción Especialidad Neurología"
+    },
+
+    {
+        "id": 4,
+        "name": "Medicina General",
+        "description": "Descripción Especialidad Medicina General"
+    },
+
+    {
+        "id": 5,
+        "name": "Fonoaudiología",
+        "description": "Descripción Especialidad Fonoaudiología"
+    },
+
+    {
+        "id": 6,
+        "name": "Dermatología",
+        "description": "Descripción Especialidad Dermatología"
+    },
+
+    {
+        "id": 7,
+        "name": "Laboratorio Clínico",
+        "description": "Descripción Especialidad Laboratorio Clínico"
+    },
+
+    {
+        "id": 8,
+        "name": "Oftalmología",
+        "description": "Descripción Especialidad Oftalmología"
+    },
+
+    {
+        "id": 9,
+        "name": "Radiología",
+        "description": "Descripción Especialidad Radiología"
+    },
+
+    {
+        "id": 10,
+        "name": "Medicina Nuclear",
+        "description": "Descripción Especialidad Medicina Nuclear"
+    }
+]
