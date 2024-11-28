@@ -52,6 +52,13 @@
     <div class="row text-center">
        <h2 class="text-primary">Nuestro Equipo Médico</h2>
     </div>
+    <div class="text-center">
+      <a href="#" id="btn-show-ava">Ver disponibles </a> &nbsp;|&nbsp;
+      <a href="#" id="btn-show-una">Ver no disponibles </a> &nbsp;|&nbsp;
+      <a href="#" id="btn-sort-by-max">Ordenar mayor experiencia </a> &nbsp;|&nbsp;
+      <a href="#" id="btn-sort-by-less">Ordenar menor experiencia </a> &nbsp;|&nbsp;
+      <a href="#" id="btn-search-by-lname">Buscar por apellido </a> 
+    </div>
   </div>
 
     <div class="container marketing">
@@ -103,44 +110,49 @@
   <script>
   document.addEventListener("DOMContentLoaded",function(event) {
     console.log('Page loadaed...')
+
     let rowDoctors = document.getElementById('row-doctors')
     let jsonObjects = []
-    let mergedDoctors, clonedSpecialties
-    let contentItem = ''
-    let availableDoctors = false // hacer boton
-    let sortDoctors = true // hacer boton
-    // funcion promp para buscar doctor
+    let mergedDoctors, clonedSpecialties, contentItem
+    let availableDoctors = true 
+    let sortMaxLessExp = true 
 
-    // * Incluir los archivos JSON en Promise para procesarlos todos con forEach :
+    // * Incluir los archivos JSON doctores y especialidades en Promise, luego concatenamos (doctors_a + doctors_b) 
+    // * para procesarlos todos con for In en función renderDOMElements :
 
-    const urls = ['./assets/js/doctors_a.json', './assets/js/doctors_b.json', './assets/js/specialties.json'];
+    const urls = ['./assets/js/doctors_a.json', './assets/js/doctors_b.json', './assets/js/specialties.json']
 
     Promise.all(urls.map((url) => fetch(url).then((response) => response.json())))
 	  .then((jsons) => {
-		  jsons.forEach((json) => jsonObjects.push(json));
+		  jsons.forEach((json) => jsonObjects.push(json))
 
-      mergedDoctors = jsonObjects[0].concat(jsonObjects[1]);
-      clonedSpecialties = JSON.parse(JSON.stringify(jsonObjects[2]));
+      mergedDoctors = jsonObjects[0].concat(jsonObjects[1])
+      clonedSpecialties = JSON.parse(JSON.stringify(jsonObjects[2]))
 
-      console.log('* Merged Doctors Stringify:', JSON.stringify(mergedDoctors));
-      console.log('* Cloned Specialties :', clonedSpecialties);
+      console.log('* Merged Doctors Stringify:', JSON.stringify(mergedDoctors))
+      console.log('* Cloned Specialties :', clonedSpecialties)
 
-      renderDOMElements();
+      // * Renderizar los elementos del DOM :
+
+      renderDOMElements()
 	  })
-	  .catch((error) => console.error('* Fetch Json Error :', error));
-
+	  .catch((error) => console.error('* Fetch Json Error :', error))
 
     function renderDOMElements() {
       let i, j, status
+      contentItem = ''
       rowDoctors.innerHTML = ''
 
-      // * Ordenar objeto doctores por años de experiencia antes de procesar el contenido HTML :
+      // * Ordenar objeto doctores por > o < experiencia (antes de concatenar contenido HTML) :
 
-      if (sortDoctors) {
-        mergedDoctors = mergedDoctors.sort(function(a, b){ 
+      mergedDoctors = mergedDoctors.sort(function(a, b){ 
+        if (sortMaxLessExp) {
           if (a.experience > b.experience) return -1
-        });
-      }
+        } else {
+          if (a.experience < b.experience) return -1
+        }
+      });
+      
 
       for (i in mergedDoctors) {
 
@@ -155,7 +167,7 @@
             }
           }
 
-          // * Concatena el contenido con el div card doctor :
+          // * Concatena el contenido con el Card div :
 
           status = (mergedDoctors[i].available) ? 'Disponible' : 'No disponible';
 
@@ -171,12 +183,54 @@
               </div>
               </div>
             </div>`;
-          console.log(mergedDoctors[i].fname,mergedDoctors[i].lname,'|',mergedDoctors[i].specialty_id,'|',mergedDoctors[i].specialty,'|',mergedDoctors[i].available);
+          console.log(mergedDoctors[i].fname,mergedDoctors[i].lname,'|',mergedDoctors[i].experience,'|',mergedDoctors[i].specialty,'|',mergedDoctors[i].available);
         }
       } 
+
+      // * Actualiza el HTML del contenedor principal :
+
       rowDoctors.innerHTML = contentItem
     }
-});
+
+    document.getElementById('btn-show-ava').addEventListener('click',(evt)=>{
+      console.log('* btn-show-ava')
+      evt.preventDefault()
+      availableDoctors = true 
+      renderDOMElements()
+    })
+
+    document.getElementById('btn-show-una').addEventListener('click',(evt)=>{
+      console.log('* btn-show-una')
+      evt.preventDefault()
+      availableDoctors = false 
+      renderDOMElements()
+    })
+
+    document.getElementById('btn-sort-by-max').addEventListener('click',(evt)=>{
+      console.log('* btn-sort-by-max')
+      evt.preventDefault()
+      sortMaxLessExp = true 
+      renderDOMElements()
+    })
+
+    document.getElementById('btn-sort-by-less').addEventListener('click',(evt)=>{
+      console.log('* btn-sort-by-less')
+      evt.preventDefault()
+      sortMaxLessExp = false 
+      renderDOMElements()
+    })
+
+    document.getElementById('btn-search-by-lname').addEventListener('click',(evt)=>{
+      console.log('* btn-search-by-lname')
+      evt.preventDefault()
+
+      // * Buscar doctores por apellido en el array mergedDoctors :
+
+      let inputUser = window.prompt('Ingrese apellido del doctor')
+      let found = mergedDoctors.filter(item=>item.lname.toLowerCase().includes(inputUser.toLowerCase()));
+      if (inputUser) alert('* DOCTORES ENCONTRADOS POR APELLIDO ('+inputUser+'):\n\n'+JSON.stringify(found))
+    })
+})
 </script>
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
 </body>

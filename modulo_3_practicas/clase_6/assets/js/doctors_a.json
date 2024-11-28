@@ -7,7 +7,7 @@
         "specialty_id": 10,
         "photo" : "medico2.jpg",
         "available" : true,
-        "experience": 6,
+        "experience": 27,
         "contact" : {
             "phone" : 123456789,
             "email": "samuel@liv.cl"
@@ -26,7 +26,7 @@
         "specialty_id": 2,
         "photo" : "medico3.jpg",
         "available" : true,
-        "experience": 6,
+        "experience": 4,
         "contact" : {
             "phone" : 123456789,
             "email": "smith@liv.cl"
@@ -45,7 +45,7 @@
         "specialty_id": 3,
         "photo" : "medico1.jpg",
         "available" : true,
-        "experience": 6,
+        "experience": 12,
         "contact" : {
             "phone" : 123456789,
             "email": "john@liv.cl"
@@ -58,16 +58,16 @@
 
     {
         "rut": "11.345.678-9",
-        "fname": "Regina",
-        "lname": "Neil",
+        "fname": "Josefina",
+        "lname": "Duarte",
         "age": 45,
         "specialty_id": 4,
         "photo" : "medico4.jpg",
         "available" : true,
-        "experience": 6,
+        "experience": 15,
         "contact" : {
             "phone" : 123456789,
-            "email": "regina@liv.cl"
+            "email": "duarte@liv.cl"
         },
         "hours" : {
             "am" : "07:00 - 13:00",
@@ -102,7 +102,7 @@
         "specialty_id": 5,
         "photo" : "medico5.jpg",
         "available" : true,
-        "experience": 6,
+        "experience": 10,
         "contact" : {
             "phone" : 123456789,
             "email": "prodriguez@liv.cl"
@@ -121,7 +121,7 @@
         "specialty_id": 3,
         "photo" : "medico6.jpg",
         "available" : true,
-        "experience": 6,
+        "experience": 20,
         "contact" : {
             "phone" : 123456789,
             "email": "ericasoto@liv.cl"

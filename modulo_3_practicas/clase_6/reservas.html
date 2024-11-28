@@ -51,20 +51,15 @@
 
       <div class="card text-center">
         <div class="card-header">
-          Presiona el botón para solicitar hora
-      
+          Presiona los botones para gestionar reservas
         </div>
         <div class="card-body">
-
-            <a id="btn-booking" href="#" class="btn btn-primary"> <b>Ingresar Hora a Reservar</b></a>
-
+            <a href="#" id="btn-booking" class="btn btn-primary"> <b>Nueva Reserva</b></a>
+            <a href="#" id="btn-get-first" class="btn btn-primary"> <b>Atender Primera</b></a>
+            <a href="#" id="btn-get-last" class="btn btn-primary"> <b>Atender Última</b></a>
             <hr>
-
-            <h3>Datos a solicitar</h3>
-            <p>• Nombre <span id="span-name"></span></p>
-            <p>• Email <span id="span-email"></span></p>
-            <p>• Teléfono <span id="span-phone"></span></p>
-          
+            <h3>Reservas almacenadas</h3>
+            <p id="p-booking"></p>
         </div>
         <div class="card-footer text-body-secondary">
           <p class="fw-bold text-primary m-0">Gracias por su preferencia.</p>
@@ -98,66 +93,50 @@
 
 <script>
 document.addEventListener("DOMContentLoaded",function(event) {
+  console.log('Page loadaed...')
 
-  /*
-  
-  
-   Pilas: Implementa una pila para gestionar las citas de los pacientes (última cita
-agendada, próxima cita a atender, etc.).
-- Colas: Crea una cola para simular el orden de llegada de los pacientes en la
-página de contacto
-  
-  
-  */
-    console.log('Page loadaed...')
-    let userName, userEmail, userPhone;
+  let pBooking = document.getElementById('p-booking')
+  let bookingArr = []
+  let item
 
-    const regexName  = /^[a-zA-ZÀ-ÿ\u00f1\u00d1\s]+$/i;
-    const regexEmal  = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
-    const regexPhone = /^[0-9\s]*$/;
+  document.getElementById('btn-booking').addEventListener('click',(evt)=>{
+      console.log('* btn-search-by-lname')
+      evt.preventDefault()
 
-    const spanName = document.querySelector('#span-name')
-    const spanEmail = document.querySelector('#span-email')
-    const spanPhone = document.querySelector('#span-phone')
-    const btnBooking = document.querySelector('#btn-booking')
+      let inputUser = window.prompt('Ingresar nombre reserva')
+      if (inputUser) {
+        bookingArr.push(inputUser)
+        renderDOMElements()
+      }
+  })
 
-    btnBooking.addEventListener('click',()=>{
-        console.log('Button clicked...')
+  document.getElementById('btn-get-first').addEventListener('click',(evt)=>{
+      console.log('* btn-get-first')
+      evt.preventDefault()
 
-        // * Obtener los datos desde la funcion getUserPromData :
+      if (bookingArr.length) {
+          item = bookingArr.shift()
+          alert('• Atender primera reserva: ' + item)
+          renderDOMElements()
+      }
+  })
 
-        userName  = getUserPromptData('nombre',regexName)
-        userEmail = getUserPromptData('email',regexEmal)
-        userPhone = getUserPromptData('teléfono',regexPhone)
+  document.getElementById('btn-get-last').addEventListener('click',(evt)=>{
+      console.log('* btn-get-last')
+      evt.preventDefault()
 
-        // * Renderizar en el DOM con las variables de usario :
+      if (bookingArr.length) {
+          item = bookingArr.pop()
+          alert('• Atender última reserva: ' + item)
+          renderDOMElements()
+      }
+  })
 
-        spanName.innerHTML  = (userName)  ? `: <strong> ${userName}  </strong>` : ': Sin info.'
-        spanEmail.innerHTML = (userEmail) ? `: <strong> ${userEmail} </strong>` : ': Sin info.'
-        spanPhone.innerHTML = (userPhone) ? `: <strong> ${userPhone} </strong>` : ': Sin info.'
-
-        // * Mostrar variables por consola :
-
-        console.log('>>> Nombre de usuario :', userName)
-        console.log('>>> Email de usuario :', userEmail)
-        console.log('>>> Teléfono de usuario :', userPhone)
-    });
-
-    function getUserPromptData(type, regex) {
-        const prompErrorMsg = '¡Por favor, debe ingresar un '+ type + ' válido!'
-        let inputUser = window.prompt('Ingrese su ' + type  + '. Su información será validada solo si es ingresada: ')
-
-        // * Para efectos prácticos, retornar valor solo si es ingresado y si cumple con la RegEx :
-
-        if (inputUser && !regex.test(inputUser)) {
-            alert(prompErrorMsg)
-            console.log(prompErrorMsg)
-            return getUserPromptData(type, regex)
-        } else {
-          return inputUser
-        }
-    }
-});
+  function renderDOMElements() {
+    pBooking.innerHTML = bookingArr.toString() 
+    console.log('* Arreglo de reservas :', bookingArr)
+  }
+})
 </script>
 
 <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
