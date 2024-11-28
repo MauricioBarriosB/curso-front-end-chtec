@@ -1,7 +1,7 @@
 [
     {
         "rut": "12.345.678-9",
-        "fname": "Samuel",
+        "fname": "Luis",
         "lname": "Neil",
         "age": 35,
         "specialty_id": 1,
@@ -20,16 +20,16 @@
 
     {
         "rut": "13.345.678-9",
-        "fname": "José",
-        "lname": "Smith",
+        "fname": "Alberto",
+        "lname": "Fuentes",
         "age": 45,
         "specialty_id": 2,
         "photo" : "medico3.jpg",
         "available" : true,
-        "experience": 6,
+        "experience": 7,
         "contact" : {
             "phone" : 123456789,
-            "email": "smith@liv.cl"
+            "email": "afuentes@liv.cl"
         },
         "hours" : {
             "am" : "07:00 - 13:00",
@@ -39,16 +39,16 @@
 
     {
         "rut": "12.345.678-9",
-        "fname": "John",
-        "lname": "Doe",
+        "fname": "Francisco",
+        "lname": "Garcia",
         "age": 33,
         "specialty_id": 3,
         "photo" : "medico1.jpg",
         "available" : true,
-        "experience": 6,
+        "experience": 18,
         "contact" : {
             "phone" : 123456789,
-            "email": "john@liv.cl"
+            "email": "fgarcia@liv.cl"
         },
         "hours" : {
             "am" : "07:00 - 13:00",
@@ -64,7 +64,7 @@
         "specialty_id": 4,
         "photo" : "medico4.jpg",
         "available" : true,
-        "experience": 6,
+        "experience": 33,
         "contact" : {
             "phone" : 123456789,
             "email": "regina@liv.cl"
