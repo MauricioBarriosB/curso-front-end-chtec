@@ -1,0 +1,252 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIV Hospital</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-sm">
+      <div class="container-fluid">
+        <img class="navbar__logo" src="assets/images/logo.svg">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible-navbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsible-navbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"> <i class="las la-home"></i> Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personas.html"> <i class="las la-user-friends"></i> Personas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html"> <i class="las la-inbox"></i> Contacto</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="reservas.html"> <i class="las la-calendar-check"></i> Reservas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html"> <i class="las la-cubes"></i> Dashboard</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+  <div class="container py-4">
+    <div class="row text-center">
+       <h1 class="text-primary">Dashboard</h1>
+       <h2 class="text-primary">Informacón general</h2>
+    </div>
+  </div>
+
+    <div class="container pb-4">
+
+      <div class="card text-center">
+        <div class="card-header">
+          Presiona los botones para consulta
+        </div>
+        <div class="card-body">
+            <a href="#" id="btn-get-cost" class="btn btn-primary"> <b>Consultar Valor</b></a>
+            <a href="#" id="btn-get-mediatime" class="btn btn-primary"> <b>Promedio Espera</b></a>
+            <a href="#" id="btn-get-totals" class="btn btn-primary"> <b>Total Horas Doctor</b></a>
+            <a href="#" id="btn-get-discounts" class="btn btn-primary"> <b>Revisar Descuentos</b></a>
+            <hr>
+        </div>
+        <div class="card-footer text-body-secondary">
+          <p class="fw-bold text-primary m-0">Revizar salida por consola</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <img class="footer__logo mb-5" src="assets/images/logo_white.svg">
+      
+      <div class="pb-4">
+        <div class="d-inline-block"><i class="las la-phone"></i> 800 600 2010 </div>
+        <div class="d-inline-block"><i class="las la-envelope ps-4"></i> contacto@livhospital.com </div>
+        <div class="d-inline-block"><i class="las la-map-marker ps-4"></i> Av. Salud 1234, Santiago, Chile </div>
+      </div>
+
+      <i class="lab la-google-plus-g la-3x p-2"></i>
+      <i class="lab la-facebook la-3x p-2"></i>
+      <i class="lab la-twitter la-3x p-2"></i>
+      <i class="lab la-vimeo-v la-3x p-2"></i>
+      <i class="lab la-pinterest la-3x p-2"></i>
+      <i class="lab la-blogger-b la-3x p-2"></i>
+      <p>Síguenos en nustras redes sociales</p>
+      <p>© 2024 LIV Hospital - Derechos Reservados.</p>
+
+    </div>
+  </footer>
+
+<script>
+document.addEventListener("DOMContentLoaded",function(event) {
+  console.log('Page loadaed...')
+
+  // * Usa currying para calcular el costo total de los servicios de un paciente en función del número 
+  // * de consultas realizadas y el precio de cada consulta.
+
+  document.getElementById('btn-get-cost').addEventListener('click',(evt)=>{
+    console.clear()
+    const customerName = 'Mauricio' // * Nombre paciente
+    const costConsult = [2400,4000,3200,100,2500,8200,90500,500,100,1400,2100] // * Array lista costos paciente
+    const totalConsult = costConsult.length // * Cantidad de consultas
+    alert(getCostService(customerName)(totalConsult)(costConsult))
+  })
+
+  const getCostService = function(customerName) {
+      return function (totalConsult) {
+          return function (costConsult) {
+            let total = 0
+            costConsult.forEach(item => {
+              console.log('current cost :', item)
+              total += item
+            });
+            return 'Cilente: ' + customerName + ' | Total: $' + total + ' | por ' + totalConsult + ' consultas'
+          }
+      }
+  }
+
+  // * Usa la función flecha para simplificar la sintaxis en una función que calcule el tiempo
+  // * promedio de espera de los pacientes.
+
+  document.getElementById('btn-get-mediatime').addEventListener('click',(evt)=>{
+    console.clear()
+    let hourTime = [4,2,5,2,6,5,2,2,4] // * Array lista horas de espera global pacientes
+    alert('Promedio tiempo de espera: ' + getMediaTime(hourTime) + ' Horas.')
+  })
+
+  const getMediaTime = (hourTime) => {
+    let sum = hourTime.reduce((acc, current) => acc + current)
+    let mediaTime = Math.round(sum / hourTime.length, 2)
+    console.log('* mediaTime :', mediaTime)
+    return mediaTime
+  }
+
+  // * Implementa la recursión para calcular de forma recursiva el total de horas de consulta
+  // * de un doctor a lo largo de la semana.
+
+  document.getElementById('btn-get-totals').addEventListener('click',(evt)=>{
+    console.clear()
+    let hourTime = [8,9,8,7,8,4,3] // * Array lista horas de doctor por semana (7 dias)
+    var total = 0
+    let index = 0
+    let printTotal = getTotalHoursByDoc(hourTime, index, total) 
+    alert('Suma total horas Doctor X: ' + printTotal + ' Horas.')
+  })
+
+  const getTotalHoursByDoc = function(hrs, ind, tot) {  
+      if (ind < hrs.length) {   
+        tot += hrs[ind]
+        console.log('* current hour :', hrs[ind])
+        return getTotalHoursByDoc(hrs, ind + 1, tot)  
+      } else {    
+        console.log('* total :', tot)
+        return tot
+      }
+  }
+
+  // * Integra composición de funciones para aplicar descuentos a los costos de consultas
+  // * en base al costo cantidad de consultas realizadas.
+
+  document.getElementById('btn-get-discounts').addEventListener('click',(evt)=>{
+    console.clear()
+    const costConsult = [2400,100,200,100,2500,8200,90500,400,100,1400,2100] // * Array lista costos paciente
+    const applyAt = 500  // * Aplicar si el costo es mayor de 500 
+    const cantDiscount = 100 // * El decuento es de  100
+    alert('Costos con descuentos: ' + getDiscount(costConsult, applyAt, cantDiscount));
+  })
+
+  const getDiscount = (costConsult, applyAt, cantDiscount) => {
+    let result = []
+    costConsult.forEach(item => {
+      console.log('* current cost :', item)
+      result.push((item >= applyAt) ? setDiscount(item, cantDiscount) : item)
+    });
+    console.log('cost with discount:', result)
+    return result.toString() 
+  }
+
+  const setDiscount = (item, cant) => item - cant
+
+  // * Implementa una función async/await para simular una llamada a una API REST que obtenga los datos de los doctores:
+
+  let doctorsData = null
+
+  async function getDoctors() {
+    try {
+      const response = await fetch('./assets/js/doctors_props.json')
+      if (!response.ok) throw new Error("Fetch doctors error!")
+      const data = await response.json()
+      doctorsData = data
+      console.log('* Doctors Data :', doctorsData)
+    } catch (error) {
+      console.error("* Error:", error.message)
+    }
+  }
+  
+  getDoctors()
+
+  // * Implementa una clase Doctor con las propiedades nombre, especialidad, y año de experiencia
+  // * Añade un método para mostrar la información de cada doctor y otro para calcular el total de pacientes atendidos por el doctor
+  // * Implementa el encapsulamiento en la clase, protegiendo la propiedad de años de experiencia mediante un getter y un setter:
+
+  class Doctor {
+    constructor(name, specialty, experience) {
+      this._name = name
+      this._specialty = specialty
+      this._experience = experience
+    }
+
+    get experience() {
+      return this._experience
+    }
+
+    set experience(value) {
+      if (value < 0) throw new Error("La experiencia no puede ser negativa.")
+      this._experience = value
+    }
+
+    showInfo() {
+      return `Doctor ${this._name}, Especialidad: ${this._specialty}, Experiencia: ${this._experience} años.`
+    }
+  }
+
+  // * Crea una subclase de Doctor, por ejemplo Cirujano, que extienda las funcionalidades de la clase base
+  // * Usa el polimorfismo para sobrescribir un método en la subclase Cirujano que calcule
+  // * el número de operaciones realizadas en lugar de consultas:
+
+  class Cirujano extends Doctor {
+    constructor (name, specialty, experience, ops) {
+      super(name, specialty, experience)
+      this._ops = ops
+    }
+
+    showInfo() {
+      return `Cirujano ${this._name}, Especialidad: ${this._specialty}, Operaciones: ${this._ops}.`
+    }
+  }
+
+  // FALTA  IMPLEMENTAR CLASES: CREAR EVENTOS (BOTONES) QUE ASIGNEN DOCTORES A LA CLASE (DENTRO DE ARRAY) Y 
+  // OTRO PARA INCLUIR CIRUJANOS EJEM  btn-class-doctors btn-class-extend
+  // const cirujano = new Cirujano("Ricado", "Médico General", 2, 6)
+})
+</script>
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>
