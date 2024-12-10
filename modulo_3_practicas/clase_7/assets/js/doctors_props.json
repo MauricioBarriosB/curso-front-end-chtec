@@ -1,0 +1,102 @@
+[
+    {
+        "rut": "12.345.678-9",
+        "fname": "Luis",
+        "lname": "Neil",
+        "age": 35,
+        "specialty": "Cardiología",
+        "photo" : "medico2.jpg",
+        "available" : true,
+        "experience": 6,
+        "patients" : 50,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "samuel@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "rut": "13.345.678-9",
+        "fname": "Alberto",
+        "lname": "Fuentes",
+        "age": 45,
+        "specialty": "Pediatría",
+        "photo" : "medico3.jpg",
+        "available" : true,
+        "experience": 7,
+        "patients" : 20,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "afuentes@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "rut": "12.345.678-9",
+        "fname": "Francisco",
+        "lname": "Garcia",
+        "age": 33,
+        "specialty": "Neurología",
+        "photo" : "medico1.jpg",
+        "available" : true,
+        "experience": 18,
+        "patients" : 21,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "fgarcia@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "rut": "11.345.678-9",
+        "fname": "Regina",
+        "lname": "Neil",
+        "age": 45,
+        "specialty": "Medicina General",
+        "photo" : "medico4.jpg",
+        "available" : true,
+        "experience": 33,
+        "patients" : 55,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "regina@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "rut": "11.223.344-5",
+        "fname": "Jorge",
+        "lname": "Berrios",
+        "age": 50,
+        "specialty": "Fonoaudiología",
+        "photo" : "medico5.jpg",
+        "available" : false,
+        "experience": 1,
+        "patients" : 22,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "cramirez@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    }
+
+]

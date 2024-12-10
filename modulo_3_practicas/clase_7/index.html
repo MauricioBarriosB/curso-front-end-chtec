@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>LIV Hospital</title>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/line-awesome.min.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+</head>
+
+<body>
+
+  <header>
+    <nav class="navbar navbar-expand-sm">
+      <div class="container-fluid">
+        <img class="navbar__logo" src="assets/images/logo.svg">
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#collapsible-navbar">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="collapsible-navbar">
+          <ul class="navbar-nav">
+            <li class="nav-item">
+              <a class="nav-link" href="index.html"> <i class="las la-home"></i> Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="personas.html"> <i class="las la-user-friends"></i> Personas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contacto.html"> <i class="las la-inbox"></i> Contacto</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="reservas.html"> <i class="las la-calendar-check"></i> Reservas</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="dashboard.html"> <i class="las la-cubes"></i> Dashboard</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+
+    <div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" aria-label="Slide 1" class="active" aria-current="true" ></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      </div>
+
+      <div class="carousel-inner">
+
+        <div id="carousel-item-1" class="carousel-item active">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1 class="display-1">Bienvenidos a LIV</h1>
+              <h4>En el Hospital LIV nos comprometemos a brindar atención médica de calidad, poniendo siempre a nuestros pacientes en el centro de todo lo que hacemos.</h4>
+            </div>
+          </div>
+        </div>
+
+        <div id="carousel-item-2" class="carousel-item">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1 class="display-1">Nuestra Misión</h1>
+              <h4>Nuestra misión es ofrecer un cuidado integral y humano, utilizando tecnología avanzada y un equipo altamente capacitado para mejorar la salud y el bienestar de nuestra comunidad.</h4>
+            </div>
+          </div>
+        </div>
+
+        <div id="carousel-item-3" class="carousel-item">
+          <div class="container">
+            <div class="carousel-caption text-start">
+              <h1 class="display-1">Nuestra Visión</h1>
+              <h4>Nuestra visión es ser el referente en servicios de salud de excelencia, promoviendo la innovación y el trato cálido, con el objetivo de mejorar la calidad de vida de cada persona que confía en nosotros.</h4>
+            </div>
+          </div>
+        </div>
+
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+
+
+    <div class="container marketing">
+
+      <div class="row">
+
+        <div class="col-lg-4">
+          <div class="card p-2">
+            <i class="las la-ambulance la-4x text-primary mb-2"></i>
+            <h3 class="fw-normal text-primary">Servicio de Traslado</h3>
+            <p>Atención inmediata para emergencias, disponible 24/7.</p>
+            <p><a class="btn btn-primary" href="#">Ver más detalle &raquo;</a></p>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card p-2">
+            <i class="las la-stethoscope la-4x text-primary mb-2"></i>
+            <h3 class="fw-normal text-primary">Consulta Médica General</h3>
+            <p>Atención personalizada y diagnóstico integral para el cuidado de tu salud.</p>
+            <p><a class="btn btn-primary" href="#">Ver más detalle &raquo;</a></p>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="card p-2">
+            <i class="las la-procedures la-4x text-primary mb-2"></i>
+            <h3 class="fw-normal text-primary">Atención Hospitalaria</h3>
+            <p>Cirugías con tecnología avanzada y un equipo de especialistas de primer nivel.</p>
+            <p><a class="btn btn-primary" href="#">Ver más detalle &raquo;</a></p>
+          </div>
+        </div>
+
+      </div>
+
+
+      <div class="container py-4">
+        <div class="row text-center">
+           <h1 class="text-primary fw-bold">Testimonios de Nuestros Pacientes</h1>
+        </div>
+      </div>
+
+      <div class="row testimonial">
+        <div class="col-md-7">
+          <h2 class="testimonial__heading">El equipo médico fue <span class="text-body-secondary">increíble</span></h2>
+          <blockquote class="blockquote">
+            <p>"El equipo médico fue increíble. Me sentí seguro y bien cuidado en todo momento"</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Paciente Destacado :  <cite title="Source Title">Juan Pérez</cite>
+          </figcaption>
+        </div>
+        <div class="col-md-5">
+          <img class="testimonial__img" src="assets/images/2979.jpg" width="400" height="200">
+        </div>
+      </div>
+
+      <div class="row testimonial">
+        <div class="col-md-7 order-md-2">
+          <h2 class="testimonial__heading">La atención fue <span class="text-body-secondary">eficiente</span></h2>
+          <blockquote class="blockquote">
+            <p>"La atención fue rápida y eficiente. No puedo agradecer lo suficiente al hospital"</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Paciente Destacado :  <cite title="Source Title">María González</cite>
+          </figcaption>
+        </div>
+        <div class="col-md-5 order-md-1">
+          <img class="testimonial__img" src="assets/images/30.jpg" width="400" height="200">
+        </div>
+      </div>
+
+      <div class="row testimonial">
+        <div class="col-md-7">
+          <h2 class="testimonial__heading">Me recuperé mucho más <span class="text-body-secondary">rápido de lo esperado</span></h2>
+          <blockquote class="blockquote">
+            <p>"Me recuperé mucho más rápido de lo esperado gracias a los excelentes cuidados"</p>
+          </blockquote>
+          <figcaption class="blockquote-footer">
+            Paciente Destacado :  <cite title="Source Title">Sofía Sánchez</cite>
+          </figcaption>
+        </div>
+        <div class="col-md-5">
+          <img class="testimonial__img" src="assets/images/40.jpg" width="400" height="200">
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container py-4">
+      <div class="card text-center reserva">
+        <div class="card-header fw-bold">
+          Reserva de Horas con RUT Paciente y RUT Médico
+        </div>
+        <div class="card-body">
+          <h3 class="card-title">Anticiapa tu Hora de Atención en LIV Hospital</h3>
+          <p class="card-text">Elige horario preferencial de lunes a jueves.</p>
+          <a href="reservas.html" class="btn btn-primary"> <b>Haz tu reserva aquí</b></a>
+        </div>
+        <div class="card-footer text-body-secondary">
+          <p class="fw-bold text-primary m-0">Disponibilidad Inmediata</p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+    <footer class="footer">
+      <div class="container">
+        <img class="footer__logo mb-5" src="assets/images/logo_white.svg">
+
+        <div class="pb-4">
+          <div class="d-inline-block"><i class="las la-phone"></i> 800 600 2010 </div>
+          <div class="d-inline-block"><i class="las la-envelope ps-4"></i> contacto@livhospital.com </div>
+          <div class="d-inline-block"><i class="las la-map-marker ps-4"></i> Av. Salud 1234, Santiago, Chile </div>
+        </div>
+
+        <i class="lab la-google-plus-g la-3x p-2"></i>
+        <i class="lab la-facebook la-3x p-2"></i>
+        <i class="lab la-twitter la-3x p-2"></i>
+        <i class="lab la-vimeo-v la-3x p-2"></i>
+        <i class="lab la-pinterest la-3x p-2"></i>
+        <i class="lab la-blogger-b la-3x p-2"></i>
+        <p>Síguenos en nustras redes sociales</p>
+        <p>© 2024 LIV Hospital - Derechos Reservados.</p>
+
+      </div>
+    </footer>
+  <script src="node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
+</body>
+</html>

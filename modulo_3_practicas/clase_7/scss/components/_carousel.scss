@@ -1,0 +1,41 @@
+.carousel {
+    margin-bottom: 4rem;
+    #carousel-item-1 {
+        background-image: url('../../assets/images/hero.jpg');
+    }
+
+    #carousel-item-2 {
+        background-image: url('../../assets/images/11198.jpg');
+    }
+
+    #carousel-item-3 {
+        background-image: url('../../assets/images/2148168440.jpg');
+    }
+
+    #carousel-item-1,
+    #carousel-item-2,
+    #carousel-item-3 {
+        height: 32rem;
+        background-size: cover;
+        background-color: rgba(0, 0, 0, 0.5);
+        background-blend-mode: multiply;
+    }
+}
+
+.carousel-caption {
+    bottom: 3rem;
+    z-index: 10;
+    h1,
+    h4 {
+        text-shadow: 4px 3px 7px rgba(0, 0, 0, 0.80);
+    }
+}
+
+
+@media (min-width: 40em) {
+    .carousel-caption p {
+        margin-bottom: 1.25rem;
+        font-size: 1.25rem;
+        line-height: 1.4;
+    }
+}
