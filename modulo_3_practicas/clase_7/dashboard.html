@@ -54,7 +54,7 @@
 
       <div class="card text-center">
         <div class="card-header">
-          Presiona los botones para consulta
+          Presiona los botones para simular consulta
         </div>
         <div class="card-body">
             <a href="#" id="btn-get-cost" class="btn btn-primary"> <b>Consultar Valor</b></a>
@@ -62,6 +62,8 @@
             <a href="#" id="btn-get-totals" class="btn btn-primary"> <b>Total Horas Doctor</b></a>
             <a href="#" id="btn-get-discounts" class="btn btn-primary"> <b>Revisar Descuentos</b></a>
             <hr>
+            <a href="#" id="btn-make-ciru" class="btn btn-primary"> <b>Crear Cirujano</b></a>
+            <a href="#" id="btn-ops-ciru" class="btn btn-primary"> <b>Operaciones Cirujano</b></a>
         </div>
         <div class="card-footer text-body-secondary">
           <p class="fw-bold text-primary m-0">Revizar salida por consola</p>
@@ -210,6 +212,7 @@ document.addEventListener("DOMContentLoaded",function(event) {
       this._name = name
       this._specialty = specialty
       this._experience = experience
+      this._byYear = 30
     }
 
     get experience() {
@@ -224,7 +227,18 @@ document.addEventListener("DOMContentLoaded",function(event) {
     showInfo() {
       return `Doctor ${this._name}, Especialidad: ${this._specialty}, Experiencia: ${this._experience} años.`
     }
+
+    showCantPatients() {
+      return `Media atenciones: ${this._experience * this._byYear} pacientes.`
+    }
   }
+
+  const doctor = new Doctor("Ricado", "Médico General", 5)
+  doctor.experience = 8
+
+  const patients = doctor.showCantPatients()
+  console.log('* Data from Class :', doctor.showInfo())
+  console.log('* Data Pacientes  :', patients)
 
   // * Crea una subclase de Doctor, por ejemplo Cirujano, que extienda las funcionalidades de la clase base
   // * Usa el polimorfismo para sobrescribir un método en la subclase Cirujano que calcule
@@ -241,9 +255,25 @@ document.addEventListener("DOMContentLoaded",function(event) {
     }
   }
 
-  // FALTA  IMPLEMENTAR CLASES: CREAR EVENTOS (BOTONES) QUE ASIGNEN DOCTORES A LA CLASE (DENTRO DE ARRAY) Y 
-  // OTRO PARA INCLUIR CIRUJANOS EJEM  btn-class-doctors btn-class-extend
-  // const cirujano = new Cirujano("Ricado", "Médico General", 2, 6)
+  let cirujano = null
+
+  document.getElementById('btn-make-ciru').addEventListener('click',(evt)=>{
+    console.clear()
+    cirujano = new Cirujano("Antonio Andrade", "Cirujano", 15, 36) 
+    console.log('Nuevo cirujano creado :', cirujano)
+    alert('Nuevo cirujano creado...')
+  })
+
+  document.getElementById('btn-ops-ciru').addEventListener('click',(evt)=>{
+    console.clear()
+    if (cirujano) {
+      console.log('Nuevo cirujano creado :', cirujano.showInfo())
+      alert(cirujano.showInfo());
+    } else {
+      alert('Debes crear un cirujano para acceder a la información.');
+    }
+  })
+
 })
 </script>
 
