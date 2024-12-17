@@ -8,7 +8,7 @@ URL Github pública acceso archivos fuente React JS :
 
 https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_4_practicas/clase_2_proyecto_react_liv
 
-# Los requerimientos de la evaluación han sido abordados en los siguientes componentes: 
+Los requerimientos de la evaluación han sido abordados en los siguientes componentes: 
 
 * Desarrollo Componentes Modulares: HeaderMedicalTeam, Footer.
 
