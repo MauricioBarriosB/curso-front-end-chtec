@@ -14,10 +14,11 @@ Los requerimientos de la evaluación han sido abordados en los siguientes compon
 
 * Desarrollo listas y keys para renderizado HTML: DoctorsList, ServicesList.
 
-* Flujo de Datos con Props (datos asignados al componente Child desde el componente principal): MedicalTeam -> DoctorsList -> DoctorCard.
+* Flujo de Datos con Props (datos asignados al componente Child desde el componente principal): 
+  PageMedicalTeam -> DoctorsList -> DoctorCard.
 
 * Formulario con Manejo de Estado (descripción mediante console.log): AppointmentForm.
 
-* Hooks y Ciclo de Vida de la aplicación mediante useState y useEffect: MedicalTeam, AppointmentForm.
+* Hooks y Ciclo de Vida de la aplicación mediante useState y useEffect: PageMedicalTeam, AppointmentForm.
 
 
