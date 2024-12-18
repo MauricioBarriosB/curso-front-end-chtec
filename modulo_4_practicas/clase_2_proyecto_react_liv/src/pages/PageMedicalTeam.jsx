@@ -1,13 +1,12 @@
 import { useState, useEffect } from 'react';
-import HeaderMedicalTeam from './components/HeaderMedicalTeam';
-import DoctorsList from './components/DoctorsList';
-import ServicesList from './components/ServicesList';
-import AppointmentForm from './components/AppointmentForm';
-import Footer from './components/Footer';
+import DoctorsList from '@components/DoctorsList';
+import ServicesList from '@components/ServicesList';
+import AppointmentForm from '@components/AppointmentForm';
 
-import './main.css';
+import HeaderMedicalTeam from '@layouts/HeaderMedicalTeam';
+import Footer from '@layouts/Footer';
 
-function App() {
+function PageMedicalTeam() {
   const [doctors, setDoctors] = useState([]);
   const [services, setServices] = useState([]);
 
@@ -85,4 +84,4 @@ function App() {
   );
 }
 
-export default App;
+export default PageMedicalTeam;

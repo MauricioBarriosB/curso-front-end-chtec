@@ -1,4 +1,4 @@
-import livLogo from "./../assets/logo.svg";
+import livLogo from "@assets/logo.svg";
 
 function HeaderMedicalTeam() {
   return (
