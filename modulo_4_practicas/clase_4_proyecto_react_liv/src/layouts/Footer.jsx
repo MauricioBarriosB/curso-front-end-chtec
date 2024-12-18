@@ -1,4 +1,4 @@
-import livLogo from "./../assets/logo_white.svg";
+import livLogo from "@assets/logo_white.svg";
 
 function Footer() {
   return (

@@ -10,14 +10,15 @@ https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_4_pra
 
 Los requerimientos de la evaluación han sido abordados en los siguientes componentes: 
 
-* Desarrollo Componentes Modulares: HeaderMedicalTeam, Footer.
+* Desarrollo Componentes Modulares: HeaderMedicalTeam, Footer, Button.
 
 * Desarrollo listas y keys para renderizado HTML: DoctorsList, ServicesList.
 
-* Flujo de Datos con Props (datos asignados al componente Child desde el componente principal): App -> DoctorsList -> DoctorCard.
+* Flujo de Datos con Props (datos asignados al componente Child desde el componente principal): 
+  PageMedicalTeam -> DoctorsList -> DoctorCard.
 
-* Formulario con Manejo de Estado: AppointmentForm.
+* Formulario con Manejo de Estado (descripción mediante console.log): AppointmentForm.
 
-* Hooks y Ciclo de Vida de la aplicación mediante useState y useEffect: App.
+* Hooks y Ciclo de Vida de la aplicación mediante useState y useEffect: PageMedicalTeam, AppointmentForm.
 
 
