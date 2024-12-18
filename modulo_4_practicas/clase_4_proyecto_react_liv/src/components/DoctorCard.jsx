@@ -1,5 +1,11 @@
 import PropTypes from "prop-types";
 
+import Button from "@commons/Button";
+
+const handleOnClick = (e) => {
+  console.log("* Button Clicked :", e.target.dataset.label);
+};
+
 function DoctorCard({ name, photo, specialty, experience }) {
   return (
     <div className="col-lg-4">
@@ -9,7 +15,7 @@ function DoctorCard({ name, photo, specialty, experience }) {
           <h5 className="card-title text-primary">{name}</h5>
           <p className="card-text">Especialidad: {specialty}</p>
           <p className="text-primary">• Años experiencia: <strong> {experience} </strong></p>
-          <a className="btn btn-primary">Ver más detalle &raquo;</a>
+          <Button label="Ver más detalle" onClick={handleOnClick}/>
         </div>
       </div>
     </div>
