@@ -1,14 +1,20 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Profiler } from 'react';
 import DoctorsList from '@components/DoctorsList';
 import ServicesList from '@components/ServicesList';
 import AppointmentForm from '@components/AppointmentForm';
-
 import HeaderMedicalTeam from '@layouts/HeaderMedicalTeam';
+import ProfileView from '@views/ProfileView';
 import Footer from '@layouts/Footer';
 
 function PageMedicalTeam() {
   const [doctors, setDoctors] = useState([]);
   const [services, setServices] = useState([]);
+
+  // * Set onRenderCallback in conjuntion to React Profiler to log incomes :
+
+  const onRenderCallback = (id, phase, actualDuration) => {
+    console.log(`* Profiler: ${id} (${phase}) took ${actualDuration.toFixed(2)} ms to render.`);
+  };
 
   // * useEffect Hook allows you to perform side effects (ex: fetching data, directly updating the DOM, timers, etc.)
   // * in your components. Fetch data - from DB simulation :
@@ -80,9 +86,12 @@ function PageMedicalTeam() {
       <div className='container pt-4 pb-2'>
         <HeaderMedicalTeam />
         <div className='container marketing'>
-          <DoctorsList doctors={doctors} />
+          <Profiler id="DoctorList" onRender={onRenderCallback}>
+            <DoctorsList doctors={doctors}/>
+          </Profiler>
           <ServicesList services={services} />
           <AppointmentForm/>
+          <ProfileView/>
         </div>
       </div>
       <Footer />
