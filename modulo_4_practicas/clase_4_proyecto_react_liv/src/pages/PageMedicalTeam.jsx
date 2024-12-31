@@ -21,6 +21,7 @@ function PageMedicalTeam() {
         name: 'Samuel Neil',
         specialty: 'Medicina General',
         experience: 12,
+        biography: 'una breve descripción biográfica del doctor Samuel Neil, el cual posee 12 años de experiencia y servicio médico.'
       },
       {
         id: 2,
@@ -28,6 +29,7 @@ function PageMedicalTeam() {
         name: 'Francisco Garcia',
         specialty: 'Medicina Nuclear',
         experience: 15,
+        biography: 'una breve descripción biográfica del doctor Francisco Garcia, el cual posee 15 años de experiencia y servicio médico.'
       },
       {
         id: 3,
@@ -35,6 +37,7 @@ function PageMedicalTeam() {
         name: 'John Doe',
         specialty: 'Neurología',
         experience: 6,
+        biography: 'una breve descripción biográfica del doctor John Doe, el cual posee 6 años de experiencia y servicio médico.'
       },
       {
         id: 4,
@@ -42,6 +45,7 @@ function PageMedicalTeam() {
         name: 'Josefina Duarte',
         specialty: 'Fonoaudiología',
         experience: 10,
+        biography: 'una breve descripción biográfica de la doctora Josefina Duarte, la cual posee 10 años de experiencia y servicio médico.'
       },
       {
         id: 5,
@@ -49,6 +53,7 @@ function PageMedicalTeam() {
         name: 'Alberto Fuentes',
         specialty: 'Cardiología',
         experience: 20,
+        biography: 'una breve descripción biográfica del doctor Alberto Fuentes, el cual posee 20 años de experiencia y servicio médico.'
       },
       {
         id: 6,
@@ -56,6 +61,7 @@ function PageMedicalTeam() {
         name: 'Erica Soto',
         specialty: 'Medicina General',
         experience: 5,
+        biography: 'una breve descripción biográfica de la doctora Erica Soto, la cual posee 5 años de experiencia y servicio médico.'
       },
     ]);
 
