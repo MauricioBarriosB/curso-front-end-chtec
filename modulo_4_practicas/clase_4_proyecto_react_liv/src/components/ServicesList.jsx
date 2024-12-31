@@ -1,9 +1,12 @@
+import React from "react";
+
 import PropTypes from "prop-types";
 
 import Button from "@commons/Button";
 
 const handleOnClick = (e) => {
-  console.log("* Button Clicked :", e.target.dataset.label);
+  let temp = e.target.dataset.label;
+  alert(`* Fragment Pressed: ${temp}`);
 };
 
 function ServicesList({ services }) {
@@ -16,11 +19,12 @@ function ServicesList({ services }) {
       </div>
       <div className="card-body">
         {services.map((property) => (
+          <React.Fragment key={property.id}>
           <Button
-            key={property.id}
-            label={property.name}
+            label={`Fragment ID  ${property.id} | ${property.name}`} 
             onClick={handleOnClick}
           />
+          </React.Fragment>
         ))}
       </div>
       <div className="card-footer text-body-secondary">

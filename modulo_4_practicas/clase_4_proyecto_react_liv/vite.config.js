@@ -12,6 +12,8 @@ export default defineConfig({
       '@commons': '/src/commons',
       '@layouts': '/src/layouts',
       '@pages': '/src/pages',
+      '@views': '/src/views',
+      '@context': '/src/context',
     },
   },
 })

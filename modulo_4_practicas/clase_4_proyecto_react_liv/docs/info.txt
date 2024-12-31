@@ -17,3 +17,7 @@ https://react.dev/learn/updating-objects-in-state
 types
 
 https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
+
+repos adalid
+
+https://github.com/adalid-cl

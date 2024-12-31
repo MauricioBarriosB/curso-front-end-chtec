@@ -1,13 +1,10 @@
 import PropTypes from "prop-types";
 import DoctorCard from "./DoctorCard";
-import Modal from "@commons/Modal";
-import PortalExample from "@commons/PortalExample";
+import ModalPortal from "@commons/ModalPortal";
 import { useState } from "react";
 
 function DoctorsList({ doctors }) {
   const [open, setOpen] = useState(false);
-
-  // use context??????????????????
 
   const [userData, setUserData] = useState({
     name: '',
@@ -18,18 +15,18 @@ function DoctorsList({ doctors }) {
 
   const handleClose = () => {
     setOpen(false);
+    console.log('* Close ModalPortal');
   };
 
   const handleOpen = (name, photo, specialty, biography) => {
-
     setUserData({
       name: name,
       photo: photo,
       specialty:specialty,
       biography:biography
     });
-    
     setOpen(true);
+    console.log('* Open ModalPortal');
   };
 
   return (
@@ -47,8 +44,10 @@ function DoctorsList({ doctors }) {
           />
         ))}
       </div>
-      <Modal isOpen={open} onClose={handleClose} userData={userData}></Modal>
-      <PortalExample />
+
+      {open && (
+        <ModalPortal onClose={handleClose} userData={userData}></ModalPortal>
+      )}
 
     </>
   );

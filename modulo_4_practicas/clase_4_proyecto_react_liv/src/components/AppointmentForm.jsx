@@ -1,6 +1,11 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 function AppointmentForm() {
+
+  // * Store user name as ref:
+
+  let refUserName = useRef('');
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -14,13 +19,25 @@ function AppointmentForm() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(formData);
+    if (formData.name.length < 4) {
+      alert('Nombre debe tener al menos 3 caractéres'); return false;
+    }
+    if (formData.email.length < 4) {
+      alert('Email debe tener al menos 3 caractéres'); return false;
+    }
+    if (formData.message.length < 4) {
+      alert('Mensaje debe tener al menos 3 caractéres'); return false;
+    }
+    alert(`Datos de formulario correcto: ${formData.name} | ${formData.email} | ${formData.message}`);
+
+    refUserName.current = formData.name;
+    console.log('* refUserName : ', refUserName.current);
   };
 
   return (
     <div className="card mt-5">
       <div className="card-header text-center">
-        <h5 className="mt-1">Formulario de Contacto </h5>
+        <h5 className="mt-1">Formulario de Contacto</h5>
       </div>
       <div className="card-body">
         <form className="contact-form" onSubmit={handleSubmit}>

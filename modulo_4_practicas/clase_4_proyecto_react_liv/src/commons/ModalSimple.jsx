@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import Button from "@commons/Button";
 
-function Modal({ isOpen, onClose, userData }) {
+function ModalSimple({ isOpen, onClose, userData }) {
   if (!isOpen) return null;
 
   return (
@@ -42,10 +42,10 @@ function Modal({ isOpen, onClose, userData }) {
   );
 }
 
-Modal.propTypes = {
+ModalSimple.propTypes = {
   isOpen: PropTypes.bool,
   onClose: PropTypes.func,
   userData: PropTypes.object,
 };
 
-export default Modal;
+export default ModalSimple;
