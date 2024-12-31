@@ -1,0 +1,19 @@
+npm create vite@latest my-todo-app -- --template react
+
+cd my-todo-app
+
+npm install
+
+npm run dev
+
+
+https://github.com/alangajardo/hospital
+
+
+setting vars:
+
+https://react.dev/learn/updating-objects-in-state
+
+types
+
+https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
