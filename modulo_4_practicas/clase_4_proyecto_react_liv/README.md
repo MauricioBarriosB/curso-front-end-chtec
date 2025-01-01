@@ -24,11 +24,10 @@ Los requerimientos de la evaluación han sido abordados en:
 
 * Uso de Fragmentos: en componente ServicesList se utilizó React.Fragment para generar cada elemento.
 
-* Uso de Context: se utilizó context para administrar los perfiles de usuario del sitio (HACCERRRRERERERERERERE).
+* Uso de Context: se utilizó context para administrar los perfiles de usuario del sitio en componente ProfileView (anexos ProfileForm y ProfileContext).
 
 * Verificación de tipos con PropTypes: todos los componentes que requieren props fueron validados con PropTypes.
 
-MODALLL
+* Componente de Orden Superior y Portal: creación de componente ModalPortal el cual carga los datos de doctores mediante props, se utiliza un único componente para mostrar la data, el cual esta desacoplado de la estructura del root principal (mediante Portal de React).
 
-PROFILERRRR
-
+* Optimización de Rendimiento y Profiler: se utilizó React Profiler en componente PageMedicalTeam haciendo referencia a componente DoctorsList (el cual tiene mayor incidencia en la aplicación), se evaluó el buen compomportamiento y tiempo de renderizado y actualización del componente.
