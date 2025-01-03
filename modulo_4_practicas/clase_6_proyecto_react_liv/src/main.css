@@ -11669,6 +11669,26 @@ body, html {
   text-align: center;
 }
 
+.nav-link {
+  cursor:pointer;
+}
+
+
+.modal-overlay {
+  position: "fixed" !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 900;
+}
+
+
+
 .marketing .col-lg-4 p {
   margin-right: 0.75rem;
   margin-left: 0.75rem;

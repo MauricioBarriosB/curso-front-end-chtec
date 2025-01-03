@@ -2,7 +2,7 @@ import React, { useState, useEffect, Profiler, Suspense } from 'react';
 import DoctorsList from '@components/DoctorsList';
 import ServicesList from '@components/ServicesList';
 import AppointmentForm from '@components/AppointmentForm';
-import HeaderMedicalTeam from '@layouts/HeaderMedicalTeam';
+import HeaderMenu from '@layouts/HeaderMenu';
 import Footer from '@layouts/Footer';
 
 function PageMedicalTeam() {
@@ -89,8 +89,10 @@ function PageMedicalTeam() {
 
   return (
     <>
-      <div className='container pt-4 pb-2'>
-        <HeaderMedicalTeam />
+      
+        <HeaderMenu />
+
+        <main>
         <div className='container marketing'>
           <Profiler id="DoctorList" onRender={onRenderCallback}>
             <DoctorsList doctors={doctors}/>
@@ -111,9 +113,9 @@ function PageMedicalTeam() {
             <ProfileView/>
           </Suspense>
           )}
-
-        </div>
-      </div>
+          </div>
+          </main>
+     
       <Footer />
     </>
   );

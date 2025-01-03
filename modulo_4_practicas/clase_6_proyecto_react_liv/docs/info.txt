@@ -8,6 +8,12 @@ npm run dev
 
 
 https://stackoverflow.com/questions/71290482/switch-between-views-in-react-js
+https://blog.logrocket.com/lazy-loading-components-in-react-16-6-6cea535c0b52/
+https://legacy.reactjs.org/docs/code-splitting.html
+https://refine.dev/blog/how-react-fragments-is-works/#introduction
+
+
+add or remove class to div react butoon"!!
 
 https://github.com/alangajardo/hospital
 
