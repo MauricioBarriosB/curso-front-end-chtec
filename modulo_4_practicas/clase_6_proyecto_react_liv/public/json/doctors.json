@@ -1,0 +1,181 @@
+[
+    {
+        "id": 1,
+        "rut": "12.345.678-9",
+        "fname": "Samuel",
+        "lname": "Neil",
+        "age": 35,
+        "specialty_id": 10,
+        "photo" : "./images/medico2.jpg",
+        "available" : true,
+        "experience": 27,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "samuel@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "id": 2,
+        "rut": "13.345.678-9",
+        "fname": "José",
+        "lname": "Smith",
+        "age": 45,
+        "specialty_id": 2,
+        "photo" : "./images/medico3.jpg",
+        "available" : true,
+        "experience": 4,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "smith@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "id": 3,
+        "rut": "14.345.678-9",
+        "fname": "John",
+        "lname": "Doe",
+        "age": 33,
+        "specialty_id": 3,
+        "photo" : "./images/medico1.jpg",
+        "available" : true,
+        "experience": 12,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "john@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "id": 4,
+        "rut": "15.345.678-9",
+        "fname": "Josefina",
+        "lname": "Duarte",
+        "age": 45,
+        "specialty_id": 4,
+        "photo" : "./images/medico4.jpg",
+        "available" : true,
+        "experience": 15,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "duarte@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "id": 5,
+        "rut": "3.223.344-5",
+        "fname": "Carlos",
+        "lname": "Ramírez",
+        "age": 50,
+        "specialty_id": 5,
+        "photo" : "./images/medico5.jpg",
+        "available" : false,
+        "experience": 4,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "cramirez@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "id": 6,
+        "rut": "4.345.678-9",
+        "fname": "Pedro",
+        "lname": "Rodriguez",
+        "age": 55,
+        "specialty_id": 5,
+        "photo" : "./images/medico5.jpg",
+        "available" : true,
+        "experience": 10,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "prodriguez@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "id": 7,
+        "rut": "5.345.678-9",
+        "fname": "Erica",
+        "lname": "Soto",
+        "age": 41,
+        "specialty_id": 3,
+        "photo" : "./images/medico6.jpg",
+        "available" : true,
+        "experience": 20,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "ericasoto@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+    
+    {
+        "id": 8,
+        "rut": "6.345.678-9",
+        "fname": "Juan",
+        "lname": "Pérez",
+        "age": 45,
+        "specialty_id": 3,
+        "photo" : "./images/medico1.jpg",
+        "available" : false,
+        "experience": 3,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "jperes@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    },
+
+    {
+        "id": 9,
+        "rut": "7.765.432-1",
+        "fname": "María",
+        "lname": "Gómez",
+        "age": 38,
+        "specialty_id": 5,
+        "photo" : "./images/medico4.jpg",
+        "available" : false,
+        "experience": 2,
+        "contact" : {
+            "phone" : 123456789,
+            "email": "mgomez@liv.cl"
+        },
+        "hours" : {
+            "am" : "07:00 - 13:00",
+            "pm" : "14:00 - 21:00"
+        }
+    }
+]

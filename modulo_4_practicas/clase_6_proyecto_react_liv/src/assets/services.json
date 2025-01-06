@@ -1,0 +1,32 @@
+[
+  {
+    "id": 1,
+    "name": "Medicina General",
+    "desc": "Texto breve e informativo acerca del ámbito y uso del Servicio Medicina General."
+  },
+  {
+    "id": 2,
+    "name": "Medicina Nuclear",
+    "desc": "Texto breve e informativo acerca del ámbito y uso del Servicio Medicina Nuclear."
+  },
+  {
+    "id": 3,
+    "name": "Neurología",
+    "desc": "Texto breve e informativo acerca del ámbito y uso del Servicio Neurología."
+  },
+  {
+    "id": 4,
+    "name": "Fonoaudiología",
+    "desc": "Texto breve e informativo acerca del ámbito y uso del Servicio Fonoaudiología."
+  },
+  {
+    "id": 5,
+    "name": "Cardiología",
+    "desc": "Texto breve e informativo acerca del ámbito y uso del Servicio Cardiología."
+  },
+  {
+    "id": 6,
+    "name": "Pediatría",
+    "desc": "Texto breve e informativo acerca del ámbito y uso del Servicio Pediatría."
+  }
+]
