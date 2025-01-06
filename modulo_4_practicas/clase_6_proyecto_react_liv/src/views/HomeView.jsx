@@ -1,16 +1,36 @@
 import React, { useEffect, useState } from "react";
 import Button from "@commons/Button";
-import ModalServices from "@commons/ModalServices";
+import ModalSpecialties from "@commons/ModalSpecialties";
 import livLogo from "@assets/logo.svg";
 
 function HomeView() {
-  const [services, setServices] = useState([]);
+  const [specialties, setSpecialties] = useState([]);
   const [open, setOpen] = useState(false);
-  const [itemData, setItemData] = useState({name:'', desc:''});
+  const [itemData, setItemData] = useState({ name: "", desc: "" });
+
+  // * Get From DB API Fetch simulation :
+
+  const getSpecialties = () => {
+    fetch("./json/specialties.json", {
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+    })
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (myJson) {
+        console.log(myJson);
+        setSpecialties(myJson);
+      });
+  };
+
+  // * Portal modal functions :
 
   const handleClose = () => {
     setOpen(false);
-    console.log("* Close ModalServices");
+    console.log("* Close ModalSpecialties");
   };
 
   const handleOpen = (e) => {
@@ -19,20 +39,11 @@ function HomeView() {
       desc: e.target.dataset.desc,
     });
     setOpen(true);
-    console.log("* Open ModalServices");
+    console.log("* Open ModalSpecialties");
   };
 
-  // * Fetch data - from DB simulation :
-
   useEffect(() => {
-    setServices([
-      { id: 1, name: "Medicina General", desc: 'Texto breve e informativo acerca del ámbito y uso del Servicio Medicina General.'},
-      { id: 2, name: "Medicina Nuclear", desc: 'Texto breve e informativo acerca del ámbito y uso del Servicio Medicina Nuclear.'},
-      { id: 3, name: "Neurología", desc: 'Texto breve e informativo acerca del ámbito y uso del Servicio Neurología.'},
-      { id: 4, name: "Fonoaudiología", desc: 'Texto breve e informativo acerca del ámbito y uso del Servicio Fonoaudiología.'},
-      { id: 5, name: "Cardiología", desc: 'Texto breve e informativo acerca del ámbito y uso del Servicio Cardiología.'},
-      { id: 6, name: "Pediatría", desc: 'Texto breve e informativo acerca del ámbito y uso del Servicio Pediatría.'},
-    ]);
+    getSpecialties();
   }, []);
 
   return (
@@ -84,34 +95,36 @@ function HomeView() {
       <div className="card text-center mb-5">
         <div className="card-header">
           <h5 className="mt-1">
-            Listado con nuestras esecialidades médicas disponibles
+            Listado con nuestras especialidades médicas disponibles
           </h5>
         </div>
         <div className="card-body">
-          {services.map((property) => (
+          {specialties.map((property) => (
             <React.Fragment key={property.id}>
               <Button
                 label={property.name}
                 onClick={handleOpen}
-                desc={property.desc}
+                desc={property.description}
               />
             </React.Fragment>
           ))}
         </div>
         <div className="card-footer text-body-secondary">
           <p className="fw-bold text-primary m-0">
-            Presione cada botón para obtener mayor información acerca de nuestras especialidades
+            Presione cada botón para obtener mayor información acerca de
+            nuestras especialidades
           </p>
         </div>
       </div>
 
       {open && (
-        <ModalServices
+        <ModalSpecialties
           onClose={handleClose}
           itemData={itemData}
-        ></ModalServices>
+        ></ModalSpecialties>
       )}
     </div>
   );
 }
+
 export default HomeView;

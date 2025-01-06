@@ -1,0 +1,61 @@
+[
+    {
+        "id": 1,
+        "name": "Cardiología",
+        "description": "Texto breve e informativo acerca de la Especialidad Cardiología."
+    },
+
+    {
+        "id": 2,
+        "name": "Pediatría",
+        "description": "Texto breve e informativo acerca de la Especialidad Pediatría."
+    },
+
+    {
+        "id": 3,
+        "name": "Neurología",
+        "description": "Texto breve e informativo acerca de la Especialidad Neurología."
+    },
+
+    {
+        "id": 4,
+        "name": "Medicina General",
+        "description": "Texto breve e informativo acerca de la Especialidad Medicina General."
+    },
+
+    {
+        "id": 5,
+        "name": "Fonoaudiología",
+        "description": "Texto breve e informativo acerca de la Especialidad Fonoaudiología."
+    },
+
+    {
+        "id": 6,
+        "name": "Dermatología",
+        "description": "Texto breve e informativo acerca de la Especialidad Dermatología."
+    },
+
+    {
+        "id": 7,
+        "name": "Laboratorio Clínico",
+        "description": "Texto breve e informativo acerca de la Especialidad Laboratorio Clínico."
+    },
+
+    {
+        "id": 8,
+        "name": "Oftalmología",
+        "description": "Texto breve e informativo acerca de la Especialidad Oftalmología."
+    },
+
+    {
+        "id": 9,
+        "name": "Radiología",
+        "description": "Texto breve e informativo acerca de la Especialidad Radiología."
+    },
+
+    {
+        "id": 10,
+        "name": "Medicina Nuclear",
+        "description": "Texto breve e informativo acerca de la Especialidad Medicina Nuclear."
+    }
+]

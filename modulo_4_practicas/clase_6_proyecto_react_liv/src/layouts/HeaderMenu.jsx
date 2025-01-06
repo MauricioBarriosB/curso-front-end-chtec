@@ -8,7 +8,9 @@ function HeaderMenu({onViewSelect}) {
 
   const handleOnClick = (e) => {
     let temp = e.target.dataset.view;
-    onViewSelect(temp);
+
+    // * handleViewSelect on parent app :
+    if (temp) onViewSelect(temp);
   };
 
   return (
@@ -21,14 +23,14 @@ function HeaderMenu({onViewSelect}) {
         </button>
         <div className={!buttonTogg ? 'collapse navbar-collapse' : 'collapse navbar-collapse collapse show'} id="collapsible-navbar">
           <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link mx-3" onClick={handleOnClick} data-view="HomeView"><i className="las la-home"></i> Home</a>
+            <li className="nav-item mx-3">
+              <a className="nav-link" onClick={handleOnClick} data-view="HomeView"><i className="las la-home" data-view="HomeView"></i> Home</a>
             </li>
             <li className="nav-item mx-3">
-              <a className="nav-link" onClick={handleOnClick} data-view="MedicalTeamView"><i className="las la-user-friends"></i> Equipo Médico</a>
+              <a className="nav-link" onClick={handleOnClick} data-view="MedicalTeamView"><i className="las la-user-friends" data-view="MedicalTeamView"></i> Equipo Médico</a>
             </li>
             <li className="nav-item mx-3">
-              <a className="nav-link" onClick={handleOnClick} data-view="AppointmentView"><i className="las la-inbox"></i> Citas</a>
+              <a className="nav-link" onClick={handleOnClick} data-view="AppointmentView"><i className="las la-inbox" data-view="AppointmentView"></i> Citas</a>
             </li>
           </ul>
         </div>

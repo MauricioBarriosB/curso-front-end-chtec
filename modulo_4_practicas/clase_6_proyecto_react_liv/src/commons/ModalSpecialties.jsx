@@ -2,7 +2,7 @@ import ReactDOM from "react-dom";
 import PropTypes from "prop-types";
 import Button from "./Button";
 
-function ModalServices({onClose, itemData }) {
+function ModalSpecialties({onClose, itemData }) {
   return ReactDOM.createPortal(
     <div onClick={onClose}
     style={{
@@ -37,9 +37,9 @@ function ModalServices({onClose, itemData }) {
   );
 }
 
-ModalServices.propTypes = {
+ModalSpecialties.propTypes = {
   onClose: PropTypes.func.isRequired,
   itemData: PropTypes.object.isRequired,
 };
 
-export default ModalServices;
+export default ModalSpecialties;
