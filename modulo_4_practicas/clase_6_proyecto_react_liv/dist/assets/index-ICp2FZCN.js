@@ -1,10 +1,11 @@
 const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=[
-    "https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/HomeView-DJYlSDcC.js",
-    "https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/index-CTtdsqeU.js",
-    "https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/MedicalTeamView-DGcb7xyE.js",
-    "https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/CustomSelect-BToPyiMK.js",
-    "https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/AppointmentView-6sz8VZmM.js",
-    "https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/AppointmentView-3p-quawv.css"])))=>i.map(i=>d[i]);
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/HomeView-DJYlSDcC.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/index-CTtdsqeU.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/MedicalTeamView-DGcb7xyE.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/CustomSelect-BToPyiMK.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/AppointmentView-6sz8VZmM.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/AppointmentView-3p-quawv.css"])))=>i.map(i=>d[i]);
+
 (function(){const I=document.createElement("link").relList;if(I&&I.supports&&I.supports("modulepreload"))return;for(const M of document.querySelectorAll('link[rel="modulepreload"]'))V(M);new MutationObserver(M=>{for(const U of M)if(U.type==="childList")for(const W of U.addedNodes)W.tagName==="LINK"&&W.rel==="modulepreload"&&V(W)}).observe(document,{childList:!0,subtree:!0});function m(M){const U={};return M.integrity&&(U.integrity=M.integrity),M.referrerPolicy&&(U.referrerPolicy=M.referrerPolicy),M.crossOrigin==="use-credentials"?U.credentials="include":M.crossOrigin==="anonymous"?U.credentials="omit":U.credentials="same-origin",U}function V(M){if(M.ep)return;M.ep=!0;const U=m(M);fetch(M.href,U)}})();function Ba(P){return P&&P.__esModule&&Object.prototype.hasOwnProperty.call(P,"default")?P.default:P}var Ci={exports:{}},gr={},Ni={exports:{}},F={};/**
  * @license React
  * react.production.min.js
