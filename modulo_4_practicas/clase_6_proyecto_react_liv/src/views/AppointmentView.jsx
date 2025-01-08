@@ -137,7 +137,7 @@ function AppointmentView() {
 
                 {results &&
                     <div className="card-body d-flex justify-content-center pt-4 pb-2">
-                        <p className="text-primary"><strong>Datos Cita Médica: {formData.name} | {formData.email} | {formData.doctor} | {formData.date} </strong></p>
+                        <p className="text-primary"><strong>Cita Médica: {formData.name} | {formData.email} | {formData.doctor} | {formData.date} </strong></p>
                     </div>
                 }
 
