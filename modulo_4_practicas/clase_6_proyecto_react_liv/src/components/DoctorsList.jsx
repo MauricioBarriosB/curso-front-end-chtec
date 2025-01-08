@@ -7,7 +7,8 @@ function DoctorsList({ doctors }) {
   const [open, setOpen] = useState(false);
 
   const [userData, setUserData] = useState({
-    name: '',
+    fname: '',
+    lname: '',
     photo: '',
     specialty: '',
     biography: ''
@@ -18,12 +19,14 @@ function DoctorsList({ doctors }) {
     console.log('* Close ModalPortal');
   };
 
-  const handleOpen = (name, photo, specialty, biography) => {
+  const handleOpen = (fname, lname, photo, specialty, experience, biography) => {
     setUserData({
-      name: name,
+      fname: fname,
+      lname: lname,
       photo: photo,
-      specialty:specialty,
-      biography:biography
+      specialty: specialty,
+      experience : experience,
+      biography: biography
     });
     setOpen(true);
     console.log('* Open ModalPortal');
@@ -31,11 +34,12 @@ function DoctorsList({ doctors }) {
 
   return (
     <>
-      <div className="row doctors">
-        {doctors.map((property) => (
+      <div className="row doctors pt-5">
+        {doctors.map((property) => ( 
           <DoctorCard
             key={property.id}
-            name={property.name}
+            fname={property.fname}
+            lname={property.lname}
             photo={property.photo}
             specialty={property.specialty}
             experience={property.experience}
@@ -57,7 +61,8 @@ DoctorsList.propTypes = {
   doctors: PropTypes.arrayOf(
     PropTypes.shape({
       id: PropTypes.number.isRequired,
-      name: PropTypes.string.isRequired,
+      fname: PropTypes.string.isRequired,
+      lname: PropTypes.string.isRequired,
       photo: PropTypes.string.isRequired,
       specialty: PropTypes.string.isRequired,
       experience: PropTypes.number.isRequired,

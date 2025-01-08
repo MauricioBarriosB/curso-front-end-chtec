@@ -13,29 +13,29 @@ function App() {
         console.clear();
         console.log('* Loading View :', view);
     };
-  
+
     const onRenderCallback = (id, phase, actualDuration) => {
         console.log(`* Profiler: ${id} (${phase}) took ${actualDuration.toFixed(2)} ms to render.`);
     };
 
     return (
-        <>
-        <HeaderMenu onViewSelect={handleViewSelect}/>
+        <React.Fragment>
+            <HeaderMenu onViewSelect={handleViewSelect} />
 
-        <Profiler id="content" onRender={onRenderCallback}>
+            <Profiler id="content" onRender={onRenderCallback}>
 
-            <Suspense fallback={<p>Cargando página...</p>}>
-            {{
-                'HomeView': <HomeView/>,
-                'MedicalTeamView': <MedicalTeamView />,
-                'AppointmentView': <AppointmentView/>,
-            }[view]}
-            </Suspense>
+                <Suspense fallback={<p>Cargando página...</p>}>
+                    {{
+                        'HomeView': <HomeView />,
+                        'MedicalTeamView': <MedicalTeamView />,
+                        'AppointmentView': <AppointmentView />,
+                    }[view]}
+                </Suspense>
 
-        </Profiler>
-
-        <Footer />
-        </>
+            </Profiler>
+            
+            <Footer />
+        </React.Fragment>
     );
 }
 
