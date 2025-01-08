@@ -82,3 +82,14 @@ node_modules\react-day-picker\tsconfig.json
   "include": ["src", "test", "**/*.test.*", "examples"],
   "exclude": ["website"]
 } 
+
+
+
+
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=[
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/HomeView-DJYlSDcC.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/index-CTtdsqeU.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/MedicalTeamView-DGcb7xyE.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/CustomSelect-BToPyiMK.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/AppointmentView-6sz8VZmM.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/AppointmentView-3p-quawv.css"])))=>i.map(i=>d[i]);
