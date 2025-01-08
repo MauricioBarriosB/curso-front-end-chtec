@@ -1,7 +1,5 @@
-import React from "react";
-
+import React from "react"
 import PropTypes from "prop-types";
-
 import Button from "@commons/Button";
 
 const handleOnClick = (e) => {
@@ -14,7 +12,7 @@ function ServicesList({ services }) {
     <div className="card text-center">
       <div className="card-header">
         <h5 className="mt-1">
-          Listado con especialidades nuestras esecialidades médicas disponibles
+          Listado con nuestras Especialidades Médicas disponibles
         </h5>
       </div>
       <div className="card-body">
