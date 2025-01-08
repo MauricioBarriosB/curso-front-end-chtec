@@ -1,6 +1,6 @@
-# Modulo 4 /  Evaluación M4 - Ejercicio Práctico 2 / Fecha entrega 30-12-24
+# Modulo 4 / Ejercicio Práctico 3 / Fecha entrega 30-12-24
 
-# Ejercicio Práctico: Integración Completa del Sistema del Hospital con ReactJS
+# Integración Completa del Sistema del Hospital con ReactJS
 
 URL Github pública acceso compilación para distribución React JS (sitio SPA productivo) :
 
@@ -12,33 +12,24 @@ https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_4_pra
 
 Los requerimientos de la evaluación han sido abordados en: 
 
+* Implementación de Vistas Complejas HomeView: incluye lista de servicios (carga dinámica) e información hospital.
 
+* Implementación de Vistas Complejas MedicalTeamView: incluye carga dinámica data doctores, componente DoctorCard y filtro select por especialidad.
 
+* Implementación de Vistas Complejas AppointmentView: incluye formulario de agenda de citas, validaciones, calendario, hooks, etc.
 
+* DOM Virtual para gestionar la actualización de datos: en general se utilizaron hooks para actualizar el HTML en base a variables reactivas.
 
+* Implementación de Fragmentos: se utilizó en componente principal App.jsx para gestionar la carga de las vistas, la cual se ejecuta mediante el componente HeaderMenu.
 
+* Implementación referencias: vista MedicalTeamView, etc.
 
+* Enfocar automáticamente en un campo de entrada: vista AppointmentView.
 
+* Uso de callback para gestionar el desplazamiento a diferentes secciones: punto de entrada App.jsx, se utilizo React.lazy para cargar las vistas on demand.
 
+* Simulación la obtención de datos del equipo médico y servicios y uso de hooks: aplicado en MedicalTeamView cargado la data desde archivos JSON, etc.
 
+* Optimización de Rendimiento y Uso de Profiler: aplicado en punto de entrada App.jsx, la info de rendimiento es visualizada mediante console.log (solo visible en modo dev).
 
-
-* Manejo del DOM Virtual: Fueron abordados múltiples componentes manejando virtualmente el DOM.
-
-* Explicación del DOM Virtual: carda de datos en componente DoctorCard, CategoryView mediente el DOM virtual, etc. Utilización de lazy loading para carga vista administración de perfiles de usuario, etc.
-
-* Utilización useEffect: se utilizo useEffect en componente PageMedicalTeam para gestionar carga de datos y renderizado.
-
-* Uso de Referencias: en componente AppointmentForm se ha guardado la referencia refUserName al validar formulario.
-
-* Callback en formulario: en componente AppointmentForm se han guardado los campos formulario mediante función handleChange() además se han validado todos los campos de formulario mediante función handleSubmit().
-
-* Uso de Fragmentos: en componente ServicesList se utilizó React.Fragment para generar cada elemento.
-
-* Uso de Context: se utilizó context para administrar los perfiles de usuario del sitio en componente ProfileView (anexos ProfileForm y ProfileContext).
-
-* Verificación de tipos con PropTypes: todos los componentes que requieren props fueron validados con PropTypes.
-
-* Componente de Orden Superior y Portal: creación de componente ModalPortal el cual carga los datos de doctores mediante props, se utiliza un único componente para mostrar la data, el cual esta desacoplado de la estructura del root principal (mediante Portal de React).
-
-* Optimización de Rendimiento y Profiler: se utilizó React Profiler en componente PageMedicalTeam haciendo referencia a componente DoctorsList (el cual tiene mayor incidencia en la aplicación), se evaluó el buen compomportamiento y tiempo de renderizado y actualización del componente.
+* Comprobación de Tipos con PropTypes: en todos los componentes que requieren props, estas fueron comprobadas mediante PropTypes.
