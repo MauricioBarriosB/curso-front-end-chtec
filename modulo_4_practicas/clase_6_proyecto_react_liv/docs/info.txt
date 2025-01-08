@@ -6,12 +6,16 @@ npm install
 
 npm run dev
 
+https://daypicker.dev/guides/custom-modifiers
+https://blog.logrocket.com/top-react-date-pickers/
+https://daypicker.dev/guides/custom-modifiers
 
 https://stackoverflow.com/questions/71290482/switch-between-views-in-react-js
 https://blog.logrocket.com/lazy-loading-components-in-react-16-6-6cea535c0b52/
 https://legacy.reactjs.org/docs/code-splitting.html
 https://refine.dev/blog/how-react-fragments-is-works/#introduction
-
+https://www.dhiwise.com/post/reactjs-filter-array-of-objects-effortless-data-handling
+https://medium.com/@ibeanuhillary/mastering-react-building-a-custom-select-component-from-scratch-6a6dc3be89c
 
 add or remove class to div react butoon"!!
 
@@ -33,17 +37,17 @@ https://github.com/adalid-cl
 
 ==================================================================
 
-AQUI TODOS PUEDEN INGRESAR CURSOS
+AQUI TODOS PUEDEN INGRESAR CURSOS (NO HAY LIMITE DE PETICIONES DE CURSOS SALVO QUE ESTE EN PROG)
 
-NO HAY LIMITE DE PETICIONES DE CURSOS
-
-MANTENEDOR DE CURSOS ACTIVOS POR COLABORADOR, SI LA SOLICITUD QUE ACA DE LLEGAR LA RESPUESTA,
- NOMBRE CURSOS, RUT ALUMNO, NOMBRE, FECHA, POR EXCEL, SE SUMAN LOS DATOS, 
-ES PARA SABER QUE CURSOS EN GLOBAL TIENE EL ALUMNO ANTES DE ACERTAR LA PETICION, ES UNA PESTAÑA MAS.
+MANTENEDOR DE CURSOS ACTIVOS POR COLABORADOR: SI LA SOLICITUD DEL COLABORADOR ES RECIBIDA POR VRP, 
+SE EVALUAN CURSOS EN TODA LA INSTITUCION POR ESO ES IMPORTANTE DESACOPLAR ESTE MODULO.
+NOMBRE CURSOS, RUT ALUMNO, NOMBRE, FECHA, POR EXCEL, SE SUMAN LOS DATOS 
+(ES PARA SABER QUE CURSOS EN GLOBAL TIENE EL ALUMNO ANTES DE ACEPTAR LA PETICION) 
+SE AGREGA MNODULO DENTRO DE LA PESTAÑA PERFIL VRP.
 
 sera en un subdominio NO servidor nuevo?
 empezaremos desde 0 SI?
-carga mensual dinamica xls (activay y desactivar) colaborador puede tener mas de un jefe
+carga mensual dinamica xls (activay y desactivar) colaborador puede tener mas de un jefe (2)
 
 person con distintas jefeturas tiene varias opciones al pedir curso :
 (seran asociadas por cargo ya que cada jefe es un cargo) 
@@ -55,3 +59,26 @@ envio correo a jefe cuando colaborador pide un curso para que lo apeube o no (au
 envio correo a persona a vizando a jefe que persona respondio (envia carina)
 
 administrador de presupuestos (como lo que ya esta en DNC)
+
+
+
+D:\LOCALHOST\www\curso-front-end-chtec\modulo_4_practicas\clase_6_proyecto_react_liv\node_modules\react-day-picker\tsconfig.json
+
+
+node_modules\react-day-picker\tsconfig.json
+
+{
+  "extends": "./tsconfig-base.json",
+  "compilerOptions": {
+    "paths": {
+      "@/test": ["./test"],
+      "@/test/*": ["./test/*"],
+      "react-day-picker": ["./src"],
+      "react-day-picker/*": ["./src/*"]
+    },
+    "noEmit": true,
+    "types": ["node", "jest", "@testing-library/jest-dom", "@types/jest"]
+  },
+  "include": ["src", "test", "**/*.test.*", "examples"],
+  "exclude": ["website"]
+} 

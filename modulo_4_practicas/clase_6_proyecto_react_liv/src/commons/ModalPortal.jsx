@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import Button from "./Button";
 
 function ModalPortal({onClose, userData }) {
+
   return ReactDOM.createPortal(
     <div onClick={onClose} 
       style={{
@@ -21,7 +22,7 @@ function ModalPortal({onClose, userData }) {
       <div onClick={(e)=>e.stopPropagation()} className="card text-center m-4">
         <div className="card-header">
           <h4 className="mt-1 text-primary">
-            <i className="las la-file-alt"></i> Ficha Doctor  {userData.name}
+            <i className="las la-file-alt"></i> Ficha {userData.fname} {userData.lname}
           </h4>
         </div>
         <div className="card-body">
@@ -30,9 +31,7 @@ function ModalPortal({onClose, userData }) {
             alt="doctor"
             style={{ width: 220, height: 150, borderRadius: 15 / 2 }}
           />
-
-          <div className="mt-2">Modal Portal Component | Especialidad doctor: {userData.specialty} </div>
-          <div>Biografía doctor: {userData.biography} </div>
+          <div className="pt-2"> {userData.biography} </div>
         </div>
 
         <div className="card-footer text-body-secondary">

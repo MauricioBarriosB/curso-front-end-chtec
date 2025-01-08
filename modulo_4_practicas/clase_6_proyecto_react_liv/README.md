@@ -1,16 +1,27 @@
-# Modulo 4 /  Evaluación M4 - Ejercicio Práctico 2 / Fecha entrega 27-12-24
+# Modulo 4 /  Evaluación M4 - Ejercicio Práctico 2 / Fecha entrega 30-12-24
 
-# Manejo Avanzado del DOM y Elementos ReactJS
+# Ejercicio Práctico: Integración Completa del Sistema del Hospital con ReactJS
 
 URL Github pública acceso compilación para distribución React JS (sitio SPA productivo) :
 
-https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_4_practicas/clase_4_proyecto_react_liv/dist
+https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist
 
 URL Github pública acceso archivos fuente React JS :
 
-https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_4_practicas/clase_4_proyecto_react_liv
+https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_4_practicas/clase_6_proyecto_react_liv
 
 Los requerimientos de la evaluación han sido abordados en: 
+
+
+
+
+
+
+
+
+
+
+
 
 * Manejo del DOM Virtual: Fueron abordados múltiples componentes manejando virtualmente el DOM.
 

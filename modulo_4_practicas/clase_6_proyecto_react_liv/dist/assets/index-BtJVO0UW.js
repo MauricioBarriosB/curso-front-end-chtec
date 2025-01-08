@@ -1,0 +1,1 @@
+import{P as t,j as a,a as o,g as n}from"./index-Dp95flhc.js";function i({label:s,onClick:r,desc:e}){return a.jsxs("button",{className:"btn btn-primary m-2","data-label":s,onClick:r,"data-desc":e,children:[s," »"]})}i.propTypes={label:t.string.isRequired,onClick:t.func.isRequired,desc:t.string};var c=o();const u=n(c);export{i as B,u as R};
