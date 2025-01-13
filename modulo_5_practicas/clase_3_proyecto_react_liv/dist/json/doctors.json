@@ -1,0 +1,182 @@
+[
+    {
+        "id": 1,
+        "rut": "12.345.678-9",
+        "fname": "Samuel",
+        "lname": "Neil",
+        "age": 35,
+        "specialty_id": 1,
+        "photo": "./images/medico2.jpg",
+        "available": true,
+        "experience": 22,
+        "contact": {
+            "phone": 123456789,
+            "email": "samuel@liv.cl"
+        },
+        "hours": {
+            "am": "07:00 - 13:00",
+            "pm": "14:00 - 21:00"
+        },
+        "biography": "Una breve descripción biográfica del doctor Samuel Neil, el cual posee 22 años de experiencia y servicio médico, entre otros."
+    },
+    {
+        "id": 2,
+        "rut": "13.345.678-9",
+        "fname": "José",
+        "lname": "Smith",
+        "age": 45,
+        "specialty_id": 2,
+        "photo": "./images/medico3.jpg",
+        "available": true,
+        "experience": 4,
+        "contact": {
+            "phone": 123456789,
+            "email": "smith@liv.cl"
+        },
+        "hours": {
+            "am": "07:00 - 13:00",
+            "pm": "14:00 - 21:00"
+        },
+        "biography": "Una breve descripción biográfica del doctor José Smith, el cual posee 4 años de experiencia y servicio médico, entre otros."
+    },
+    {
+        "id": 3,
+        "rut": "14.345.678-9",
+        "fname": "John",
+        "lname": "Doe",
+        "age": 33,
+        "specialty_id": 3,
+        "photo": "./images/medico1.jpg",
+        "available": true,
+        "experience": 12,
+        "contact": {
+            "phone": 123456789,
+            "email": "john@liv.cl"
+        },
+        "hours": {
+            "am": "07:00 - 13:00",
+            "pm": "14:00 - 21:00"
+        },
+        "biography": "Una breve descripción biográfica del doctor Jhon Doe, el cual posee 12 años de experiencia y servicio médico, entre otros."
+    },
+    {
+        "id": 4,
+        "rut": "15.345.678-9",
+        "fname": "Josefina",
+        "lname": "Duarte",
+        "age": 45,
+        "specialty_id": 4,
+        "photo": "./images/medico4.jpg",
+        "available": true,
+        "experience": 15,
+        "contact": {
+            "phone": 123456789,
+            "email": "duarte@liv.cl"
+        },
+        "hours": {
+            "am": "07:00 - 13:00",
+            "pm": "14:00 - 21:00"
+        },
+        "biography": "Una breve descripción biográfica de la doctora Josefina Duarte, la cual posee 15 años de experiencia y servicio médico, entre otros."
+    },
+    {
+        "id": 5,
+        "rut": "3.223.344-5",
+        "fname": "Carlos",
+        "lname": "Ramírez",
+        "age": 50,
+        "specialty_id": 5,
+        "photo": "./images/medico5.jpg",
+        "available": false,
+        "experience": 4,
+        "contact": {
+            "phone": 123456789,
+            "email": "cramirez@liv.cl"
+        },
+        "hours": {
+            "am": "07:00 - 13:00",
+            "pm": "14:00 - 21:00"
+        },
+        "biography": "Una breve descripción biográfica del doctor Carlos Ramírez, el cual posee 4 años de experiencia y servicio médico, entre otros."
+    },
+    {
+        "id": 6,
+        "rut": "4.345.678-9",
+        "fname": "Pedro",
+        "lname": "Rodriguez",
+        "age": 55,
+        "specialty_id": 6,
+        "photo": "./images/medico5.jpg",
+        "available": true,
+        "experience": 10,
+        "contact": {
+            "phone": 123456789,
+            "email": "prodriguez@liv.cl"
+        },
+        "hours": {
+            "am": "07:00 - 13:00",
+            "pm": "14:00 - 21:00"
+        },
+        "biography": "Una breve descripción biográfica del doctor Pedro Rodriguez, el cual posee 10 años de experiencia y servicio médico, entre otros."
+    },
+    {
+        "id": 7,
+        "rut": "5.345.678-9",
+        "fname": "Erica",
+        "lname": "Sotomayor",
+        "age": 41,
+        "specialty_id": 7,
+        "photo": "./images/medico6.jpg",
+        "available": true,
+        "experience": 20,
+        "contact": {
+            "phone": 123456789,
+            "email": "ericasoto@liv.cl"
+        },
+        "hours": {
+            "am": "07:00 - 13:00",
+            "pm": "14:00 - 21:00"
+        },
+        "biography": "Una breve descripción biográfica de la doctora Erica Sotomayor, la cual posee 20 años de experiencia y servicio médico, entre otros."
+    },
+    {
+        "id": 8,
+        "rut": "6.345.678-9",
+        "fname": "Juan",
+        "lname": "Pérez",
+        "age": 45,
+        "specialty_id": 8,
+        "photo": "./images/medico1.jpg",
+        "available": false,
+        "experience": 3,
+        "contact": {
+            "phone": 123456789,
+            "email": "jperes@liv.cl"
+        },
+        "hours": {
+            "am": "07:00 - 13:00",
+            "pm": "14:00 - 21:00"
+        },
+        "biography": "Una breve descripción biográfica del doctor Juan Pérez, el cual posee 3 años de experiencia y servicio médico, entre otros."
+    },
+    {
+        "id": 9,
+        "rut": "7.765.432-1",
+        "fname": "María",
+        "lname": "Gómez",
+        "age": 38,
+        "specialty_id": 1,
+        "photo": "./images/medico4.jpg",
+        "available": false,
+        "experience": 2,
+        "contact": {
+            "phone": 123456789,
+            "email": "mgomez@liv.cl"
+        },
+        "hours": {
+            "am": "07:00 - 13:00",
+            "pm": "14:00 - 21:00"
+        },
+        "biography": "Una breve descripción biográfica de la doctora María Gómez, la cual posee 2 años de experiencia y servicio médico, entre otros."
+    }
+]

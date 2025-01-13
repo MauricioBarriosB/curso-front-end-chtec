@@ -1,0 +1,117 @@
+npm create vite@latest my-todo-app -- --template react
+
+cd my-todo-app
+
+npm install
+
+npm run dev
+
+https://daypicker.dev/guides/custom-modifiers
+https://blog.logrocket.com/top-react-date-pickers/
+https://daypicker.dev/guides/custom-modifiers
+
+https://stackoverflow.com/questions/71290482/switch-between-views-in-react-js
+https://blog.logrocket.com/lazy-loading-components-in-react-16-6-6cea535c0b52/
+https://legacy.reactjs.org/docs/code-splitting.html
+https://refine.dev/blog/how-react-fragments-is-works/#introduction
+https://www.dhiwise.com/post/reactjs-filter-array-of-objects-effortless-data-handling
+https://medium.com/@ibeanuhillary/mastering-react-building-a-custom-select-component-from-scratch-6a6dc3be89c
+
+
+https://www.freecodecamp.org/espanol/news/como-usar-axios-con-react/
+
+npm install axios
+
+add or remove class to div react butoon"!!
+
+https://github.com/alangajardo/hospital
+
+
+setting vars:
+
+https://react.dev/learn/updating-objects-in-state
+
+types
+
+https://legacy.reactjs.org/docs/typechecking-with-proptypes.html
+
+repos adalid
+
+https://github.com/adalid-cl
+
+
+==================================================================
+
+AQUI TODOS PUEDEN INGRESAR CURSOS (NO HAY LIMITE DE PETICIONES DE CURSOS SALVO QUE ESTE EN PROG)
+
+MANTENEDOR DE CURSOS ACTIVOS POR COLABORADOR: SI LA SOLICITUD DEL COLABORADOR ES RECIBIDA POR VRP, 
+SE EVALUAN CURSOS EN TODA LA INSTITUCION POR ESO ES IMPORTANTE DESACOPLAR ESTE MODULO.
+NOMBRE CURSOS, RUT ALUMNO, NOMBRE, FECHA, POR EXCEL, SE SUMAN LOS DATOS 
+(ES PARA SABER QUE CURSOS EN GLOBAL TIENE EL ALUMNO ANTES DE ACEPTAR LA PETICION) 
+SE AGREGA MNODULO DENTRO DE LA PESTAÑA PERFIL VRP.
+
+sera en un subdominio NO servidor nuevo?
+empezaremos desde 0 SI?
+carga mensual dinamica xls (activay y desactivar) colaborador puede tener mas de un jefe (2)
+
+person con distintas jefeturas tiene varias opciones al pedir curso :
+(seran asociadas por cargo ya que cada jefe es un cargo) 
+al matricular por excel se asigna segundo cargo y jefatura
+
+reporte para jefatura estados de cursos
+envio correo encuesta (envia carina)
+envio correo a jefe cuando colaborador pide un curso para que lo apeube o no (automatico se agrega)
+envio correo a persona a vizando a jefe que persona respondio (envia carina)
+
+administrador de presupuestos (como lo que ya esta en DNC)
+
+
+
+D:\LOCALHOST\www\curso-front-end-chtec\modulo_4_practicas\clase_6_proyecto_react_liv\node_modules\react-day-picker\tsconfig.json
+
+
+node_modules\react-day-picker\tsconfig.json
+
+{
+  "extends": "./tsconfig-base.json",
+  "compilerOptions": {
+    "paths": {
+      "@/test": ["./test"],
+      "@/test/*": ["./test/*"],
+      "react-day-picker": ["./src"],
+      "react-day-picker/*": ["./src/*"]
+    },
+    "noEmit": true,
+    "types": ["node", "jest", "@testing-library/jest-dom", "@types/jest"]
+  },
+  "include": ["src", "test", "**/*.test.*", "examples"],
+  "exclude": ["website"]
+} 
+
+
+
+
+const __vite__mapDeps=(i,m=__vite__mapDeps,d=(m.f||(m.f=[
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/HomeView-DJYlSDcC.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/index-CTtdsqeU.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/MedicalTeamView-DGcb7xyE.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/CustomSelect-BToPyiMK.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/AppointmentView-6sz8VZmM.js",
+    "curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist/assets/AppointmentView-3p-quawv.css"])))=>i.map(i=>d[i]);
+
+
+
+
+
+    // ** Select user input change Specialty :
+
+    const handleSelectChange = (value) => {
+        console.log('*** Selected value to API Call :', value);
+        if (value) {
+            // filtra en arr todo lo que tenga el mismo specialty_id :
+            let filtered = doctors.current.filter(a => a.specialty_id == value);
+            setList(filtered);
+        } else {
+            setList(doctors.current);
+        }
+    };
