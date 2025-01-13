@@ -12,24 +12,16 @@ https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_5_pra
 
 Todos los requerimientos de la evaluación han sido abordados en la vista MedicalTeamView.jsx : 
 
-* Implementación de Vistas Complejas HomeView: incluye lista de servicios (carga dinámica) e información hospital.
+* Usa los Hooks useEffect y useState para realizar peticiones a una API externa: he creado el servicio src/services/DocsApi.js el cual se conecta a la siguiente API:
 
-* Implementación de Vistas Complejas MedicalTeamView: incluye carga dinámica data doctores, componente DoctorCard y filtro select por especialidad.
+https://capacitaenlinea.cl/demodoctorapi/index.php/doctors?key=mab25
 
-* Implementación de Vistas Complejas AppointmentView: incluye formulario de agenda de citas, validaciones, calendario, hooks, etc.
+Esta API publica la he creado en PHP para enviar y devolver las peticiones GET y POST, mediante la cual se cargan los datos en el componente DoctorList.jsx.
 
-* DOM Virtual para gestionar la actualización de datos: en general se utilizaron hooks para actualizar el HTML en base a variables reactivas.
+* Uso de Axios para el Consumo de la API: el servicio src/services/DocsApi.js fue implementado mediante Axios, fue elegido Axios por su simplicidad para cargar datos de manera asíncrona.
 
-* Implementación de Fragmentos: se utilizó en componente principal App.jsx para gestionar la carga de las vistas, la cual se ejecuta mediante el componente HeaderMenu.
+* Peticiones Basadas en Eventos del Usuario: en la vista MedicalTeamView el evento handleSelectChange se encarga de llamar al servicio y extraer los datos dependiendo del ID de especialidad de cada Doctor (los parametros del endpoint los he enviado mediante la URL).
 
-* Implementación referencias: vista MedicalTeamView, etc.
+* Manejo de Errores en Peticiones Asíncronas: el servicio posee manejo de errores, además, la vista MedicalTeamView carga un mensaje de error en caso de fallo de la API, etc.
 
-* Enfocar automáticamente en un campo de entrada: vista AppointmentView.
-
-* Uso de callback para gestionar el desplazamiento a diferentes secciones: punto de entrada App.jsx, se utilizo React.lazy para cargar las vistas on demand.
-
-* Simulación la obtención de datos del equipo médico y servicios y uso de hooks: aplicado en MedicalTeamView cargado la data desde archivos JSON, etc.
-
-* Optimización de Rendimiento y Uso de Profiler: aplicado en punto de entrada App.jsx, la info de rendimiento es visualizada mediante console.log (solo visible en modo dev).
-
-* Comprobación de Tipos con PropTypes: en todos los componentes que requieren props, estas fueron comprobadas mediante PropTypes.
+* Optimización del Rendimiento al Omitir Efectos: en la vista la vista MedicalTeamView he creado un useState con la data de servicios, lo cual reduce el tiempo de carga, ya que no se vuelve a interpretar el listado de servicios (si la data de doctores cambia).
