@@ -1,16 +1,16 @@
-# Modulo 4 / Ejercicio Práctico 3 / Fecha entrega 30-12-24
+# Modulo 5 / Ejercicio Práctico 3 / Fecha entrega 10-12-24
 
-# Integración Completa del Sistema del Hospital con ReactJS
+# : Consumo de API en el Sistema del Hospital
 
 URL Github pública acceso compilación para distribución React JS (sitio SPA productivo) :
 
-https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_4_practicas/clase_6_proyecto_react_liv/dist
+https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_5_practicas/clase_3_proyecto_react_liv/dist
 
 URL Github pública acceso archivos fuente React JS :
 
-https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_4_practicas/clase_6_proyecto_react_liv
+https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_5_practicas/clase_3_proyecto_react_liv
 
-Los requerimientos de la evaluación han sido abordados en: 
+Todos los requerimientos de la evaluación han sido abordados en la vista MedicalTeamView.jsx : 
 
 * Implementación de Vistas Complejas HomeView: incluye lista de servicios (carga dinámica) e información hospital.
 
