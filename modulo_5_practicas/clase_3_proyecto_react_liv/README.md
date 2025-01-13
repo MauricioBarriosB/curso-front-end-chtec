@@ -1,6 +1,6 @@
-# Modulo 5 / Ejercicio Práctico 3 / Fecha entrega 10-12-24
+# Modulo 5 / Ejercicio Práctico 1 / Fecha entrega 10-12-24
 
-# : Consumo de API en el Sistema del Hospital
+# Consumo de API en el Sistema del Hospital
 
 URL Github pública acceso compilación para distribución React JS (sitio SPA productivo) :
 
