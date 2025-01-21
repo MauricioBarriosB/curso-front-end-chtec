@@ -1,7 +1,10 @@
 import React from 'react';
 import Button from './Button';
 
+type id = string | number;
+
 interface DoctorCardProps {
+    id: id;
     fname: string;
     lname: string;
     specialty_name: string;
@@ -9,7 +12,7 @@ interface DoctorCardProps {
     photo: string;
 }
 
-const DoctorCard: React.FC<DoctorCardProps> = ({ fname, lname, specialty_name, biography, photo }) => {
+const DoctorCard: React.FC<DoctorCardProps> = ({ id, fname, lname, specialty_name, biography, photo }) => {
 
     const handleClick = (e:React.SyntheticEvent<HTMLButtonElement>) => {
         alert(e.currentTarget.dataset.desc);
@@ -25,7 +28,7 @@ const DoctorCard: React.FC<DoctorCardProps> = ({ fname, lname, specialty_name, b
                     <h5 className="card-text"><i className="las la-book-medical"></i> Especialidad: {specialty_name}</h5>
                     <hr />
                     <p className="text-primary">• Biografía: {biography}</p>
-                    <Button desc={`Descripción ${fname} ${lname}: ${biography}`} label="Ver más detalle" buttonOnClick={handleClick} />
+                    <Button desc={`Descripción ID # ${id}: ${fname} ${lname}: ${biography}`} label="Ver más detalle" buttonOnClick={handleClick} />
                 </div>
             </div>
         </div>
