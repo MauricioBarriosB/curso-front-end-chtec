@@ -53,7 +53,7 @@ const DoctorList: React.FC = () => {
                 <h5 className="text-center"> Datos desde Clase TS DoctorClass.ts: </h5>
                 <h5 className="text-center text-primary">{classdoc}</h5>
 
-                <h5 className="text-center"> Datos desde Función TS showDoctorData: </h5>
+                <h5 className="text-center pt-4"> Datos desde Función TS showDoctorData: </h5>
                 <h5 className="text-center text-primary">{functdoc}</h5>
 
                 <hr className="mt-4"/>
