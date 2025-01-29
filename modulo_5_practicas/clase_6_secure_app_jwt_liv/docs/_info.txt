@@ -1,0 +1,40 @@
+// https://medium.com/winkhostinglatam/crea-una-api-b%C3%A1sica-en-php-con-autenticaci%C3%B3n-a-trav%C3%A9s-de-token-82de7f72c356
+
+Para codificar decodificar JWT, en nuestro caso no es necesario decodificarlo ya que el backen se encarga de hacer las validaciones:
+
+npm install jwt-decode   /// para decodificar JWT
+
+import { jwtDecode } from "jwt-decode";
+
+const decodedJWT = jwtDecode(storedJWT)
+
+----------------------------------------------------------------
+
+// ** https://www.youtube.com/watch?v=UqnnhAZxRac&t=4576s
+// ** https://codeparrot.ai/blogs/react-cookies-a-complete-guide-to-managing-cookies-in-your-react-application
+
+swager para documntar apis
+
+https://github.com/bguzmanm/safeAppFeg2   aps segurasss
+
+----------------------------------------------------------------
+
+casl v6 en react sistema de seguridad
+
+https://casl.js.org/v6/en/package/casl-react
+
+
+// ** https://openwebinars.net/blog/que-es-json-web-token-y-como-funciona/
+// ** https://www.freecodecamp.org/news/json-server-for-frontend-development/
+// ** https://academy.leewayweb.com/como-autenticar-jwt-php-segura/
+
+
+* Ejecutar el json server: npm run server
+
+Mal planteo de la tarea practica :
+
+* si los datos de login viajan cifrados por https a la API hay que encriptarlos de todas formas?
+
+* por lo que tengo entendido el JWT con la fecha de expiración, validacion, etc. se hace del lado del servidor
+
+* hacer el login contra la API mediante el AuthContext.jsx de ahí llamar al servicio de API? AuthContext solo deberia teber 1 responsabilidad!

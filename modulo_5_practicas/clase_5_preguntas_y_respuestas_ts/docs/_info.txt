@@ -1,0 +1,13 @@
+npm install json-server json-server-auth -D
+
+swager para documntar apis
+
+https://github.com/bguzmanm/safeAppFeg2   aps segurasss
+
+
+casl v6 en react sistema de seguridad
+
+https://casl.js.org/v6/en/package/casl-react
+
+
+http://localhost:3001/secure-data

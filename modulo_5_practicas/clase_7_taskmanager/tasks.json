@@ -1,0 +1,44 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "task": "lavar la loza",
+      "done": false
+    },
+    {
+      "id": "2",
+      "task": "Planchar la ropa",
+      "done": false
+    },
+    {
+      "id": "3",
+      "task": "preparar almuerzo",
+      "done": false
+    },
+    {
+      "id": "8584",
+      "task": "Limpiar la arena del gato",
+      "done": false
+    },
+    {
+      "id": "1234",
+      "task": "lavar la ropa",
+      "done": false
+    },
+    {
+      "id": "3198.089907034465",
+      "task": "hacer la cama",
+      "done": false
+    },
+    {
+      "id": "3386.1802421000652",
+      "task": "surcir los churrines",
+      "done": false
+    },
+    {
+      "id": "2313.38989281487",
+      "task": "Tarea 5",
+      "done": false
+    }
+  ]
+}
