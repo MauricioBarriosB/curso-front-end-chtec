@@ -1,0 +1,56 @@
+{
+  "flights": [
+    {
+      "id": "1",
+      "origin": "New York",
+      "destination": "London",
+      "price": 500
+    },
+    {
+      "id": "2",
+      "origin": "Paris",
+      "destination": "Talca",
+      "price": 700
+    },
+    {
+      "id": "3",
+      "origin": "Santiago",
+      "destination": "Concepción",
+      "price": 100
+    },
+    {
+      "id": "4",
+      "origin": "Antofagasta",
+      "destination": "Santiago",
+      "price": 150
+    }
+  ],
+  "secure-data": [
+    {
+      "id": "1",
+      "info": "Datos confidenciales 1"
+    },
+    {
+      "id": "2",
+      "info": "Datos confidenciales 2"
+    },
+    {
+      "id": "d1e1",
+      "headers": {
+        "Authorization": "Bearer U2FsdGVkX19OswaLklJRWC4Lxel+RkWVJ2oRWBpGacbuAq3aK3qEslKmIoU4CwUV"
+      }
+    },
+    {
+      "id": "7f71",
+      "headers": {
+        "Authorization": "Bearer U2FsdGVkX19OswaLklJRWC4Lxel+RkWVJ2oRWBpGacbuAq3aK3qEslKmIoU4CwUV"
+      }
+    },
+    {
+      "id": "8d69",
+      "headers": {
+        "Authorization": "Bearer U2FsdGVkX19OswaLklJRWC4Lxel+RkWVJ2oRWBpGacbuAq3aK3qEslKmIoU4CwUV"
+      }
+    }
+  ]
+}
