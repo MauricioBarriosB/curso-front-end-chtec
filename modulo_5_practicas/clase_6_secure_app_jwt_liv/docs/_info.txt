@@ -8,6 +8,9 @@ import { jwtDecode } from "jwt-decode";
 
 const decodedJWT = jwtDecode(storedJWT)
 
+configurar las variabels de entorno vite:
+https://dev.to/navinduabhishek/how-to-fix-process-is-not-defined-reactvite-1nn4
+
 ----------------------------------------------------------------
 
 // ** https://www.youtube.com/watch?v=UqnnhAZxRac&t=4576s
@@ -38,3 +41,5 @@ Mal planteo de la tarea practica :
 * por lo que tengo entendido el JWT con la fecha de expiración, validacion, etc. se hace del lado del servidor
 
 * hacer el login contra la API mediante el AuthContext.jsx de ahí llamar al servicio de API? AuthContext solo deberia teber 1 responsabilidad!
+
+npm install qs ::: para pasar a string los foms en axios : https://axios-http.com/docs/urlencoded

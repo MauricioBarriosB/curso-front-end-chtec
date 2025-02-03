@@ -20,10 +20,13 @@ const Login = () => {
 
         try {
             const dataApi = await userLogIn(userData);
+
+            /*
             if (dataApi) {
                 login('admin', dataApi.jwt);
                 navigate('/dashboard'); // if role = admin, user, doctor redirect.
             }
+                */
         } catch (error) {
             console.log('Error:', error);
         }
