@@ -23,7 +23,7 @@ const Home = () => {
       <h1>Bienvenidos a SafeApp</h1>
       {!user && (
         <p>
-          <a href="/login">Iniciar Sesión</a>
+          <a href="./login">Iniciar Sesión</a>
         </p>
       )}
       {user && (

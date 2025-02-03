@@ -13,11 +13,11 @@ const AppRoutes = () => {
         <AuthProvider>
             <Router>
                 <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/signin" element={<Signin />} />
-                    <Route path="/login" element={<Login />} />
+                    <Route path="./" element={<Home />} />
+                    <Route path="./signin" element={<Signin />} />
+                    <Route path="./login" element={<Login />} />
                     <Route
-                        path="/dashboard"
+                        path="./dashboard"
                         element={
                             <ProtectedRoute allowedRoles={["admin", "user"]}>
                                 <Dashboard />
@@ -25,7 +25,7 @@ const AppRoutes = () => {
                         }
                     />
                     <Route
-                        path="/search-flights"
+                        path="./search-flights"
                         element={
                             <ProtectedRoute allowedRoles={["admin", "user"]}>
                                 <SearchFlights />
@@ -33,7 +33,7 @@ const AppRoutes = () => {
                         }
                     />
                     <Route
-                        path="/vulnerabilities"
+                        path="./vulnerabilities"
                         element={
                             <ProtectedRoute allowedRoles={["admin"]}>
                                 <Vulnerabilities />

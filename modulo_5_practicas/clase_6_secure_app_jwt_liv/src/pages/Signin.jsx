@@ -23,7 +23,7 @@ const Signin = () => {
             const dataApi = await userSignIn(userData);
             if (dataApi) {
                 login('admin', dataApi.jwt);
-                navigate('/dashboard'); // if role = admin, user, doctor redirect.
+                navigate('./dashboard'); // if role = admin, user, doctor redirect.
             }
         } catch (error) {
             console.log('Error:', error);
