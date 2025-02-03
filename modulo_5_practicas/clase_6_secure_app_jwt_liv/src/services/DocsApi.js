@@ -1,9 +1,8 @@
 import axios from "axios";
-
-const X_API_KEY_HASHED = '$2y$10$0PNxS3ciP3qpulSnblsUNOc8sXzbDWVcyIgMZ/z7vOnE9cH7t6XVi';
+import qs from "qs";
 
 const api = axios.create({
-    baseURL: 'http://localhost/demodoctorapi/api.php',
+    baseURL: import.meta.env.VITE_APP_API_URL,
     timeout: 1000,
 });
 
@@ -15,7 +14,7 @@ export const userSignIn = async (userInputData) => {
         const response = await api.post(
             'users/signin',
             userInputData,
-            {headers: { 'x-api-key' : X_API_KEY_HASHED }},
+            {headers: { 'x-api-key' : import.meta.env.VITE_APP_API_KEY_HASHED }},
         );
         if (response.data.status != 200) {
             alert(response.data.message);
@@ -35,17 +34,17 @@ export const userLogIn = async (userInputData) => {
     try {
         const response = await api.post(
             'users/login',
-            userInputData,
-            {headers: { 'x-api-key' : X_API_KEY_HASHED }},
-        );
-        if (response.data.status != 200) {
-            alert(response.data.message);
-            return false;
-        } else {
-            return response.data;
-        }
+            qs.stringify(userInputData),
+            {headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'x-api-key' : import.meta.env.VITE_APP_API_KEY_HASHED 
+                }
+            }
+        )
+        console.log('*', response.data);
+        return response.data;
     } catch (error) {
-        throw new Error("Error:", error);
+        alert( error.response.data.messages.error);
     }
 };
 
@@ -95,15 +94,20 @@ export const getDoctorsByIdSpeciality = async (id, jwt) => {
 export const getAllPatients = async (jwt) => {
     try {
         const response = await api.get(
-            'patients/all',
-            {headers: { 'Authorization' : `Bearer ${jwt}` }},
+            '/patients',
+          //  {headers: { 'Authorization' : `Bearer ${jwt}` }},
         );
+
+        console.log(response);
+
+        /*
         if (response.data.status != 200) {
             alert(response.data.message);
             return false;
         } else {
             return response.data;
         }
+        */
     } catch (error) {
         throw new Error("Error:", error);
     }
