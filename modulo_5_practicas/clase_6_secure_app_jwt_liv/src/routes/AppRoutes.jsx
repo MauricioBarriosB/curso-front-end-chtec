@@ -1,4 +1,4 @@
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes, HashRouter } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
 import Home from "../pages/Home";
 import Signin from "../pages/Signin";
@@ -11,13 +11,13 @@ import Vulnerabilities from "../pages/Vulnerabilities";
 const AppRoutes = () => {
     return (
         <AuthProvider>
-            <Router>
+            <HashRouter>
                 <Routes>
-                    <Route path="./" element={<Home />} />
-                    <Route path="./signin" element={<Signin />} />
-                    <Route path="./login" element={<Login />} />
+                    <Route path="/" element={<Home />} />
+                    <Route path="/signin" element={<Signin />} />
+                    <Route path="/login" element={<Login />} />
                     <Route
-                        path="./dashboard"
+                        path="/dashboard"
                         element={
                             <ProtectedRoute allowedRoles={["admin", "user"]}>
                                 <Dashboard />
@@ -25,7 +25,7 @@ const AppRoutes = () => {
                         }
                     />
                     <Route
-                        path="./search-flights"
+                        path="/search-flights"
                         element={
                             <ProtectedRoute allowedRoles={["admin", "user"]}>
                                 <SearchFlights />
@@ -33,7 +33,7 @@ const AppRoutes = () => {
                         }
                     />
                     <Route
-                        path="./vulnerabilities"
+                        path="/vulnerabilities"
                         element={
                             <ProtectedRoute allowedRoles={["admin"]}>
                                 <Vulnerabilities />
@@ -41,7 +41,7 @@ const AppRoutes = () => {
                         }
                     />
                 </Routes>
-            </Router>
+            </HashRouter>
         </AuthProvider>
     );
 };
