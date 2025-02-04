@@ -6,20 +6,33 @@ import Login from "../pages/Login";
 import Dashboard from "../pages/Dashboard";
 import ProtectedRoute from "./ProtectedRoute";
 import SearchFlights from "../pages/SearchFlights";
-import Vulnerabilities from "../pages/Vulnerabilities";
+import MedicalTeam from "../pages/MedicalTeam";
+
+// ** Use HashRouter instead of Route due GitHub subfolder system  :
 
 const AppRoutes = () => {
     return (
         <AuthProvider>
             <HashRouter>
                 <Routes>
-                    <Route path="/" element={<Home />} />
+                    <Route path="/" element={<Login />} />
                     <Route path="/signin" element={<Signin />} />
                     <Route path="/login" element={<Login />} />
+
+                    <Route
+                        path="/home"
+                        element={
+                            <ProtectedRoute allowedRoles={["admin", "guest"]}>
+                                <Home />
+                            </ProtectedRoute>
+                        }
+                    />
+
+
                     <Route
                         path="/dashboard"
                         element={
-                            <ProtectedRoute allowedRoles={["admin", "user"]}>
+                            <ProtectedRoute allowedRoles={["admin", "guest"]}>
                                 <Dashboard />
                             </ProtectedRoute>
                         }
@@ -27,16 +40,16 @@ const AppRoutes = () => {
                     <Route
                         path="/search-flights"
                         element={
-                            <ProtectedRoute allowedRoles={["admin", "user"]}>
+                            <ProtectedRoute allowedRoles={["admin", "guest"]}>
                                 <SearchFlights />
                             </ProtectedRoute>
                         }
                     />
                     <Route
-                        path="/vulnerabilities"
+                        path="/medicalteam"
                         element={
                             <ProtectedRoute allowedRoles={["admin"]}>
-                                <Vulnerabilities />
+                                <MedicalTeam />
                             </ProtectedRoute>
                         }
                     />

@@ -15,18 +15,17 @@ const Login = () => {
 
         let userData = {
             username: username,
-            password: password,
+            password: password
         }
 
         try {
             const dataApi = await userLogIn(userData);
-
-            /*
-            if (dataApi) {
-                login('admin', dataApi.jwt);
-                navigate('/dashboard'); // if role = admin, user, doctor redirect.
+            userData = {
+                name: dataApi.name,
+                roles: dataApi.roles
             }
-                */
+            login(userData, dataApi.jwt);
+            navigate('/home');
         } catch (error) {
             console.log('Error:', error);
         }
@@ -34,28 +33,48 @@ const Login = () => {
 
     return (
         <MainLayout>
-            <h1>Iniciar Sesión</h1>
-            <form onSubmit={handleLogin}>
-                <label htmlFor="username">Usuario:</label>
-                <input
-                    id="username"
-                    name="username"
-                    type="text"
-                    placeholder="Usuario"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <label htmlFor="password">Password:</label>
-                <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="Contraseña"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit">Iniciar Sesión</button>
-            </form>
+        <div className="container marketing">
+
+            <div className="row text-center">
+                <h2 className="text-primary pt-4"> <i className="las la-sign-in-alt"></i> Inicia sesión en Portal LIV</h2>
+                <h5 className="pt-4 pb-4">
+                    En caso de no tener cuenta, puedes crear una con perfil "Visita" accediendo al menú superior y presionando el enlace "Crear Cuenta".
+                </h5>
+            </div>
+
+            <div className="card-body d-flex justify-content-center">
+                <form className="contact-form" onSubmit={handleLogin}>
+                    <input
+                        id="username"
+                        name="username"
+                        type="text"
+                        placeholder="Usuario"
+                        className="form-control my-4"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required 
+                    />
+                 <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        placeholder="Contraseña"
+                        className="form-control my-4"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+
+                    <div className="py-4 text-center">
+                        <input
+                            type="submit"
+                            className="btn btn-primary"
+                            value="Iniciar Sesión"
+                        />
+                    </div>
+                </form>
+            </div>
+        </div>
         </MainLayout>
     );
 };

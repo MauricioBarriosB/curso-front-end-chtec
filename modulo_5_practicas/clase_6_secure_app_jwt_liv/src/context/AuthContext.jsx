@@ -13,7 +13,7 @@ export const AuthProvider = ({ children }) => {
         const storedUser = localStorage.getItem("user");
         if (storedUser) {
             const decryptedUser = decryptData(storedUser);
-            // console.log('* AuthContext storedUser -> decrypted :', decryptedUser)
+            // console.log('* AuthContext storedUser -> decrypted :', decryptedUser);
             setUser(decryptedUser);
         }
 
@@ -26,11 +26,10 @@ export const AuthProvider = ({ children }) => {
     }, []);
 
 
-    const login = (role, jwt) => {
+    const login = (userData, jwt) => {
 
-        // ** Guarda los datos encriptados en el localStorage al hacer login y signin : 
-
-        const userData = {role};
+        // ** Login y Signin -> save encrypted data to localStorage  : 
+        
         setUser(userData);
         localStorage.setItem("user", encryptData(userData));
 
@@ -45,7 +44,7 @@ export const AuthProvider = ({ children }) => {
         localStorage.removeItem("jwt");
     };
 
-    // ** isAuthenticated es verdadero o falso si viene el usuario en nuestro caso seria el jwt
+    // ** If isAuthenticated = true user and JWT is set :
 
     const value = {
         user,

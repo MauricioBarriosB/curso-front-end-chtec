@@ -16,15 +16,17 @@ const Signin = () => {
         let userData = {
             username: username,
             password: password,
-            roles: 'admin'
+            roles: 'guest'
         }
 
         try {
             const dataApi = await userSignIn(userData);
-            if (dataApi) {
-                login('admin', dataApi.jwt);
-                navigate('./dashboard'); // if role = admin, user, doctor redirect.
+            userData = {
+                name: dataApi.name,
+                roles: dataApi.roles
             }
+            login(userData, dataApi.jwt);
+            navigate('/home');
         } catch (error) {
             console.log('Error:', error);
         }
@@ -32,28 +34,48 @@ const Signin = () => {
 
     return (
         <MainLayout>
-            <h1>Crear Usuario</h1>
-            <form onSubmit={handleSignIn}>
-                <label htmlFor="username">Usuario:</label>
-                <input
-                    id="username"
-                    name="username"
-                    type="text"
-                    placeholder="Usuario"
-                    value={username}
-                    onChange={(e) => setUsername(e.target.value)}
-                />
-                <label htmlFor="password">Password:</label>
-                <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="Contraseña"
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                />
-                <button type="submit">Sign in</button>
-            </form>
+        <div className="container marketing">
+
+            <div className="row text-center">
+                <h2 className="text-primary pt-4">  <i className="las la-address-card"> </i> Crea Cuenta de Acceso en Portal LIV</h2>
+                <h5 className="pt-4 pb-4">
+                    En el siguiente formulario podrás crear una cuenta con perfil "Visita", y podras acceder al contenido del sitio, equipo médico, entre otros.
+                </h5>
+            </div>
+
+            <div className="card-body d-flex justify-content-center">
+                <form className="contact-form" onSubmit={handleSignIn}>
+                    <input
+                        id="username"
+                        name="username"
+                        type="text"
+                        placeholder="Usuario"
+                        className="form-control my-4"
+                        value={username}
+                        onChange={(e) => setUsername(e.target.value)}
+                        required 
+                    />
+                 <input
+                        id="password"
+                        name="password"
+                        type="password"
+                        placeholder="Contraseña"
+                        className="form-control my-4"
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+
+                    <div className="py-4 text-center">
+                        <input
+                            type="submit"
+                            className="btn btn-primary"
+                            value="Crear Cuenta"
+                        />
+                    </div>
+                </form>
+            </div>
+        </div>
         </MainLayout>
     );
 };
