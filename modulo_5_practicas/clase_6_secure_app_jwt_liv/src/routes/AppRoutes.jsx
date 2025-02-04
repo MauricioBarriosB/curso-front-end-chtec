@@ -3,9 +3,9 @@ import { AuthProvider } from "../context/AuthContext";
 import Home from "../pages/Home";
 import Signin from "../pages/Signin";
 import Login from "../pages/Login";
-import Dashboard from "../pages/Dashboard";
+import Patients from "../pages/Patients";
 import ProtectedRoute from "./ProtectedRoute";
-import SearchFlights from "../pages/SearchFlights";
+import Appointments from "../pages/Appointments";
 import MedicalTeam from "../pages/MedicalTeam";
 
 // ** Use HashRouter instead of Route due GitHub subfolder system  :
@@ -22,34 +22,35 @@ const AppRoutes = () => {
                     <Route
                         path="/home"
                         element={
-                            <ProtectedRoute allowedRoles={["admin", "guest"]}>
+                            <ProtectedRoute allowedRoles={["admin", "doctor", "guest"]}>
                                 <Home />
                             </ProtectedRoute>
                         }
                     />
 
+                    <Route
+                        path="/patients"
+                        element={
+                            <ProtectedRoute allowedRoles={["admin", "doctor"]}>
+                                <Patients />
+                            </ProtectedRoute>
+                        }
+                    />
 
-                    <Route
-                        path="/dashboard"
-                        element={
-                            <ProtectedRoute allowedRoles={["admin", "guest"]}>
-                                <Dashboard />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
-                        path="/search-flights"
-                        element={
-                            <ProtectedRoute allowedRoles={["admin", "guest"]}>
-                                <SearchFlights />
-                            </ProtectedRoute>
-                        }
-                    />
                     <Route
                         path="/medicalteam"
                         element={
-                            <ProtectedRoute allowedRoles={["admin"]}>
+                            <ProtectedRoute allowedRoles={["admin", "guest"]}>
                                 <MedicalTeam />
+                            </ProtectedRoute>
+                        }
+                    />
+
+                    <Route
+                        path="/appointments"
+                        element={
+                            <ProtectedRoute allowedRoles={["admin", "guest"]}>
+                                <Appointments />
                             </ProtectedRoute>
                         }
                     />

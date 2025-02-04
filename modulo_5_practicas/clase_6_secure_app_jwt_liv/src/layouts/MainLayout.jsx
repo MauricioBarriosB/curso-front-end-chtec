@@ -6,15 +6,7 @@ import livLogoHeader from "../assets/logo.svg";
 
 const MainLayout = ({ children }) => {
     const { user, logout } = useAuth();
-
     const [buttonTogg, setButtonTogg] = useState(false);
-
-    const handleOnClick = (e) => {
-        let temp = e.target.dataset.view;
-
-        // * handleViewSelect on parent app :
-        if (temp) onViewSelect(temp);
-    };
 
     return (
         <>
@@ -34,22 +26,21 @@ const MainLayout = ({ children }) => {
                                     </li>
                                 )}
 
-                                {user && (
+                                {(user?.roles === "admin" || user?.roles === "doctor") && (
                                     <li className="nav-item mx-3">
                                         <Link className="nav-link" to="/patients"> <i className="lab la-creative-commons-by"></i> Pacientes</Link>
                                     </li>
                                 )}
 
-                                {user && (
+                                {(user?.roles === "admin" || user?.roles === "guest") && (
                                     <li className="nav-item mx-3">
                                         <Link className="nav-link" to="/medicalteam"> <i className="las la-user-friends"></i> Equipo Médico</Link>
                                     </li>
                                 )}
 
-                                {user && (
-
+                                {(user?.roles === "admin" || user?.roles === "guest") && (
                                     <li className="nav-item mx-3">
-                                        <a className="nav-link" onClick={handleOnClick} data-view="AppointmentView"><i className="las la-inbox"></i> Citas</a>
+                                        <Link className="nav-link" to="/appointments"> <i className="las la-inbox"></i> Citas</Link>
                                     </li>
                                 )}
 
@@ -65,15 +56,11 @@ const MainLayout = ({ children }) => {
                                     </li>
                                 )}
 
-
-
-
                                 {user && (
                                     <li className="nav-item mx-3">
                                         <a className="nav-link" onClick={logout}>  <i className="las la-sign-out-alt"></i> Salir</a>
                                     </li>
                                 )}
-
 
                             </ul>
                         </div>
@@ -81,9 +68,7 @@ const MainLayout = ({ children }) => {
                 </nav>
             </header>
 
-
             <main>{children}</main>
-
 
             <footer className="footer">
                 <div className="container">

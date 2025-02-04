@@ -7,8 +7,6 @@ const api = axios.create({
 });
 
 // ** Función crear nueva cuenta de usaurio, requiere datos de usuario (stringify format) y x-api-key :
-// ** Recurso: users -> endpoint: signin 
-
 export const userSignIn = async (userInputData) => {
     try {
         const response = await api.post(
@@ -28,8 +26,6 @@ export const userSignIn = async (userInputData) => {
 };
 
 // ** Función login de usuario, requiere datos de usuario (stringify format) y x-api-key :
-// ** Recurso: users -> endpoint: login 
-
 export const userLogIn = async (userInputData) => {
     try {
         const response = await api.post(
@@ -49,13 +45,11 @@ export const userLogIn = async (userInputData) => {
 };
 
 // ** Función para extraer data restringida de doctores, requiere JWT :
-// ** Recurso: doctors 
-
-export const getAllDoctors = async () => {
+export const getAllDoctors = async (jwt) => {
     try {
         const response = await api.get(
             'doctors',
-            {headers: {'x-api-key' : import.meta.env.VITE_APP_API_KEY_HASHED }}
+            {headers: { 'Authorization' : `Bearer ${jwt}` }},
         )
         console.log('*', response.data);
         return response.data;
@@ -65,28 +59,10 @@ export const getAllDoctors = async () => {
 };
 
 // ** Función para extraer la data restringida de doctores por ID especialodad, requiere ID y JWT :
-// ** Recurso: doctors
-
-export const getDoctorsByIdSpeciality = async (id) => {
+export const getDoctorsByIdSpeciality = async (id, jwt) => {
     try {
         const response = await api.get(
             `doctors/${id}`, 
-            {headers: {'x-api-key' : import.meta.env.VITE_APP_API_KEY_HASHED }}
-        )
-        console.log('*', response.data);
-        return response.data;
-    } catch (error) {
-        alert( error.response.data.messages.error);
-    }
-};
-
-// ** Función para traer data restringida de pacientes, requiere JWT (validaciones desde el backend) :
-// ** Recurso: patients 
-
-export const getAllPatients = async (jwt) => {
-    try {
-        const response = await api.get(
-            'patients',
             {headers: { 'Authorization' : `Bearer ${jwt}` }},
         )
         console.log('*', response.data);
@@ -97,13 +73,25 @@ export const getAllPatients = async (jwt) => {
 };
 
 // ** Función para traer data de especialidades :
-// ** Recurso: Specialties
-
 export const getAllSpecialties = async () => {
     try {
         const response = await api.get(
             'specialties',
             {headers: {'x-api-key' : import.meta.env.VITE_APP_API_KEY_HASHED }}
+        )
+        console.log('*', response.data);
+        return response.data;
+    } catch (error) {
+        alert( error.response.data.messages.error);
+    }
+};
+
+// ** Función para traer data restringida de pacientes, requiere JWT (validaciones desde el backend) :
+export const getAllPatients = async (jwt) => {
+    try {
+        const response = await api.get(
+            'patients',
+            {headers: { 'Authorization' : `Bearer ${jwt}` }},
         )
         console.log('*', response.data);
         return response.data;
