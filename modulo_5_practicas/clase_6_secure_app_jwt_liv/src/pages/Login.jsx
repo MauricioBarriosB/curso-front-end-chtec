@@ -21,12 +21,14 @@ const Login = () => {
 
         try {
             const dataApi = await userLogIn(userData);
-            userData = {
-                name: dataApi.name,
-                roles: dataApi.roles
+            if (dataApi) {
+                userData = {
+                    name: dataApi.name,
+                    roles: dataApi.roles
+                }
+                login(userData, dataApi.jwt);
+                navigate('/home');
             }
-            login(userData, dataApi.jwt);
-            navigate('/home');
         } catch (error) {
             console.log('Error:', error);
         }
