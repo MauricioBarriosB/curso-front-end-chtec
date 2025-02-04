@@ -1,0 +1,7 @@
+
+
+Hooks personalizados:
+
+https://upmostly.com/tutorials/using-custom-react-hooks-simplify-forms
+
+https://developero.io/blog/react-js-design-patterns/custom-hook fetch mejorado
