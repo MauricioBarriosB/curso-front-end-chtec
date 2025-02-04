@@ -43,3 +43,17 @@ Mal planteo de la tarea practica :
 * hacer el login contra la API mediante el AuthContext.jsx de ahí llamar al servicio de API? AuthContext solo deberia teber 1 responsabilidad!
 
 npm install qs ::: para pasar a string los foms en axios : https://axios-http.com/docs/urlencoded
+
+Perfiles de Usuario:
+
+Nombre de usuario: admin
+contraseña: adminpass
+Perfil admin accede a: home, pacientes, equipo médico, citas.
+
+Nombre de usuario: doctor
+contraseña: doctorpass
+Perfil doctor accede a: home, pacientes.
+
+Nombre de usaurio: guest
+contraseña: guestpass
+Perfil guest accede a:  home, equipo médico, citas.
