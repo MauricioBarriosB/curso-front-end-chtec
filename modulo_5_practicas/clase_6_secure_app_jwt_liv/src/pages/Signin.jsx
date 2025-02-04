@@ -3,19 +3,20 @@ import { useAuth } from "../context/AuthContext";
 import MainLayout from "../layouts/MainLayout";
 import { useState } from "react";
 import { userSignIn } from '../services/DocsApi';
+import DOMPurify from "dompurify";
 
 const Signin = () => {
+    const {login} = useAuth();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { login } = useAuth();
     const navigate = useNavigate();
 
     const handleSignIn = async (e) => {
         e.preventDefault();
 
         let userData = {
-            username: username,
-            password: password,
+            username: DOMPurify.sanitize(username),
+            password: DOMPurify.sanitize(password),
             roles: 'guest'
         }
 
@@ -70,7 +71,7 @@ const Signin = () => {
                         <input
                             type="submit"
                             className="btn btn-primary"
-                            value="Crear Cuenta"
+                            value=" &raquo; Crear Cuenta"
                         />
                     </div>
                 </form>

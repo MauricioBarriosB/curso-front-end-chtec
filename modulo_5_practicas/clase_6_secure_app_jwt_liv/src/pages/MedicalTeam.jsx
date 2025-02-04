@@ -6,18 +6,16 @@ import MainLayout from "../layouts/MainLayout";
 import { getAllDoctors, getDoctorsByIdSpeciality } from "../services/DocsApi";
 
 const MedicalTeam = () => {
-    const { user } = useAuth();
-
+    const {jwt} = useAuth();
     const specialties = useRef([]); // * No reactive!
     const [list, setList] = useState([]);
-    const [error, setError] = useState(null);
 
-    // * Get Data from public API :
+    // * Get Data from API REST :
 
     useEffect(() => {
         const fetchDoctors = async () => {
             try {
-                const data = await getAllDoctors();
+                const data = await getAllDoctors(jwt);
                 console.log(data);
                 let jspec = [];
 
@@ -37,7 +35,7 @@ const MedicalTeam = () => {
                 specialties.current = uniJspec;
                 setList(data);
             } catch (error) {
-                console.log(error);
+                console.log('Error from API REST');
             }
         };
         fetchDoctors();
@@ -48,7 +46,7 @@ const MedicalTeam = () => {
     const handleSelectChange = (value) => {
         const fetchDoctors = async (value) => {
             try {
-                const data = await getDoctorsByIdSpeciality(value);
+                const data = await getDoctorsByIdSpeciality(value, jwt);
                 setList(data);
             } catch (error) {
                 console.log(error);
@@ -56,8 +54,6 @@ const MedicalTeam = () => {
         };
         fetchDoctors(value);
     };
-
-    if (error) return <p>Error:{error}</p>;
 
     return (
         <MainLayout>

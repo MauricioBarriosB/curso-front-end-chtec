@@ -4,13 +4,10 @@ import Button from "../commons/Button";
 import ModalSpecialties from "../commons/ModalSpecialties";
 import livLogo from "../assets/logo.svg";
 import MainLayout from "../layouts/MainLayout";
-
-
 import { getAllSpecialties } from "../services/DocsApi";
 
 const Home = () => {
     const { user } = useAuth();
-
     const [specialties, setSpecialties] = useState([]);
     const [open, setOpen] = useState(false);
     const [itemData, setItemData] = useState({ name: "", desc: "" });

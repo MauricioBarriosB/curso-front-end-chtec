@@ -3,19 +3,20 @@ import { useAuth } from "../context/AuthContext";
 import MainLayout from "../layouts/MainLayout";
 import { useState } from "react";
 import { userLogIn } from '../services/DocsApi';
+import DOMPurify from "dompurify";
 
 const Login = () => {
+    const {login} = useAuth();
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    const { login } = useAuth();
     const navigate = useNavigate();
 
     const handleLogin = async (e) => {
         e.preventDefault();
 
         let userData = {
-            username: username,
-            password: password
+            username: DOMPurify.sanitize(username),
+            password: DOMPurify.sanitize(password)
         }
 
         try {
@@ -69,7 +70,7 @@ const Login = () => {
                         <input
                             type="submit"
                             className="btn btn-primary"
-                            value="Iniciar Sesión"
+                            value=" &raquo; Iniciar Sesión"
                         />
                     </div>
                 </form>

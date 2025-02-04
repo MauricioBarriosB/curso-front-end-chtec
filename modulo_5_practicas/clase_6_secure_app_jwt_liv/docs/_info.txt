@@ -57,3 +57,18 @@ Perfil doctor accede a: home, pacientes.
 Nombre de usaurio: guest
 contraseña: guestpass
 Perfil guest accede a:  home, equipo médico, citas.
+
+PARA ENCRIPTAR POR SHA :
+
+// ** https://www.npmjs.com/package/crypto-js
+// ** https://dev.to/shubhamkhan/beginners-guide-to-aes-encryption-and-decryption-in-javascript-using-cryptojs-592
+
+
+/*
+export const encryptSHA1 = (data) => {
+    const hash = CryptoJS.SHA1(data);
+    return CryptoJS.enc.Hex.stringify(hash);
+};
+*/
+
+
