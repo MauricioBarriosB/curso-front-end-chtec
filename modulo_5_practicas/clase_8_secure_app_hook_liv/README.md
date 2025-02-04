@@ -33,12 +33,10 @@ He aplicado el Hook personalizado para manejo de todos los formularios (aqui se 
 
 * Nombre de usuario: admin
 * Contraseña: adminpass
-* Perfil admin tiene acceso a las siguientes páginas: home, pacientes, equipo médico, citas.
-
+* Perfil admin tiene acceso a las siguientes páginas: home, pacientes, equipo médico, citas.<br/><br/>
 * Nombre de usuario: doctor
 * Contraseña: doctorpass
-* Perfil doctor tiene acceso a las siguientes páginas: home, pacientes.
-
+* Perfil doctor tiene acceso a las siguientes páginas: home, pacientes.<br/><br/>
 * Nombre de usaurio: guest 
 * Contraseña: guestpass
 * Perfil guest (invitado) tiene acceso a las siguientes páginas:  home, equipo médico, citas.
