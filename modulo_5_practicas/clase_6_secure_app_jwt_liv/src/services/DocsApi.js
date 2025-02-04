@@ -18,7 +18,7 @@ export const userSignIn = async (userInputData) => {
                 }
             }
         )
-        console.log('*', response.data);
+        // console.log('*', response.data);
         return response.data;
     } catch (error) {
         alert(error.response.data.messages.error);
@@ -37,7 +37,7 @@ export const userLogIn = async (userInputData) => {
                 }
             }
         )
-        console.log('*', response.data);
+        // console.log('*', response.data);
         return response.data;
     } catch (error) {
         alert( error.response.data.messages.error);
@@ -51,7 +51,7 @@ export const getAllDoctors = async (jwt) => {
             'doctors',
             {headers: { 'Authorization' : `Bearer ${jwt}` }},
         )
-        console.log('*', response.data);
+        // console.log('*', response.data);
         return response.data;
     } catch (error) {
         alert( error.response.data.messages.error);
@@ -65,7 +65,7 @@ export const getDoctorsByIdSpeciality = async (id, jwt) => {
             `doctors/${id}`, 
             {headers: { 'Authorization' : `Bearer ${jwt}` }},
         )
-        console.log('*', response.data);
+        // console.log('*', response.data);
         return response.data;
     } catch (error) {
         alert( error.response.data.messages.error);
@@ -79,7 +79,7 @@ export const getAllSpecialties = async () => {
             'specialties',
             {headers: {'x-api-key' : import.meta.env.VITE_APP_API_KEY_HASHED }}
         )
-        console.log('*', response.data);
+        // console.log('*', response.data);
         return response.data;
     } catch (error) {
         alert( error.response.data.messages.error);
@@ -93,7 +93,7 @@ export const getAllPatients = async (jwt) => {
             'patients',
             {headers: { 'Authorization' : `Bearer ${jwt}` }},
         )
-        console.log('*', response.data);
+        // console.log('*', response.data);
         return response.data;
     } catch (error) {
         alert( error.response.data.messages.error);

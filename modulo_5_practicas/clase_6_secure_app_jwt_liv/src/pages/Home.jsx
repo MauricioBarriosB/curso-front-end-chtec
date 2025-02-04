@@ -16,7 +16,6 @@ const Home = () => {
         try {
             const dataApi = await getAllSpecialties();
             setSpecialties(dataApi);
-            console.log(dataApi);
         } catch (error) {
             console.log(error);
         }

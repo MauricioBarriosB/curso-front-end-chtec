@@ -23,7 +23,6 @@ function Appointments() {
         let snDesc = DOMPurify.sanitize(desc);
         
         alert(user.name + ', su solicitud será procesada a la brevedad.');
-        console.log(email);
     };
 
     return (

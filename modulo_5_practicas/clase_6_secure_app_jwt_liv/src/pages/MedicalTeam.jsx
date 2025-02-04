@@ -16,7 +16,6 @@ const MedicalTeam = () => {
         const fetchDoctors = async () => {
             try {
                 const data = await getAllDoctors(jwt);
-                console.log(data);
                 let jspec = [];
 
                 // * Set the specialies as unique ID object array :

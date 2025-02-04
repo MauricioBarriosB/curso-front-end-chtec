@@ -14,7 +14,6 @@ const Patients = () => {
         try {
             const dataApi = await getAllPatients(jwt);
             setPatients(dataApi);
-            console.log(dataApi);
         } catch (error) {
             console.log(error);
         }
