@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button';
+import Button from '../commons/Button';
 
 type id = string | number;
 
@@ -10,14 +10,11 @@ interface DoctorCardProps {
     specialty_name: string;
     biography: string;
     photo: string;
+    onOpen: (React.MouseEventHandler<HTMLButtonElement>);
 }
 
-const DoctorCard: React.FC<DoctorCardProps> = ({ id, fname, lname, specialty_name, biography, photo }) => {
-
-    const handleClick = (e:React.SyntheticEvent<HTMLButtonElement>) => {
-        alert(e.currentTarget.dataset.desc);
-    };
-
+const DoctorCard: React.FC<DoctorCardProps> = ({ id, fname, lname, specialty_name, biography, photo, onOpen }) => {
+    
     return (
         <div className="col-lg-4">
             <div className="card dmx-auto">
@@ -28,7 +25,7 @@ const DoctorCard: React.FC<DoctorCardProps> = ({ id, fname, lname, specialty_nam
                     <h5 className="card-text"><i className="las la-book-medical"></i> Especialidad: {specialty_name}</h5>
                     <hr />
                     <p className="text-primary">• Biografía: {biography}</p>
-                    <Button desc={`Descripción ID # ${id}: ${fname} ${lname}: ${biography}`} label="Ver más detalle" buttonOnClick={handleClick} />
+                    <Button id={id} desc="" label="Ver más detalle" buttonOnClick={onOpen} />
                 </div>
             </div>
         </div>
