@@ -1,0 +1,12 @@
+https://react.dev/learn/updating-arrays-in-state
+
+https://react.dev/learn/typescript
+
+https://www.robinwieruch.de/typescript-react-useref/
+
+https://www.youtube.com/watch?v=bq56o84gZyQ    ts components
+
+
+npm install qs
+
+npm install -D @types/qs   tipos ts para qs
