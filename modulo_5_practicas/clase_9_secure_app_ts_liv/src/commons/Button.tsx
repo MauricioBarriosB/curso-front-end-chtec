@@ -1,12 +1,12 @@
 import React from 'react';
 
-type id = string | number;
+// ** Prop with No Event definitions :  
+// ** buttonOnClick: () => void;
 
 interface ButtonProps {
-    id: id;
+    id: string | number;
     desc: string;
     label: string;
-    // buttonOnClick: () => void; // ** Prop with No Event definitions! 
     buttonOnClick: (React.MouseEventHandler<HTMLButtonElement>);
 }
 

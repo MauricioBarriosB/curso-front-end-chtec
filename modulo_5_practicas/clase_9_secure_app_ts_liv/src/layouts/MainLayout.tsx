@@ -1,12 +1,17 @@
+import { useState } from 'react';
 import { Link } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { useState } from 'react';
 import livLogo from "../assets/logo_white.svg";
 import livLogoHeader from "../assets/logo.svg";
 
-const MainLayout = ({ children }) => {
-    const { user, logout } = useAuth();
-    const [buttonTogg, setButtonTogg] = useState(false);
+type Props = {
+    children: string | JSX.Element | JSX.Element[]
+}
+
+const MainLayout = ({ children }: Props) => {
+
+    const { userRoles, logout } = useAuth();
+    const [buttonTogg, setButtonTogg] = useState<boolean>(false);
 
     return (
         <>
@@ -20,43 +25,43 @@ const MainLayout = ({ children }) => {
                         <div className={!buttonTogg ? 'collapse navbar-collapse' : 'collapse navbar-collapse collapse show'} id="collapsible-navbar">
                             <ul className="navbar-nav">
 
-                                {user && (
+                                {userRoles && (
                                     <li className="nav-item mx-3">
-                                        <Link to="/home" className="nav-link">< i className="las la-home"></i> Home</Link>
+                                        <Link to="/home" className="nav-link" >< i className="las la-home"></i> Home</Link>
                                     </li>
                                 )}
 
-                                {(user?.roles === "admin" || user?.roles === "doctor") && (
+                                {(userRoles === "admin" || userRoles === "doctor") && (
                                     <li className="nav-item mx-3">
                                         <Link to="/patients" className="nav-link"> <i className="lab la-creative-commons-by"></i> Pacientes</Link>
                                     </li>
                                 )}
 
-                                {(user?.roles === "admin" || user?.roles === "guest") && (
+                                {(userRoles === "admin" || userRoles === "guest") && (
                                     <li className="nav-item mx-3">
                                         <Link to="/medicalteam" className="nav-link"> <i className="las la-user-friends"></i> Equipo Médico</Link>
                                     </li>
                                 )}
 
-                                {(user?.roles === "admin" || user?.roles === "guest") && (
+                                {(userRoles === "admin" || userRoles === "guest") && (
                                     <li className="nav-item mx-3">
                                         <Link to="/appointments" className="nav-link"> <i className="las la-inbox"></i> Citas</Link>
                                     </li>
                                 )}
 
-                                {!user && (
+                                {!userRoles && (
                                     <li className="nav-item mx-3">
                                         <Link to="/login" className="nav-link"> <i className="las la-sign-in-alt"></i> Login</Link>
                                     </li>
                                 )}
 
-                                {!user && (
+                                {!userRoles && (
                                     <li className="nav-item mx-3">
                                         <Link to="/signin" className="nav-link"> <i className="las la-address-card"></i> Crear Cuenta</Link>
                                     </li>
                                 )}
 
-                                {user && (
+                                {userRoles && (
                                     <li className="nav-item mx-3">
                                         <a className="nav-link" onClick={logout}>  <i className="las la-sign-out-alt"></i> Salir</a>
                                     </li>
@@ -76,7 +81,7 @@ const MainLayout = ({ children }) => {
 
                     <div className="pb-4">
                         <div className="d-inline-block">
-                            <i className="las la-phone"></i> 800 600 2010
+                            <i className="las la-phone"></i> 800 900 60606
                         </div>
                         <div className="d-inline-block">
                             <i className="las la-envelope ps-4"></i> contacto@livhospital.com

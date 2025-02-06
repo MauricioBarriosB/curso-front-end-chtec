@@ -25,6 +25,7 @@ function ModalPortal({onClose, userData }) {
             <i className="las la-file-alt"></i> Ficha {userData.fname} {userData.lname}
           </h4>
         </div>
+
         <div className="card-body">
         <img
             src={userData.photo}
@@ -37,6 +38,7 @@ function ModalPortal({onClose, userData }) {
         <div className="card-footer text-body-secondary">
           <Button label="Cerrar Modal" onClick={onClose} />
         </div>
+        
       </div>
     </div>,
     document.getElementById("modal-root")

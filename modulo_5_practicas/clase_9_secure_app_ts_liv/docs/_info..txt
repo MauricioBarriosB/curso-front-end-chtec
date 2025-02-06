@@ -1,3 +1,8 @@
+
+Event Types React TS:
+
+https://nishanthan-k.medium.com/typescript-event-types-and-event-handling-in-react-a-complete-guide-for-beginners-22293ff4b8a0  Ts Events
+
 https://react.dev/learn/updating-arrays-in-state
 
 https://react.dev/learn/typescript
@@ -6,7 +11,57 @@ https://www.robinwieruch.de/typescript-react-useref/
 
 https://www.youtube.com/watch?v=bq56o84gZyQ    ts components
 
+https://www.youtube.com/watch?v=BCg4U1FzODs    ts course
 
 npm install qs
 
 npm install -D @types/qs   tipos ts para qs
+
+npm install react-router-dom --save
+
+npm install -D @types/dompurify
+
+
+Ctrl + Shift + P    ->    Restart TS Server
+
+---------------------------------------------------------------
+
+https://medium.com/@kimtai.developer/react-typescript-authentication-guide-using-context-api-5c82f2530eb1    ts auth provider
+
+
+https://eliya-b.medium.com/react-with-typescript-by-example-pass-props-to-children-6d37332ee434  ts layouts
+
+------------------------------------------------------------------
+
+
+type Param  = {[key: string]: string} | {a:number} | {a:boolean, b:string, c?:never}
+
+function getSomething(param: Param) {}
+
+export const exp = {
+    getSomething: (param: {a:number}) => getSomething(param), //matches {a:number}
+    getSomething2: (param: {a:string}) => getSomething(param) //matches {[key:string]: string}
+  }
+
+
+  https://www.youtube.com/watch?v=HrV0HeGnzIw  
+  https://www.youtube.com/watch?v=HrV0HeGnzIw   custom hook ts
+
+  https://www.youtube.com/watch?v=397259iiZ6M&t=71s REVVV custom hook ts
+
+  https://www.youtube.com/watch?v=I2Bgi0Qcdvc  REVVV custom hook ts
+
+
+  https://www.youtube.com/watch?v=uDCBSnWkuH0  form steps
+
+
+
+Luego revizar como aceptar 2 parametros de este tipo para el hook ts:
+
+const useForm = <T extends Object>(initialValue: T) => {
+}
+
+
+(async () => {
+	await someAsyncFunction();
+})();

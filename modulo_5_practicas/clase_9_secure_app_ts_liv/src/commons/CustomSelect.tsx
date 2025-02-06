@@ -1,8 +1,8 @@
 import React from 'react';
 
 type Option = {
-    label: string;
-    value: string | number;
+    id: string | number;
+    name: string;
 }
 
 interface SelectProps {
@@ -18,8 +18,8 @@ const CustomSelect: React.FC<SelectProps> = ({ placeholder, options, onSelect })
             <select className="form-select" style={{ maxWidth: "350px", cursor: "pointer" }} onChange={onSelect}>
                 <option value="0">{placeholder}</option>
                 {options.map((option) => (
-                    <option key={option.value} value={option.value}>
-                        {option.label}
+                    <option key={option.id} value={option.id}>
+                        {option.name}
                     </option>
                 ))}
             </select>
