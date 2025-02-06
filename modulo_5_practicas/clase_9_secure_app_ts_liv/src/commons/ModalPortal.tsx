@@ -1,12 +1,19 @@
 import ReactDOM from "react-dom";
+import Button from './Button';
+
+// ** Verify two types in same Event :
+// ** onClose: (React.MouseEventHandler<HTMLDivElement>);
+// ** onClose: (React.MouseEventHandler<HTMLButtonElement>);
 
 interface ModalProps {
-    fname: string;
-    lname: string;
-    onClose: (React.MouseEventHandler<HTMLDivElement>);
+    name: string;
+    photo: string;
+    biography: string;
+    specialty_name: string;
+    onClose: (any);
 }
 
-const ModalPortal: React.FC<ModalProps> = ({fname, lname, onClose}) => {
+const ModalPortal: React.FC<ModalProps> = ({ name, photo, biography, specialty_name, onClose }) => {
 
     return ReactDOM.createPortal(
         <div onClick={onClose}
@@ -21,13 +28,27 @@ const ModalPortal: React.FC<ModalProps> = ({fname, lname, onClose}) => {
                 alignItems: "center",
                 justifyContent: "center",
                 zIndex: 900,
-            }}
-            >
-            <div onClick={(e) => e.stopPropagation()} className="card text-center m-4">
+            }}>
+
+            <div onClick={(e) => e.stopPropagation()} className="card text-center m-4"  style={{ maxWidth:600}}>
                 <div className="card-header">
                     <h4 className="mt-1 text-primary">
-                        <i className="las la-file-alt"></i> Ficha {fname} {lname}
+                        <i className="las la-file-alt"></i> Ficha {name}
                     </h4>
+                </div>
+
+                <div className="card-body">
+                    <img
+                        className="card-img-top" 
+                        src={photo}
+                        alt="doctor"
+                    />
+                    <h5 className="card-text"><i className="las la-book-medical pt-4"></i> Especialidad: {specialty_name}</h5>
+                    <div className="pt-2 d-flex align-items-center"> <p className="text-primary">• Biografía: {biography}</p> </div>
+                </div>
+
+                <div className="card-footer text-body-secondary">
+                    <Button id="0" desc="0" label="Cerrar Modal" buttonOnClick={onClose} />
                 </div>
 
             </div>
