@@ -2,7 +2,7 @@
 import DoctorList from './components/DoctorList';
 import livLogo from "./assets/logo.svg";
 
-const App: React.FC = () => {
+const App = () => {
     return (
         <div className="container marketing">
             <div className="text-center py-4">

@@ -1,14 +1,10 @@
-import React from 'react'
-
-interface PersonProps {
+interface IPerson {
     name: string
     age: number
     occupation: string
 }
 
-const PersonComponent: React.FC<PersonProps> = (props) => {
-    const { name, age, occupation } = props
-
+const SampleComponent = ({ name, age, occupation }: IPerson) => {
     return (
         <div>
             <h5>Person Details:</h5>
@@ -19,16 +15,14 @@ const PersonComponent: React.FC<PersonProps> = (props) => {
     )
 }
 
-export default PersonComponent;
-
+export default SampleComponent;
 
 /*
-import PersonComponent from './commons/PersonComponent';
-
+import SampleComponent from './commons/SampleComponent';
 const personData = {
     name: 'John Doe',
     age: 30,
     occupation: 'Médico Cirujano.'
 }
-<PersonComponent {...personData} />
+<SampleComponent {personData} />
 */

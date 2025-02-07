@@ -1,54 +1,55 @@
 import { createContext, useContext, useEffect, useState } from "react";
-//import { decryptData, encryptData } from "../utils/Encryption;
+import { decryptData, encryptData } from '../utils/Encryption';
 
-interface ProviderProps {
-    userName: string,
-    userRoles: string,
-    jwt: string,
-    login(name: string, roles: string, jwt: string): void,
-    logout(): void,
+type ContextProps = {
+    children: JSX.Element | JSX.Element[]
 }
 
-const AuthContext = createContext<ProviderProps>({
-    userName: '',
-    userRoles: '',
-    jwt: '',
+interface IAuthContext {
+    userName: string | null,
+    userRoles: string | null,
+    jwt: string | null,
+    login(name: string, roles: string, jwt: string): void,
+    logout(): void,
+};
+
+// ** Create  Auth Context whith null values :
+
+const AuthContext = createContext<IAuthContext>({
+    userName: null,
+    userRoles: null,
+    jwt: null,
     login: () => { },
     logout: () => { }
-})
+});
 
-export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
-
+export const AuthProvider = ({ children }: ContextProps) => {
     const [userName, setUserName] = useState<string | null>(null);
     const [userRoles, setUserRoles] = useState<string | null>(null);
     const [jwt, setJWT] = useState<string | null>(null);
+
     const [loading, setLoading] = useState<boolean>(true);
 
     useEffect(() => {
-        const storedUserName = localStorage.getItem("userName");
-        if (storedUserName) {
-            // const decryptedUser = decryptData(storedUser);
-            // console.log('* AuthContext storedUser -> decrypted :', decryptedUser);
-            setUserName(storedUserName);
-        }
+        const lsUserName = localStorage.getItem("userName");
+        if (lsUserName) setUserName(decryptData(lsUserName));
 
-        const storedJWT = localStorage.getItem("jwt");
-        if (storedJWT) {
-            //setJWT(storedJWT);
-        }
+        const lsUserRoles = localStorage.getItem("userRoles");
+        if (lsUserRoles) setUserName(decryptData(lsUserRoles));
+
+        const lsJWT = localStorage.getItem("jwt");
+        if (lsJWT) setJWT(lsJWT);
         setLoading(false);
     }, []);
 
+    // ** Login y Signin -> save encrypted data to localStorage  :
 
     const login = (userName: string, userRoles: string, jwt: string) => {
-
-        // ** Login y Signin -> save encrypted data to localStorage  :  // setItem("user", encryptData(userData));
-
         setUserName(userName);
         setUserRoles(userRoles);
         setJWT(jwt);
-        localStorage.setItem("userName", userName);
-        localStorage.setItem("userRoles", userRoles);
+        localStorage.setItem("userName", encryptData(userName));
+        localStorage.setItem("userRoles", encryptData(userRoles));
         localStorage.setItem("jwt", jwt);
     };
 
@@ -61,21 +62,18 @@ export const AuthProvider = ({ children }: { children: React.ReactNode }) => {
         localStorage.removeItem("jwt");
     };
 
-    // ** If isAuthenticated = true user and JWT is set :
+    // ** Expose the values context to all Childrens  :
 
-
-    const value: any = {
+    const propsValues: IAuthContext = {
         userName,
         userRoles,
         jwt,
         login,
         logout,
-        //isAuthenticated: !!user,
     };
 
-
     return (
-        <AuthContext.Provider value={value}>
+        <AuthContext.Provider value={propsValues}>
             {!loading ? children : <p>Cargando...</p>}
         </AuthContext.Provider>
     );

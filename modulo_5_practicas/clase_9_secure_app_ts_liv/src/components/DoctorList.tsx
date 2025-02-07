@@ -1,15 +1,15 @@
 import React, { useEffect, useRef, useState } from 'react';
 import DoctorCard from './DoctorCard';
-import ModalPortal from "../commons/ModalPortal";
+import DoctorModal from "./DoctorModal";
 import CustomSelect from "../commons/CustomSelect";
 import { getAllDoctors, getDoctorsByIdSpeciality } from "../services/DocsApi";
 
-type Option = {
+type OptionTypes = {
     id: string | number;
     name: string;
 }
 
-interface DoctorListDataProps {
+interface IDoctorList {
     id: string | number;
     fname: string;
     lname: string;
@@ -18,35 +18,36 @@ interface DoctorListDataProps {
     photo: string;
 }
 
-const DoctorList: React.FC = () => {
+const DoctorList = () => {
 
     // ** Doctors fetch data Hooks :
-    const [data, setData] = useState<DoctorListDataProps[]>([]);
+    const [data, setData] = useState<IDoctorList[]>([]);
     const [error, setError] = useState<string | null>(null);
 
     // ** Doctors Modals Hooks :
-    const [userData, setUserData] = useState<DoctorListDataProps[]>([]);
+    // const userData = useRef<IDoctorList>();
+    const [userData, setUserData] = useState<IDoctorList[]>([]);
     const [open, setOpen] = useState<boolean>(false);
 
     // ** Specialties Selections Hooks no reactive :
     // ** const specialties = useRef<(Option | null)[]>([]); // Default Null
-    const specialties = useRef<(Option)[]>([]);
+    const specialties = useRef<(OptionTypes)[]>([]);
 
     useEffect(() => {
         // * Fetch Data from API REST -> JWT Validation :
         const fetchDoctors = async () => {
-            let data: any = getAllDoctors('jwt');
-            try {
-                data = await data;
-            } catch (error) {
-                setError('Error en la carga de datos!');
+            const data = await getAllDoctors('jwt');
+            if (!data.error) {
+                setData(data);
+            } else {
+                setError(data.messages.error);
                 return;
             }
 
             // ** Process Specialties from result (avoid multiples API Request)
             // ** TS array of objects inline definition => let variable:Array<{id:number, name:string}> = [];
 
-            let jspec: Option[] = [];
+            let jspec: OptionTypes[] = [];
             for (let i in data) jspec.push({ id: data[i].specialty_id, name: data[i].specialty_name });
             specialties.current = jspec.filter((value, index, array) => index == array.findIndex(item => item.id == value.id));
             setData(data);
@@ -56,27 +57,25 @@ const DoctorList: React.FC = () => {
 
     const handleOpen = (event: React.SyntheticEvent<HTMLButtonElement>) => {
         let filterDoc = data.filter(x => x.id == event.currentTarget.dataset.id);
+        //docData.current = filterDoc[0];  // console.log(docData.current.fname);
         setUserData(filterDoc);
         setOpen(true);
-        console.log('* Open ModalPortal!');
     };
 
     const handleClose = () => {
         setOpen(false);
-        console.log('* Close ModalPortal!');
     };
 
     const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
         let id: string = event.currentTarget.value;
         const fetchDoctors = async () => {
-            let data: any = getDoctorsByIdSpeciality(id, 'jwt');
-            try {
-                data = await data;
-            } catch (error) {
-                setError('Error en la carga de datos!');
+            const data = await getDoctorsByIdSpeciality(id, 'jwt');
+            if (!data.error) {
+                setData(data);
+            } else {
+                setError(data.messages.error);
                 return;
             }
-            setData(data);
         };
         fetchDoctors();
     };
@@ -112,13 +111,13 @@ const DoctorList: React.FC = () => {
             </div>
 
             {open && (
-                <ModalPortal
+                <DoctorModal
                     name={`${userData[0].fname} ${userData[0].lname}`}
                     photo={userData[0].photo}
                     biography={userData[0].biography}
                     specialty_name={userData[0].specialty_name}
                     onClose={handleClose}>
-                </ModalPortal>
+                </DoctorModal>
             )}
 
         </>

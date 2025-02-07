@@ -1,7 +1,6 @@
 import { useState } from 'react';
 
 // ** Hook to store and process values of any inputs (values Number | Boolean) :
-
 /*
 const [speed, setSpeed] = useOption<number>(2);
 console.log(speed);

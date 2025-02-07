@@ -1,7 +1,7 @@
 import React from 'react';
 import Button from '../commons/Button';
 
-interface DoctorCardProps {
+type DoctorCardTypes = {
     id: string | number;
     name: string;
     specialty_name: string;
@@ -9,8 +9,8 @@ interface DoctorCardProps {
     onOpen: (React.MouseEventHandler<HTMLButtonElement>);
 }
 
-const DoctorCard: React.FC<DoctorCardProps> = ({ id, name, specialty_name, photo, onOpen }) => {
-    
+const DoctorCard = ({ id, name, specialty_name, photo, onOpen }: DoctorCardTypes) => {
+
     return (
         <div className="col-lg-4">
             <div className="card dmx-auto">

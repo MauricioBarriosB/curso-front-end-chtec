@@ -10,41 +10,39 @@ interface IFormData {
     password: string;
 }
 
-const Login: React.FC = () => {
+const Login = () => {
     const { login } = useAuth();
     const navigate = useNavigate();
     const [error, setError] = useState<string | null>(null);
 
-    const useFormCallBack = () => {
-        if (!status.current) {
+    //** useForm Hook to validate forms data :
+
+    const useFormCallBack = (flagSubmit: boolean) => {
+        if (!flagSubmit) {
             setError('Campos inválidos, debes ingresar como mímimo 4 caractéres!');
         } else {
-            submitApiValues();
+            submitValues();
         }
     };
 
     let initialValue: IFormData = { username: '', password: '' };
-    const { form, status, handleChange, handleSubmit } = useForm(initialValue, useFormCallBack);
-    const { username, password }: any = form;
+    const { form, handleChange, handleSubmit } = useForm(initialValue, useFormCallBack);
+    const { username, password }: { username?: '', password?: '' } = form;
 
-    const submitApiValues = async () => {
-        try {
-            const dataApi = await userLogIn(form);
-            if (!dataApi.error) {
-                login(dataApi.name, dataApi.roles, dataApi.jwt);
-                navigate('/home');
-            } else {
-                console.log('* Error code :', dataApi.error);
-                setError(dataApi.messages.error);
-            }
-        } catch (error) {
-            console.log(error);
+    //** Passing validation -> submit form :
+
+    const submitValues = async () => {
+        const data = await userLogIn(form);
+        if (!data.error) {
+            login(data.name, data.roles, data.jwt);
+            navigate('/home');
+        } else {
+            setError(data.messages.error);
         }
     };
 
     return (
         <MainLayout>
-
             <div className="container marketing">
 
                 <div className="row text-center">
@@ -57,9 +55,7 @@ const Login: React.FC = () => {
                 {error && <p className="text-danger text-center">{error}</p>}
 
                 <div className="card-body d-flex justify-content-center">
-
                     <form className="contact-form" autoComplete="off" onSubmit={handleSubmit}>
-
                         <input
                             id="username"
                             name="username"
