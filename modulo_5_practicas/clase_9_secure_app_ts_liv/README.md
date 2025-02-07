@@ -17,7 +17,7 @@ https://capacitaenlinea.cl/demohospitalapi/public/api
 
 Todo ello para tener persistencia de datos, creación y validación de JWT (mediante backend), validación de x-api-key, recursos de aplicación, registro de acceso, etc.
 
-He integrado solicitudes GET, POST, PUT, DELETE, por ejemplo, en vista Patients.jsx rol administrador y doctor tienen acceso al CRUD de pacientes, entre otros.
+He integrado solicitudes GET, POST, PUT, DELETE, por ejemplo, en vista Appointments.tsx rol "administrador" y "guest" tienen acceso al CRUD de citas, entre otros.
 
 ## 2 Integración de TypeScript en Componentes:
 
@@ -33,6 +33,7 @@ Todas las peticiones y operaciones poseen manejo de errores, todos los hooks fue
 
 ## 5 Rutas de React Router DOM y Perfilamiento:
 
+* Rutas acceso público: login y signin.<br/><br/>
 * Nombre de usuario: admin
 * Contraseña: adminpass
 * Perfil admin tiene acceso a las siguientes páginas: home, pacientes, equipo médico, citas.<br/><br/>

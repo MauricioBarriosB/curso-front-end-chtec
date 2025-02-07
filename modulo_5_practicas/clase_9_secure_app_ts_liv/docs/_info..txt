@@ -1,18 +1,4 @@
 
-Event Types React TS:
-
-https://nishanthan-k.medium.com/typescript-event-types-and-event-handling-in-react-a-complete-guide-for-beginners-22293ff4b8a0  Ts Events
-
-https://react.dev/learn/updating-arrays-in-state
-
-https://react.dev/learn/typescript
-
-https://www.robinwieruch.de/typescript-react-useref/
-
-https://www.youtube.com/watch?v=bq56o84gZyQ    ts components
-
-https://www.youtube.com/watch?v=BCg4U1FzODs    ts course
-
 npm install qs
 
 npm install -D @types/qs   tipos ts para qs
@@ -33,7 +19,6 @@ https://eliya-b.medium.com/react-with-typescript-by-example-pass-props-to-childr
 
 ------------------------------------------------------------------
 
-
 type Param  = {[key: string]: string} | {a:number} | {a:boolean, b:string, c?:never}
 
 function getSomething(param: Param) {}
@@ -43,17 +28,43 @@ export const exp = {
     getSomething2: (param: {a:string}) => getSomething(param) //matches {[key:string]: string}
   }
 
-
   https://www.youtube.com/watch?v=HrV0HeGnzIw  
   https://www.youtube.com/watch?v=HrV0HeGnzIw   custom hook ts
-
   https://www.youtube.com/watch?v=397259iiZ6M&t=71s REVVV custom hook ts
-
   https://www.youtube.com/watch?v=I2Bgi0Qcdvc  REVVV custom hook ts
-
-
   https://www.youtube.com/watch?v=uDCBSnWkuH0  form steps
 
+------------------------------------------------------------------
+
+
+
+Event Types React TS:
+
+https://www.typescriptlang.org/docs/handbook/utility-types.html
+
+https://www.dhiwise.com/post/a-beginner-guide-to-using-react-context-with-typescript
+
+https://nishanthan-k.medium.com/typescript-event-types-and-event-handling-in-react-a-complete-guide-for-beginners-22293ff4b8a0  Ts Events
+
+https://react.dev/learn/updating-arrays-in-state
+
+https://react.dev/learn/typescript
+
+https://codingpotions.com/typescript-diferencias-interfaces-type-alias/#:~:text=Los%20type%20alias%20tienen%20uni%C3%B3n,que%20solo%20permiten%20ser%20extendidas.
+
+https://www.robinwieruch.de/typescript-react-useref/
+https://www.youtube.com/watch?v=bq56o84gZyQ    ts components
+https://www.youtube.com/watch?v=BCg4U1FzODs    ts course
+https://www.youtube.com/watch?v=8HE657KssxE    ts context
+https://react-typescript-cheatsheet.netlify.app/docs/basic/getting-started/context/ chamge theme with context
+https://www.youtube.com/watch?v=ymSRTXT-iK4   te Generics props
+
+
+------------------------------------------------------------------
+
+// ** Verify two types in same Event :
+// ** onClose: (React.MouseEventHandler<HTMLDivElement>);
+// ** onClose: (React.MouseEventHandler<HTMLButtonElement>);
 
 
 Luego revizar como aceptar 2 parametros de este tipo para el hook ts:

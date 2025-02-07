@@ -1,18 +1,17 @@
 import React from 'react';
 
-type Option = {
+interface IOptions {
     id: string | number;
     name: string;
 }
 
-interface SelectProps {
+type CustomSelectTypes = {
     placeholder?: string;
-    options: Option[];
+    options: IOptions[];
     onSelect: (React.ChangeEventHandler<HTMLSelectElement>);
 };
 
-const CustomSelect: React.FC<SelectProps> = ({ placeholder, options, onSelect }) => {
-
+const CustomSelect = ({ placeholder, options, onSelect }: CustomSelectTypes) => {
     return (
         <div className="d-flex justify-content-center">
             <select className="form-select" style={{ maxWidth: "350px", cursor: "pointer" }} onChange={onSelect}>

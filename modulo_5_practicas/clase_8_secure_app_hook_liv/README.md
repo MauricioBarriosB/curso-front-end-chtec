@@ -31,6 +31,7 @@ He aplicado el Hook personalizado para manejo de todos los formularios (aqui se 
 
 ## 6 Rutas de React Router DOM y Perfilamiento:
 
+* Rutas acceso público: login y signin.<br/><br/>
 * Nombre de usuario: admin
 * Contraseña: adminpass
 * Perfil admin tiene acceso a las siguientes páginas: home, pacientes, equipo médico, citas.<br/><br/>

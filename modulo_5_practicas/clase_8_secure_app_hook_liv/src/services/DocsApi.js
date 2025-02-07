@@ -1,10 +1,10 @@
 import axios from "axios";
 import qs from "qs";
 
-const api = axios.create({
-    baseURL: import.meta.env.VITE_APP_API_URL,
-    timeout: 1000,
-});
+const API_HASH_KEY = import.meta.env.VITE_APP_API_KEY_HASHED;
+const API_BASE_URL = import.meta.env.VITE_APP_API_URL;
+
+const api = axios.create({baseURL: API_BASE_URL, timeout: 1000});
 
 // ** Función crear nueva cuenta de usaurio, requiere datos de usuario (stringify format) y x-api-key :
 export const userSignIn = async (userInputData) => {
@@ -14,7 +14,7 @@ export const userSignIn = async (userInputData) => {
             qs.stringify(userInputData),
             {headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
-                    'x-api-key' : import.meta.env.VITE_APP_API_KEY_HASHED 
+                    'x-api-key' : API_HASH_KEY
                 }
             }
         )
@@ -32,7 +32,7 @@ export const userLogIn = async (userInputData) => {
             qs.stringify(userInputData),
             {headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
-                    'x-api-key' : import.meta.env.VITE_APP_API_KEY_HASHED 
+                    'x-api-key' : API_HASH_KEY
                 }
             }
         )
@@ -75,7 +75,7 @@ export const getAllSpecialties = async () => {
     try {
         const response = await api.get(
             'specialties',
-            {headers: {'x-api-key' : import.meta.env.VITE_APP_API_KEY_HASHED }}
+            {headers: {'x-api-key' : API_HASH_KEY }}
         )
         // console.log('*', response.data);
         return response.data;

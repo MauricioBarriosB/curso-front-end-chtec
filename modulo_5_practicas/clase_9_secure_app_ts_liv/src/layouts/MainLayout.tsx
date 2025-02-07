@@ -4,14 +4,16 @@ import { useAuth } from "../context/AuthContext";
 import livLogo from "../assets/logo_white.svg";
 import livLogoHeader from "../assets/logo.svg";
 
-type Props = {
+type MainLayoutProps = {
     children: string | JSX.Element | JSX.Element[]
 }
 
-const MainLayout = ({ children }: Props) => {
+const MainLayout = ({ children }: MainLayoutProps) => {
 
     const { userRoles, logout } = useAuth();
     const [buttonTogg, setButtonTogg] = useState<boolean>(false);
+
+    //alert(userRoles);
 
     return (
         <>

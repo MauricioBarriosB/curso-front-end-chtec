@@ -1,20 +1,15 @@
 import ReactDOM from "react-dom";
-import Button from './Button';
+import Button from '../commons/Button';
 
-// ** Verify two types in same Event :
-// ** onClose: (React.MouseEventHandler<HTMLDivElement>);
-// ** onClose: (React.MouseEventHandler<HTMLButtonElement>);
-
-interface ModalProps {
+type ModalPortalTypes = {
     name: string;
     photo: string;
     biography: string;
     specialty_name: string;
-    onClose: (any);
+    onClose: any;
 }
 
-const ModalPortal: React.FC<ModalProps> = ({ name, photo, biography, specialty_name, onClose }) => {
-
+const ModalPortal = ({ name, photo, biography, specialty_name, onClose }: ModalPortalTypes) => {
     return ReactDOM.createPortal(
         <div onClick={onClose}
             style={{
@@ -30,7 +25,7 @@ const ModalPortal: React.FC<ModalProps> = ({ name, photo, biography, specialty_n
                 zIndex: 900,
             }}>
 
-            <div onClick={(e) => e.stopPropagation()} className="card text-center m-4"  style={{ maxWidth:600}}>
+            <div onClick={(e) => e.stopPropagation()} className="card text-center m-4" style={{ maxWidth: 600 }}>
                 <div className="card-header">
                     <h4 className="mt-1 text-primary">
                         <i className="las la-file-alt"></i> Ficha {name}
@@ -39,7 +34,7 @@ const ModalPortal: React.FC<ModalProps> = ({ name, photo, biography, specialty_n
 
                 <div className="card-body">
                     <img
-                        className="card-img-top" 
+                        className="card-img-top"
                         src={photo}
                         alt="doctor"
                     />
