@@ -1,6 +1,7 @@
 import { Routes, Route, HashRouter } from "react-router-dom";
 import { AuthProvider } from "../context/AuthContext";
 import ProtectedRoute from "./ProtectedRoute";
+
 import Login from "../pages/Login";
 import Signin from "../pages/Signin";
 import Home from "../pages/Home";

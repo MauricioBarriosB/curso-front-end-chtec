@@ -5,12 +5,13 @@ npm install -D @types/qs   tipos ts para qs
 
 npm install react-router-dom --save
 
-npm install -D @types/dompurify
+npm install -D @types/dompurifyclear
 
 
 Ctrl + Shift + P    ->    Restart TS Server
 
 ---------------------------------------------------------------
+
 
 https://blog.logrocket.com/async-await-typescript/
 
