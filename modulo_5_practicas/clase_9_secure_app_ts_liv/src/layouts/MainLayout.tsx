@@ -4,16 +4,13 @@ import { useAuth } from "../context/AuthContext";
 import livLogo from "../assets/logo_white.svg";
 import livLogoHeader from "../assets/logo.svg";
 
-type MainLayoutProps = {
-    children: string | JSX.Element | JSX.Element[]
+type MainLayoutTypes = {
+    children: React.JSX.Element | React.JSX.Element[] 
 }
 
-const MainLayout = ({ children }: MainLayoutProps) => {
-
+const MainLayout = ({ children }: MainLayoutTypes) => {
     const { userData, logout } = useAuth();
     const [buttonTogg, setButtonTogg] = useState<boolean>(false);
-
-    //alert(userData.roles);
 
     return (
         <>
@@ -35,13 +32,13 @@ const MainLayout = ({ children }: MainLayoutProps) => {
 
                                 {(userData.roles === "admin" || userData.roles === "doctor") && (
                                     <li className="nav-item mx-3">
-                                        <Link to="/patients" className="nav-link"> <i className="lab la-creative-commons-by"></i> Pacientes</Link>
+                                        <Link to="/patients" className="nav-link"> <i className="las la-user-friends"></i> Pacientes</Link>
                                     </li>
                                 )}
 
                                 {(userData.roles === "admin" || userData.roles === "guest") && (
                                     <li className="nav-item mx-3">
-                                        <Link to="/medicalteam" className="nav-link"> <i className="las la-user-friends"></i> Equipo Médico</Link>
+                                        <Link to="/medicalteam" className="nav-link">  <i className="las la-cog"></i> Equipo Médico</Link>
                                     </li>
                                 )}
 

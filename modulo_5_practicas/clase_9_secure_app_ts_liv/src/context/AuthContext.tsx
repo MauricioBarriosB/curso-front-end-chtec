@@ -9,7 +9,7 @@ type LoginTypes = {
 }
 
 type ContextTypes = {
-    children: JSX.Element | JSX.Element[]
+    children: React.JSX.Element | React.JSX.Element[] 
 }
 
 interface IAuthContext {
@@ -37,8 +37,8 @@ export const AuthProvider = ({ children }: ContextTypes) => {
         if (lsUserData) {
             let dsUserData:LoginTypes = decryptData(lsUserData);
             setUserData(dsUserData);
-            setLoading(false);
         }
+        setLoading(false);
     }, []);
 
     // ** Login y Signin -> save encrypted data to localStorage  :
@@ -63,7 +63,7 @@ export const AuthProvider = ({ children }: ContextTypes) => {
 
     return (
         <AuthContext.Provider value={propsValues}>
-            {!loading ? children : <p>Cargando...</p>}
+            {!loading ? children : <p> Cargando datos...</p>}
         </AuthContext.Provider>
     );
 };

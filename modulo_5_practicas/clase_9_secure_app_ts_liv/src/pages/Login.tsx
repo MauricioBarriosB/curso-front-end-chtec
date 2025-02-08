@@ -35,7 +35,7 @@ const Login = () => {
         const data = await userLogIn(form);
         if (!data.error) {
             login(data);
-             navigate('/home');
+            navigate('/home');
         } else {
             setError(data.messages.error);
         }
