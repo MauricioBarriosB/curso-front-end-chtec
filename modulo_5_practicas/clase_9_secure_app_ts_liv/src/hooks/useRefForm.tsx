@@ -2,13 +2,12 @@ import { useState } from 'react';
 import DOMPurify from "dompurify";
 
 // ** Hook to clean and check min lenght of Form Inputs -> Check with {JSON.stringify(form)}
-//     const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>  | React.ChangeEventHandler<HTMLTextAreaElement>) => {
 
-const useForm = (initialValue: object, useFormCallBack: Function) => {
+const useRefForm = (initialValue: object, useFormCallBack: Function) => {
 
-    const [form, setform] = useState(initialValue); 
+    const [form, setform] = useState(initialValue);
 
-    const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>  | React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>) => {
         const { name, value } = target;
         setform({ ...form, [name]: DOMPurify.sanitize(value) });
     }
@@ -35,4 +34,4 @@ const useForm = (initialValue: object, useFormCallBack: Function) => {
     } as const;
 }
 
-export default useForm;
+export default useRefForm;

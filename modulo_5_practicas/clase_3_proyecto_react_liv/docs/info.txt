@@ -42,28 +42,6 @@ https://github.com/adalid-cl
 
 ==================================================================
 
-AQUI TODOS PUEDEN INGRESAR CURSOS (NO HAY LIMITE DE PETICIONES DE CURSOS SALVO QUE ESTE EN PROG)
-
-MANTENEDOR DE CURSOS ACTIVOS POR COLABORADOR: SI LA SOLICITUD DEL COLABORADOR ES RECIBIDA POR VRP, 
-SE EVALUAN CURSOS EN TODA LA INSTITUCION POR ESO ES IMPORTANTE DESACOPLAR ESTE MODULO.
-NOMBRE CURSOS, RUT ALUMNO, NOMBRE, FECHA, POR EXCEL, SE SUMAN LOS DATOS 
-(ES PARA SABER QUE CURSOS EN GLOBAL TIENE EL ALUMNO ANTES DE ACEPTAR LA PETICION) 
-SE AGREGA MNODULO DENTRO DE LA PESTAÑA PERFIL VRP.
-
-sera en un subdominio NO servidor nuevo?
-empezaremos desde 0 SI?
-carga mensual dinamica xls (activay y desactivar) colaborador puede tener mas de un jefe (2)
-
-person con distintas jefeturas tiene varias opciones al pedir curso :
-(seran asociadas por cargo ya que cada jefe es un cargo) 
-al matricular por excel se asigna segundo cargo y jefatura
-
-reporte para jefatura estados de cursos
-envio correo encuesta (envia carina)
-envio correo a jefe cuando colaborador pide un curso para que lo apeube o no (automatico se agrega)
-envio correo a persona a vizando a jefe que persona respondio (envia carina)
-
-administrador de presupuestos (como lo que ya esta en DNC)
 
 
 
