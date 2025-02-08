@@ -27,7 +27,7 @@ Todas las peticiones y operaciones poseen manejo de errores (mensajes errores de
 
 ## 5 Aplicación Correcta de las Reglas de los Hooks:
 
-He aplicado el Hook personalizado para manejo de todos los formularios (aqui se he utilizado DOMPurify en los inputs, entre otras validaciones).
+He aplicado el Hook personalizado para manejo de formularios (aqui se he utilizado DOMPurify en los inputs, entre otras validaciones).
 
 ## 6 Rutas de React Router DOM y Perfilamiento:
 

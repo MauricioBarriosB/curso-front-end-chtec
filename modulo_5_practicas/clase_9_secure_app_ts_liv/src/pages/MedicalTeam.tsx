@@ -1,7 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
-import DoctorCard from './DoctorCard';
-import DoctorModal from "./DoctorModal";
+import DoctorCard from '../components/DoctorCard';
+import DoctorModal from "../components/DoctorModal";
 import CustomSelect from "../commons/CustomSelect";
+import MainLayout from "../layouts/MainLayout";
 import { getAllDoctors, getDoctorsByIdSpeciality } from "../services/DocsApi";
 
 type OptionTypes = {
@@ -15,8 +16,10 @@ interface IDoctorList {
     lname: string;
     specialty_name: string;
     biography: string;
-    photo: string;
+    photo: string
 }
+
+const initModal = { id: '', fname: '', lname: '', specialty_name: '', biography: '', photo: '' }
 
 const DoctorList = () => {
 
@@ -25,8 +28,7 @@ const DoctorList = () => {
     const [error, setError] = useState<string | null>(null);
 
     // ** Doctors Modals Hooks :
-    // const userData = useRef<IDoctorList>();
-    const [userData, setUserData] = useState<IDoctorList[]>([]);
+    const test = useRef<IDoctorList>(initModal);
     const [open, setOpen] = useState<boolean>(false);
 
     // ** Specialties Selections Hooks no reactive :
@@ -50,15 +52,13 @@ const DoctorList = () => {
             let jspec: OptionTypes[] = [];
             for (let i in data) jspec.push({ id: data[i].specialty_id, name: data[i].specialty_name });
             specialties.current = jspec.filter((value, index, array) => index == array.findIndex(item => item.id == value.id));
-            setData(data);
         };
         fetchDoctors();
     }, []);
 
     const handleOpen = (event: React.SyntheticEvent<HTMLButtonElement>) => {
         let filterDoc = data.filter(x => x.id == event.currentTarget.dataset.id);
-        //docData.current = filterDoc[0];  // console.log(docData.current.fname);
-        setUserData(filterDoc);
+        test.current = filterDoc[0]; 
         setOpen(true);
     };
 
@@ -67,7 +67,7 @@ const DoctorList = () => {
     };
 
     const handleSelect = (event: React.ChangeEvent<HTMLSelectElement>) => {
-        let id:string = event.currentTarget.value;
+        let id: string = event.currentTarget.value;
         const fetchDoctors = async () => {
             const data = await getDoctorsByIdSpeciality(id, 'jwt');
             if (!data.error) {
@@ -83,11 +83,13 @@ const DoctorList = () => {
     if (error) return <p>{error}</p>;
 
     return (
-        <>
+        <MainLayout>
             <div>
-                <div className="container marketing">
-                    <h4 className="text-center py-2">Carga de Datos de Doctores mediante API Externa | Componentes TS: DoctorCard.tsx y Button.tsx</h4>
-
+                <div className="container marketing text-center">
+                    <h2 className="text-primary pt-4">Equipo Médico</h2>
+                    <h4 className="pt-4 pb-4">
+                        A continuación presentamos a nuestro Equipo Médico.
+                    </h4>
                     <CustomSelect
                         placeholder='Filtrar por especialidad'
                         options={specialties.current}
@@ -108,20 +110,20 @@ const DoctorList = () => {
                     </div>
 
                 </div>
+
+                {open && (
+                    <DoctorModal
+                        name={`${test.current.fname} ${test.current.lname}`}
+                        photo={test.current.photo}
+                        biography={test.current.biography}
+                        specialty_name={test.current.specialty_name}
+                        onClose={handleClose}>
+                    </DoctorModal>
+                )}
+
             </div>
-
-            {open && (
-                <DoctorModal
-                    name={`${userData[0].fname} ${userData[0].lname}`}
-                    photo={userData[0].photo}
-                    biography={userData[0].biography}
-                    specialty_name={userData[0].specialty_name}
-                    onClose={handleClose}>
-                </DoctorModal>
-            )}
-
-        </>
+        </MainLayout>
     );
 };
 
-export default DoctorList;
+export default DoctorList; 

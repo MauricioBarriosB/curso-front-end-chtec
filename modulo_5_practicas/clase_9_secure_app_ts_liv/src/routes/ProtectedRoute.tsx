@@ -7,12 +7,12 @@ type RouteProps = {
 }
 
 const ProtectedRoute = ({ children, allowedRoles }: RouteProps) => {
-    const { userRoles } = useAuth();
+    const { userData } = useAuth();
 
-    if (!userRoles) {
+    if (!userData.roles) {
         return <Navigate to="/login" />;
     }
-    if (!allowedRoles.includes(userRoles)) {
+    if (!allowedRoles.includes(userData.roles)) {
         return <Navigate to="/login" />;
     }
 

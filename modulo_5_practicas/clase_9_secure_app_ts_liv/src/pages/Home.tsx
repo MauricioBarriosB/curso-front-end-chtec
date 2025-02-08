@@ -18,8 +18,7 @@ interface IitemData {
 }
 
 const Home = () => {
-    const { userName } = useAuth();
-    const { userRoles } = useAuth();
+    const { userData } = useAuth();
 
     const [specialties, setSpecialties] = useState<ISpecialties[]>([]);
 
@@ -65,7 +64,7 @@ const Home = () => {
                     <h2 className="text-primary">Bienvenido a Liv Hospital</h2>
                     <h4 className="pt-3 pb-4">
 
-                        Estás autenticado como <strong>{userName}</strong> con perfil <strong>{userRoles}</strong>.<br />
+                        Estás autenticado como <strong>{userData.name}</strong> con perfil <strong>{userData.roles}</strong>.<br />
 
                         A continuación presentamos nuestros principales servicios
                         hospitalarios.

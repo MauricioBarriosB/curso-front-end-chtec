@@ -36,7 +36,7 @@ const Signin = () => {
         const valuesIns = { ...form, roles: 'guest' };
         const data = await userSignIn(valuesIns);
         if (!data.error) {
-            login(data.name, data.roles, data.jwt);
+            login(data);
             navigate('/home');
         } else {
             setError(data.messages.error);

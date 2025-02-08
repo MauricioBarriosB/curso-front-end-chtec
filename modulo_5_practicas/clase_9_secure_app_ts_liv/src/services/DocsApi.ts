@@ -6,11 +6,13 @@ const API_HASH_KEY = import.meta.env.VITE_APP_API_KEY_HASHED;
 const API_BASE_URL = import.meta.env.VITE_APP_API_URL;
 const api = axios.create({ baseURL: API_BASE_URL, timeout: 1000 });
 
-// ** Función crear nueva cuenta de usaurio, requiere datos de usuario (stringify format) y x-api-key :
+// ** ################ USERS API REQUEST ################ ** //
+
+// ** Create new user account function, requires user data (stringify format) & x-api-key :
+
 export const userSignIn = async (userInputData: object) => {
     try {
-        const response = await api.post(
-            'users/signin',
+        const response = await api.post('users/signin',
             qs.stringify(userInputData), {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -25,11 +27,11 @@ export const userSignIn = async (userInputData: object) => {
     }
 };
 
-// ** Función login de usuario, requiere datos de usuario (stringify format) y x-api-key :
+// ** Login user function, requires user data (stringify format) & x-api-key :
+
 export const userLogIn = async (userInputData: object) => {
     try {
-        const response = await api.post(
-            'users/login',
+        const response = await api.post('users/login',
             qs.stringify(userInputData), {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -44,11 +46,13 @@ export const userLogIn = async (userInputData: object) => {
     }
 };
 
-// ** Función para extraer data restringida de doctores, requiere JWT :
+// ** ################ DOCTORS API REQUEST ################ ** //
+
+// ** Function to extract restricted data from doctors, requires JWT :
+
 export const getAllDoctors = async (jwt: string) => {
     try {
-        const response = await api.get(
-            'doctors',
+        const response = await api.get('doctors',
             { headers: { 'Authorization': `Bearer ${jwt}` } },
         )
         return response.data;
@@ -57,11 +61,11 @@ export const getAllDoctors = async (jwt: string) => {
     }
 };
 
-// ** Función para extraer la data restringida de doctores por ID especialodad, requiere ID y JWT :
-export const getDoctorsByIdSpeciality = async (id: string, jwt: string) => {
+// ** Function to extract restricted data from doctors by specialty ID, requires ID and JWT :
+
+export const getDoctorsByIdSpeciality = async (id: string | number, jwt: string) => {
     try {
-        const response = await api.get(
-            `doctors/${id}`,
+        const response = await api.get(`doctors/${id}`,
             { headers: { 'Authorization': `Bearer ${jwt}` } },
         )
         return response.data;
@@ -70,11 +74,11 @@ export const getDoctorsByIdSpeciality = async (id: string, jwt: string) => {
     }
 };
 
-// ** Función para traer data de especialidades :
+// ** Function to fetch data from hospital/doctors specialties :
+
 export const getAllSpecialties = async () => {
     try {
-        const response = await api.get(
-            'specialties',
+        const response = await api.get('specialties',
             { headers: { 'x-api-key': API_HASH_KEY } }
         )
         return response.data;
@@ -83,15 +87,103 @@ export const getAllSpecialties = async () => {
     }
 };
 
-// ** Función para traer data restringida de pacientes, requiere JWT (validaciones desde el backend) :
-export const getAllPatients = async (jwt: string) => {
+// ** ################ PATIENTS API REQUEST ################ ** //
+
+// ** Function to fetch restricted patient data, requires JWT (validations from the backend) :
+
+export const getAllPatients = async (jwt:string | unknown) => {
     try {
-        const response = await api.get(
-            'patients',
+        const response = await api.get('patients',
             { headers: { 'Authorization': `Bearer ${jwt}` } },
         )
         return response.data;
     } catch (error: any) {
         return(error.response.data.messages.error);
+    }
+};
+
+// ** ################ APPOINTMENTS API REQUEST ################ ** //
+
+// ** Function to fetch appointments, requires JWT (validations from the backend) :
+
+export const getAllAppointments = async (jwt:string | unknown) => {
+    try {
+        const response = await api.get('appointments',
+            { headers: { 'Authorization': `Bearer ${jwt}` } },
+        )
+        return response.data;
+    } catch (error: any) {
+        return(error.response.data.messages.error);
+    }
+};
+
+// ** Function to create appointment, requires user input & JWT (validations from the backend) :
+
+export const createAppointment = async (userInputData: object, jwt:string) => {
+    try {
+        const response = await api.post('appointments',
+            qs.stringify(userInputData), {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': `Bearer ${jwt}` 
+                }
+            }
+        )
+        return response.data;
+    } catch (error) {
+        const axiosError = error as AxiosError;
+        return axiosError.response?.data;
+    }
+};
+
+// ** Function to delete appointment, requires ID & JWT (validations from the backend) :
+
+export const deleteAppointment = async (id:number, jwt:string) => {
+    try {
+        const response = await api.delete(`appointments/${id}`,
+            { headers: { 'Authorization': `Bearer ${jwt}` } },
+        )
+        return response.data;
+    } catch (error) {
+        const axiosError = error as AxiosError;
+        return axiosError.response?.data;
+    }
+};
+
+// ** Function to update appointment, requires ID, user input & JWT (validations from the backend) :
+
+export const updateAppointment = async (id:number, userInputData: object, jwt:string) => {
+    try {
+        const response = await api.put(`appointments/${id}`,
+            qs.stringify(userInputData), {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': `Bearer ${jwt}` 
+                }
+            }
+        )
+        return response.data;
+    } catch (error) {
+        const axiosError = error as AxiosError;
+        return axiosError.response?.data;
+    }
+};
+
+// ** Function to set attended appointment , requires ID, user input & JWT (validations from the backend) :
+
+export const attendedAppointment = async (id:number, userInputData: object, jwt:string) => {
+    try {
+        const response = await api.patch(`appointments/${id}`,
+            qs.stringify(userInputData), {
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Authorization': `Bearer ${jwt}` 
+                }
+            }
+        )
+        return response.data;
+    } catch (error) {
+        const axiosError = error as AxiosError;
+        return axiosError.response?.data;
     }
 };

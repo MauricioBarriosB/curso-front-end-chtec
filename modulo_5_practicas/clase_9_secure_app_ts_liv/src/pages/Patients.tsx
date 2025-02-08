@@ -1,22 +1,34 @@
 import { useAuth } from "../context/AuthContext";
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import MainLayout from "../layouts/MainLayout";
 import { getAllPatients } from "../services/DocsApi";
 import DOMPurify from "dompurify";
 
+interface IPatients {
+    id: string | number;
+    rut: string;
+    fname: string;
+    lname: string;
+    age: string;
+    specialty_name: string;
+    diagnosis: string;
+    doctor_name: string
+}
+
 const Patients = () => {
-    const { user, jwt } = useAuth();
-    const [patients, setPatients] = useState([]);
-    const [query, setQuery] = useState("");
-    const [error, setError] = useState(null);
+    const { userData } = useAuth();
+    const [patients, setPatients] = useState<IPatients[]>([]);
+    const [query, setQuery] = useState<string>('');
+    const [error, setError] = useState<string | null>();
+    const patientsRef = useRef<IPatients[]>([]);
 
     const fetchPatients = async () => {
-        try {
-            const dataApi = await getAllPatients(jwt);
-            setPatients(dataApi);
-            console.log(dataApi);
-        } catch (error) {
-            console.log(error);
+        const data = await getAllPatients(userData.jwt);
+        if (!data.error) {
+            setPatients(data);
+            patientsRef.current = data;
+        } else {
+            setError(data.messages.error);
         }
     };
 
@@ -24,21 +36,21 @@ const Patients = () => {
         fetchPatients();
     }, []);
 
-    const handleSearch = async (e) => {
+    const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setQuery(event.currentTarget.value)
+    }
+
+    const handleSearch = async (event: React.FormEvent<HTMLFormElement>) => {
+        event.preventDefault();
+        console.log(patientsRef.current);
         setError(null);
-        try {
-            const dataApi = await getAllPatients(jwt);
-            const filPatients = dataApi.filter((fpat) =>
-                fpat.fname.toLowerCase().includes(DOMPurify.sanitize(query).toLowerCase()) ||
-                fpat.lname.toLowerCase().includes(DOMPurify.sanitize(query).toLowerCase())
-            );
-            setPatients(filPatients);
-            if (filPatients.length === 0) {
-                setError("El nombre de paciente no existe.");
-            }
-        } catch (error) {
-            console.log(error);
-        }
+
+        const filPatients = patientsRef.current.filter((fpat: IPatients) =>
+            fpat.fname.toLowerCase().includes(DOMPurify.sanitize(query).toLowerCase()) ||
+            fpat.lname.toLowerCase().includes(DOMPurify.sanitize(query).toLowerCase())
+        );
+        setPatients(filPatients);
+        if (filPatients.length === 0) setError("El nombre de paciente no existe.");
     };
 
     return (
@@ -48,7 +60,7 @@ const Patients = () => {
                 <div className="row text-center">
                     <h2 className="text-primary pt-4">Registro de Pacientes</h2>
                     <h4 className="pt-4 pb-3">
-                        Según su perfil de <strong>{user.roles}</strong>, tiene acceso a la información y registro de pacientes.<br />
+                        Según su perfil de <strong>{userData.roles}</strong>, tiene acceso a la información y registro de pacientes.<br />
                     </h4>
 
                     <form onSubmit={handleSearch}>
@@ -56,13 +68,13 @@ const Patients = () => {
                             <input
                                 type="text"
                                 className="form-control"
-                                style={{ paddingBottom:"10px"}} 
+                                style={{ paddingBottom: "10px" }}
                                 value={query}
-                                onChange={(e) => setQuery(e.target.value)}
+                                onChange={handleOnChange}
                                 placeholder="Nombre paciente"
                             />
-                        </label> 
-                        <button type="submit" className="btn btn-primary btn-sm" style={{ height: "40px", paddingTop:"8px"}} >  Buscar Paciente </button>
+                        </label>
+                        <button type="submit" className="btn btn-primary btn-sm" style={{ height: "40px", paddingTop: "8px" }} >  Buscar Paciente </button>
                     </form>
                 </div>
 
@@ -77,8 +89,8 @@ const Patients = () => {
                         <ul>
                             {patients.map((patient) => (
                                 <p key={patient.id}>
-                                    RUT: {patient.rut} | Nombre: {patient.fname} {patient.lname} | Edad:  {patient.age} | Especialidad: {patient.specialty_name}
-                                    <br /> Diagnóstico: {patient.diagnosis}  por <strong>{patient.doctor_name}  </strong>
+                                    RUT: {patient.rut} | Nombre: <strong> {patient.fname} {patient.lname} </strong> | Edad:  {patient.age} | Especialidad: {patient.specialty_name}
+                                    <br /> Diagnóstico: {patient.diagnosis} por {patient.doctor_name}
                                 </p>
                             ))}
                         </ul>

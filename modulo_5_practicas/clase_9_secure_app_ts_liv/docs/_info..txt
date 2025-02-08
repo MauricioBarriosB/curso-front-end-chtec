@@ -12,6 +12,8 @@ Ctrl + Shift + P    ->    Restart TS Server
 
 ---------------------------------------------------------------
 
+https://blog.logrocket.com/async-await-typescript/
+
 https://medium.com/@kimtai.developer/react-typescript-authentication-guide-using-context-api-5c82f2530eb1    ts auth provider
 
 
@@ -76,3 +78,13 @@ const useForm = <T extends Object>(initialValue: T) => {
 (async () => {
 	await someAsyncFunction();
 })();
+
+
+
+type UserDataTypes = typeof initUser;
+const initUser = {name:'',}
+
+    const login = (data: ContexLoginTypes) => {
+        setJWT(data.jwt);
+        const {jwt, ...userData} = data;  // reducer extrae jwt (key y value)
+        setUserData(userData);

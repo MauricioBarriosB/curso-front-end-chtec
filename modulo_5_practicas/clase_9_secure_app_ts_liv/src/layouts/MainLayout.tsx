@@ -10,10 +10,10 @@ type MainLayoutProps = {
 
 const MainLayout = ({ children }: MainLayoutProps) => {
 
-    const { userRoles, logout } = useAuth();
+    const { userData, logout } = useAuth();
     const [buttonTogg, setButtonTogg] = useState<boolean>(false);
 
-    //alert(userRoles);
+    //alert(userData.roles);
 
     return (
         <>
@@ -27,43 +27,43 @@ const MainLayout = ({ children }: MainLayoutProps) => {
                         <div className={!buttonTogg ? 'collapse navbar-collapse' : 'collapse navbar-collapse collapse show'} id="collapsible-navbar">
                             <ul className="navbar-nav">
 
-                                {userRoles && (
+                                {userData.roles && (
                                     <li className="nav-item mx-3">
                                         <Link to="/home" className="nav-link" >< i className="las la-home"></i> Home</Link>
                                     </li>
                                 )}
 
-                                {(userRoles === "admin" || userRoles === "doctor") && (
+                                {(userData.roles === "admin" || userData.roles === "doctor") && (
                                     <li className="nav-item mx-3">
                                         <Link to="/patients" className="nav-link"> <i className="lab la-creative-commons-by"></i> Pacientes</Link>
                                     </li>
                                 )}
 
-                                {(userRoles === "admin" || userRoles === "guest") && (
+                                {(userData.roles === "admin" || userData.roles === "guest") && (
                                     <li className="nav-item mx-3">
                                         <Link to="/medicalteam" className="nav-link"> <i className="las la-user-friends"></i> Equipo Médico</Link>
                                     </li>
                                 )}
 
-                                {(userRoles === "admin" || userRoles === "guest") && (
+                                {(userData.roles === "admin" || userData.roles === "guest") && (
                                     <li className="nav-item mx-3">
                                         <Link to="/appointments" className="nav-link"> <i className="las la-inbox"></i> Citas</Link>
                                     </li>
                                 )}
 
-                                {!userRoles && (
+                                {!userData.roles && (
                                     <li className="nav-item mx-3">
                                         <Link to="/login" className="nav-link"> <i className="las la-sign-in-alt"></i> Login</Link>
                                     </li>
                                 )}
 
-                                {!userRoles && (
+                                {!userData.roles && (
                                     <li className="nav-item mx-3">
                                         <Link to="/signin" className="nav-link"> <i className="las la-address-card"></i> Crear Cuenta</Link>
                                     </li>
                                 )}
 
-                                {userRoles && (
+                                {userData.roles && (
                                     <li className="nav-item mx-3">
                                         <a className="nav-link" onClick={logout}>  <i className="las la-sign-out-alt"></i> Salir</a>
                                     </li>
