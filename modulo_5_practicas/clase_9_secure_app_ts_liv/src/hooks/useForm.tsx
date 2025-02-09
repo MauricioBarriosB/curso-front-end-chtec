@@ -1,8 +1,7 @@
 import { useState } from 'react';
 import DOMPurify from "dompurify";
 
-// ** Hook to clean and check min lenght of Form Inputs -> Check with {JSON.stringify(form)}
-//     const handleChange = ({ target }: React.ChangeEvent<HTMLInputElement>  | React.ChangeEventHandler<HTMLTextAreaElement>) => {
+// ** Hook to clean, reset and check form min lenght -> Form Inputs -> Check with {JSON.stringify(form)}
 
 const useForm = (initialValue: object, useFormCallBack: Function) => {
 
@@ -15,12 +14,13 @@ const useForm = (initialValue: object, useFormCallBack: Function) => {
 
     const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-
+        
         let flagSubmit: boolean = true;
         for (const [key, value] of Object.entries(form)) {
-            console.log(`* key: ${key} -> value: ${value}`);
 
-            if (value.length < 4) {
+            // console.log(`* key: ${key} -> value: ${value}`);
+
+            if (key.length < 4 || value.length < 4) {
                 flagSubmit = false;
                 break;
             }
@@ -28,10 +28,17 @@ const useForm = (initialValue: object, useFormCallBack: Function) => {
         useFormCallBack(flagSubmit);
     };
 
+    const resetForm = () => {
+        let resetKeys : Record<string, string> = {};
+        for (const [key] of Object.entries(form)) resetKeys[key]  = '';
+        setform(resetKeys);
+    };
+
     return {
         form,
         handleChange,
-        handleSubmit
+        handleSubmit,
+        resetForm
     } as const;
 }
 

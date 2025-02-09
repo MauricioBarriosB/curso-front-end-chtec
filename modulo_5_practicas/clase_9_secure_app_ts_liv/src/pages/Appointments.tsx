@@ -1,7 +1,8 @@
 import { useAuth } from "../context/AuthContext";
-//import {useState} from "react";
+import { useState, useEffect } from "react";
 import MainLayout from "../layouts/MainLayout";
 import useForm from "../hooks/useForm";
+import { createAppointment, getAppointments, getAppointmentsByUserId} from '../services/DocsApi';
 
 interface IFormData {
     email: string;
@@ -11,62 +12,62 @@ interface IFormData {
     desc: string;
 }
 
+interface IAppointments extends IFormData {
+    id: number | null;
+    name: string;
+}
+
 function Appointments() {
     const { userData } = useAuth();
-    //const [error, setError] = useState<string | null>(null);
+    const [formMsgError, setFormMsgError] = useState<string | null>(null);
+    const [formMsgSucce, setFormMsgSucce] = useState<string | null>(null);
 
+    const [appointments, setAppointments] = useState<IAppointments[]>([]);
+    const [appoMsg, setAppoMsg] = useState<string>('Cargando...');
+    
     //** useForm Hook to validate forms data :
 
     const useFormCallBack = (flagSubmit: boolean) => {
         if (!flagSubmit) {
-            //setError('Campos inválidos, debes ingresar como mímimo 4 caractéres!');
+            setFormMsgError('Campos inválidos, debes ingresar como mímimo 4 caractéres!');
+            setFormMsgSucce(null);
         } else {
             submitValues();
         }
     };
 
-    let initialValue: IFormData = { 
-        email: '', 
-        doctor: '',
-        date:'',
-        specialty:'',
-        desc:''
-    };
+    let initialValue: IFormData = { email: '', doctor: '', date: '', specialty: '', desc: '' };
 
-    const { form, handleChange, handleSubmit } = useForm(initialValue, useFormCallBack);
-    const { email, doctor, date, specialty, desc }: { 
-        email?: '', 
-        doctor?: '' 
-        date?: '' 
-        specialty?: '' 
-        desc?: ''} = form;
+    const { form, handleChange, handleSubmit, resetForm } = useForm(initialValue, useFormCallBack);
+    const { email, doctor, date, specialty, desc }: { email?: '', doctor?: '', date?: '', specialty?: '', desc?: '' } = form;
 
     //** Passing validation -> submit form :
 
-    function submitValues() {
-
-        console.log(userData.id, form);
-        /*
-        if (isValid.current) {
-            alert(user.name + ', su solicitud será procesada a la brevedad.');
-            console.log(values);
-            resetForm();
-            setError('');
-        } else {
-            setError('Campos inválidos, debes ingresar como mímimo 4 caractéres');
-        }
-        */
-
-        /*
-        const data = await userLogIn(form);
+    const submitValues = async () => {
+        const data = await createAppointment(form, userData.jwt);
         if (!data.error) {
-            login(data);
-                navigate('/home');
+            setFormMsgError(null);
+            setFormMsgSucce(data);
+            resetForm();
+            fetchAppointments();
         } else {
-            setError(data.messages.error);
+            setFormMsgError(data.messages.error);
         }
-            */
     }
+
+    const fetchAppointments = async () => {
+        const data = (userData.roles ==='admin') ? await getAppointments() : await getAppointmentsByUserId(userData.id); 
+        if (!data.error) {
+            setAppointments(data);
+            setAppoMsg('Aun no tienes citas creadas.');
+        } else {
+            setAppoMsg(data.messages.error);
+        }
+    };
+
+    useEffect(() => {
+        fetchAppointments();
+    }, []);
 
     return (
         <MainLayout>
@@ -80,9 +81,12 @@ function Appointments() {
 
                 <div className="card-body d-flex justify-content-center">
                     <form onSubmit={handleSubmit} style={{ maxWidth: "600px" }}>
-                        <h4 className="text-primary pt-2"> <strong>{userData.name}</strong>  solicita día de antención en el siguiente formulario:</h4>
+                        <h4 className="text-primary pt-2 pb-3"> <strong>{userData.name}</strong> solicita día de antención en el siguiente formulario:</h4>
 
-                        <div className="row">
+                        <div className="row text-center">
+                            
+                        {formMsgError && <p className="text-danger">  {formMsgError} </p>}
+                        {formMsgSucce && <p className="text-success"> {formMsgSucce} </p>}
 
                             <div className="col-md-6">
                                 <input
@@ -143,10 +147,30 @@ function Appointments() {
                             <input
                                 type="submit"
                                 className="btn btn-primary"
-                                value="Reservar Hora"
+                                value="Reservar Día"
                             />
                         </div>
                     </form>
+                </div>
+                <div className="card text-center mb-5 mt-4">
+                    <div className="card-header">
+                        <h5 className="mt-1"> Lista estado reservas solicitadas </h5>
+                    </div>
+                    <div className="card-body text-center">
+                        {appointments.length == 0 && <p className="text-primary">{appoMsg}</p>}
+                        <ul>
+                            {appointments.map((row) => (
+                                <p key={row.id}>
+                                    Nombre: <strong>{row.name}</strong> | Email: {row.email} | Doctor: {row.doctor} | Fecha: {row.date} | Especialidad:  {row.specialty} | Descripción: {row.desc}
+                                </p>
+                            ))}
+                        </ul>
+                    </div>
+                    <div className="card-footer text-body-secondary">
+                        <p className="fw-bold text-primary m-0">
+                            La información de reservas ha sido actualizada con fecha {new Date().toLocaleDateString()}
+                        </p>
+                    </div>
                 </div>
             </div>
         </MainLayout>

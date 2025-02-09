@@ -32,12 +32,12 @@ const Login = () => {
     //** Passing validation -> submit form :
 
     const submitValues = async () => {
-        const data = await userLogIn(form);
-        if (!data.error) {
-            login(data);
+        const userData = await userLogIn(form);
+        if (!userData.error) {
+            login(userData);
             navigate('/home');
         } else {
-            setError(data.messages.error);
+            setError(userData.messages.error);
         }
     };
 
