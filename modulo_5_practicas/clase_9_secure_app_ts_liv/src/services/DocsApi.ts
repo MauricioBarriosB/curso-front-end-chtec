@@ -23,7 +23,7 @@ export const userSignIn = async (userInputData: object) => {
         return response.data;
     } catch (error) {
         const axiosError = error as AxiosError;
-        return axiosError.response?.data;
+        return (axiosError.response?.data) || 'Error de conexión!';
     }
 };
 
@@ -42,7 +42,7 @@ export const userLogIn = async (userInputData: object) => {
         return response.data;
     } catch (error) {
         const axiosError = error as AxiosError;
-        return axiosError.response?.data;
+        return (axiosError.response?.data) || 'Error de conexión!';
     }
 };
 
@@ -104,12 +104,12 @@ export const getAllPatients = async (jwt:string | unknown) => {
 
 // ** ################ APPOINTMENTS API REQUEST ################ ** //
 
-// ** Function to fetch appointments, requires JWT (validations from the backend) :
+// ** Function to fetch appointments, requires API Key (validations from the backend) :
 
-export const getAllAppointments = async (jwt:string | unknown) => {
+export const getAppointments = async () => {
     try {
         const response = await api.get('appointments',
-            { headers: { 'Authorization': `Bearer ${jwt}` } },
+            { headers: { 'x-api-key': API_HASH_KEY } }
         )
         return response.data;
     } catch (error: any) {
@@ -117,9 +117,23 @@ export const getAllAppointments = async (jwt:string | unknown) => {
     }
 };
 
+// ** Function to fetch appointments by user ID, requires API Key (validations from the backend) :
+
+export const getAppointmentsByUserId = async (id:number | unknown) => {
+    try {
+        const response = await api.get(`appointbyuserid/${id}`,
+            { headers: { 'x-api-key': API_HASH_KEY } }
+        )
+        return response.data;
+    } catch (error: any) {
+        console.log(error);
+        return(error.response.data.messages.error);
+    }
+};
+
 // ** Function to create appointment, requires user input & JWT (validations from the backend) :
 
-export const createAppointment = async (userInputData: object, jwt:string) => {
+export const createAppointment = async (userInputData: object, jwt:string | unknown) => {
     try {
         const response = await api.post('appointments',
             qs.stringify(userInputData), {

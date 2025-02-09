@@ -19,9 +19,7 @@ interface IitemData {
 
 const Home = () => {
     const { userData } = useAuth();
-
     const [specialties, setSpecialties] = useState<ISpecialties[]>([]);
-
     const [itemData, setItemData] = useState<IitemData>({ name: '', desc: '' });
     const [open, setOpen] = useState<boolean>(false);
 

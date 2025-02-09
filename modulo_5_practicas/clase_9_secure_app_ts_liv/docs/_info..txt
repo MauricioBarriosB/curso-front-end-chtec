@@ -10,6 +10,10 @@ npm install -D @types/dompurifyclear
 
 Ctrl + Shift + P    ->    Restart TS Server
 
+add key val to object ts
+// (form as any).user_id = userData.id;
+// const valuesIns = { ...form, user_id: userData.id };
+
 ---------------------------------------------------------------
 
 
