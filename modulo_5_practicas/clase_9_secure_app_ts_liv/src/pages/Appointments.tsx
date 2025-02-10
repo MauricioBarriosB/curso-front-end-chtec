@@ -131,18 +131,11 @@ function Appointments() {
         <MainLayout>
             <div className="container marketing">
                 <div className="row text-center">
-                    <h2 className="text-primary pt-4">Cita Médica</h2>
-                    <h4 className="pt-4 pb-2">
-                        Recuerda anticipar tu hora de atenención.
-                    </h4>
-                </div>
-                <div className="text-center">
-                    {formMsgError && <p className="text-danger mb-3" style={{ marginBottom: "0" }}>  {formMsgError} </p>}
-                    {formMsgSucce && <p className="text-success mb-3" style={{ marginBottom: "0" }}> {formMsgSucce} </p>}
+                    <h2 className="text-primary py-4">Cita Médica</h2>
                 </div>
                 <div className="card">
                     <div className="card-header text-center">
-                        <h4 className="text-primary pt-2"> <strong>{userData.name}</strong> solicita día de antención en el siguiente formulario:</h4>
+                        <h5 className="text-primary pt-2"> <strong>{userData.name}</strong> solicita día de antención en el siguiente formulario</h5>
                     </div>
 
                     <div className="card-body row justify-content-center">
@@ -204,7 +197,7 @@ function Appointments() {
                                 required
                             ></textarea>
 
-                            <div className="py-4 text-center">
+                            <div className="pt-4 pb-2 text-center">
                                 <input
                                     type="submit"
                                     className="btn btn-primary"
@@ -214,6 +207,12 @@ function Appointments() {
                         </form>
                     </div>
                 </div>
+
+                <div className="text-center">
+                    {formMsgError && <p className="text-danger my-3" style={{ marginBottom: "0" }}>  {formMsgError} </p>}
+                    {formMsgSucce && <p className="text-success my-3" style={{ marginBottom: "0" }}> {formMsgSucce} </p>}
+                </div>
+
                 <AppointmentsList
                     appoMsg={appoMsg}
                     appointments={appointments}

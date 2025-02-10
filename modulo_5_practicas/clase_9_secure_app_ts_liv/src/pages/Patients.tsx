@@ -34,6 +34,7 @@ const Patients = () => {
 
     useEffect(() => {
         fetchPatients();
+        console.log(userData.jwt);
     }, []);
 
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
@@ -42,7 +43,6 @@ const Patients = () => {
 
     const handleSearch = async (event: React.FormEvent<HTMLFormElement>) => {
         event.preventDefault();
-        console.log(patientsRef.current);
         setError(null);
 
         const filPatients = patientsRef.current.filter((fpat: IPatients) =>
