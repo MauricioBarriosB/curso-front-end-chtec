@@ -28,6 +28,10 @@ const useForm = (initialValue: object, useFormCallBack: Function) => {
         useFormCallBack(flagSubmit);
     };
 
+    const updateForm = (initialValue: object) => {
+        setform(initialValue);
+    };
+
     const resetForm = () => {
         let resetKeys : Record<string, string> = {};
         for (const [key] of Object.entries(form)) resetKeys[key]  = '';
@@ -38,6 +42,7 @@ const useForm = (initialValue: object, useFormCallBack: Function) => {
         form,
         handleChange,
         handleSubmit,
+        updateForm,
         resetForm
     } as const;
 }

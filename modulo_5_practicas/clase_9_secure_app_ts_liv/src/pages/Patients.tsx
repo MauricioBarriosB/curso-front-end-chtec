@@ -86,12 +86,11 @@ const Patients = () => {
                     </div>
                     <div className="card-body">
                         {error && <p style={{ color: "red" }}>{error}</p>}
-                        <ul>
+                        <ul className="list-group">
                             {patients.map((patient) => (
-                                <p key={patient.id}>
-                                    RUT: {patient.rut} | Nombre: <strong> {patient.fname} {patient.lname} </strong> | Edad:  {patient.age} | Especialidad: {patient.specialty_name}
-                                    <br /> Diagnóstico: {patient.diagnosis} por {patient.doctor_name}
-                                </p>
+                                <li className="list-group-item d-flex justify-content-between_ align-items-center_" key={patient.id}>
+                                    RUT: {patient.rut} |   <strong className="mx-2"> {patient.fname} {patient.lname} </strong> | Edad:  {patient.age} | Especialidad: {patient.specialty_name} | Diagnóstico: {patient.diagnosis}  - por {patient.doctor_name}.
+                                </li>
                             ))}
                         </ul>
                     </div>
