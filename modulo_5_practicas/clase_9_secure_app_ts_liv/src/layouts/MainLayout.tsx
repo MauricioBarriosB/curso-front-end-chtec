@@ -5,7 +5,7 @@ import livLogo from "../assets/logo_white.svg";
 import livLogoHeader from "../assets/logo.svg";
 
 type MainLayoutTypes = {
-    children: React.JSX.Element | React.JSX.Element[] 
+    children: React.JSX.Element | React.JSX.Element[]
 }
 
 const MainLayout = ({ children }: MainLayoutTypes) => {
@@ -76,7 +76,7 @@ const MainLayout = ({ children }: MainLayoutTypes) => {
 
             <footer className="footer">
                 <div className="container">
-                    <img className="footer__logo mb-5" src={livLogo} />
+                    <img className="footer__logo mb-4" src={livLogo} />
 
                     <div className="pb-4">
                         <div className="d-inline-block">
@@ -96,10 +96,14 @@ const MainLayout = ({ children }: MainLayoutTypes) => {
                     <i className="lab la-vimeo-v la-3x p-2"></i>
                     <i className="lab la-pinterest la-3x p-2"></i>
                     <i className="lab la-blogger-b la-3x p-2"></i>
-                    <p>Síguenos en nustras redes sociales</p>
-                    <p>© 2025 LIV Hospital - Derechos Reservados.</p>
+                    <h4 className="pt-4">Síguenos en nustras Redes Sociales</h4>
                 </div>
+
             </footer>
+
+            <div className="footer" style={{ backgroundColor: "#151521", marginTop: 0, paddingBottom: 20 }}>
+                <p>© 2025 LIV Hospital<span className="px-2">•</span>www.livhospital.com<span className="px-2">•</span>Derechos Reservados.</p>
+            </div>
         </>
     );
 };

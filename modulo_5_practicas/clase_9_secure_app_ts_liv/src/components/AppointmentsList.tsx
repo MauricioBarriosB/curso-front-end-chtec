@@ -53,11 +53,6 @@ const AppointmentsList = ({ appoMsg, appointments, roles, methodDelete, methodEd
                     ))}
                 </ul>
             </div>
-            <div className="card-footer text-body-secondary">
-                <p className="fw-bold text-primary m-0">
-                    La información de reservas ha sido actualizada con fecha {new Date().toLocaleDateString()}
-                </p>
-            </div>
         </div>
     );
 };
