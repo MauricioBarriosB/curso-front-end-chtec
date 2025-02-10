@@ -112,6 +112,7 @@ export const getAppointments = async () => {
             { headers: { 'x-api-key': API_HASH_KEY } }
         )
         return response.data;
+      
     } catch (error: any) {
         return(error.response.data.messages.error);
     }
@@ -121,7 +122,7 @@ export const getAppointments = async () => {
 
 export const getAppointmentsByUserId = async (id:number | unknown) => {
     try {
-        const response = await api.get(`appointbyuserid/${id}`,
+        const response = await api.get(`appointments/userid/${id}`,
             { headers: { 'x-api-key': API_HASH_KEY } }
         )
         return response.data;
@@ -135,7 +136,7 @@ export const getAppointmentsByUserId = async (id:number | unknown) => {
 
 export const createAppointment = async (userInputData: object, jwt:string | unknown) => {
     try {
-        const response = await api.post('appointments',
+        const response = await api.post('appointments/create',
             qs.stringify(userInputData), {
                 headers: {
                     'Content-Type': 'application/x-www-form-urlencoded',
@@ -152,9 +153,9 @@ export const createAppointment = async (userInputData: object, jwt:string | unkn
 
 // ** Function to delete appointment, requires ID & JWT (validations from the backend) :
 
-export const deleteAppointment = async (id:number, jwt:string) => {
+export const deleteAppointment = async (id:number, jwt:string | unknown) => {
     try {
-        const response = await api.delete(`appointments/${id}`,
+        const response = await api.delete(`appointments/delete/${id}`,
             { headers: { 'Authorization': `Bearer ${jwt}` } },
         )
         return response.data;
@@ -164,14 +165,28 @@ export const deleteAppointment = async (id:number, jwt:string) => {
     }
 };
 
+// ** Function to fetch appointment to edit by ID, requires ID & JWT (validations from the backend) :
+
+export const editAppointment = async (id:number, jwt:string  | unknown) => {
+    try {
+        const response = await api.get(`appointments/edit/${id}`,
+            { headers: { 'Authorization': `Bearer ${jwt}` } }
+        )
+        return response.data;
+    } catch (error: any) {
+        console.log(error);
+        return(error.response.data.messages.error);
+    }
+};
+
 // ** Function to update appointment, requires ID, user input & JWT (validations from the backend) :
 
-export const updateAppointment = async (id:number, userInputData: object, jwt:string) => {
+export const updateAppointment = async (id:number  | unknown, userInputData: object, jwt:string | unknown) => {
     try {
-        const response = await api.put(`appointments/${id}`,
-            qs.stringify(userInputData), {
+        const response = await api.put(`appointments/update/${id}`,
+            userInputData, {
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'Content-Type': 'application/json',
                     'Authorization': `Bearer ${jwt}` 
                 }
             }
@@ -183,21 +198,16 @@ export const updateAppointment = async (id:number, userInputData: object, jwt:st
     }
 };
 
-// ** Function to set attended appointment , requires ID, user input & JWT (validations from the backend) :
+// ** Function to toogle appointment pendiente/activo, requires ID, user input & JWT (validations from the backend) :
 
-export const attendedAppointment = async (id:number, userInputData: object, jwt:string) => {
+export const patchAppointment = async (id:number) => {
     try {
-        const response = await api.patch(`appointments/${id}`,
-            qs.stringify(userInputData), {
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                    'Authorization': `Bearer ${jwt}` 
-                }
-            }
-        )
-        return response.data;
-    } catch (error) {
-        const axiosError = error as AxiosError;
-        return axiosError.response?.data;
+        await fetch(`${API_BASE_URL}appointments/patch/${id}/`, {
+            method: 'PATCH',
+            headers: { Accept: "application/json", 'Content-Type':'application/x-www-form-urlencoded'},
+            body: 'id=12&day=1'
+        });
+    } catch(ex) {
+        console.error('ex:', ex);
     }
 };

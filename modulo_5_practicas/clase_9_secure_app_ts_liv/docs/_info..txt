@@ -16,7 +16,6 @@ add key val to object ts
 
 ---------------------------------------------------------------
 
-
 https://blog.logrocket.com/async-await-typescript/
 
 https://medium.com/@kimtai.developer/react-typescript-authentication-guide-using-context-api-5c82f2530eb1    ts auth provider
