@@ -3,6 +3,9 @@ import { useState, useEffect, useRef } from "react";
 import MainLayout from "../layouts/MainLayout";
 import AppointmentsList from "../components/AppointmentsList"
 import useForm from "../hooks/useForm";
+
+// ** API REST -> CRUD Methods :
+
 import {
     createAppointment,
     getAppointments,
@@ -43,7 +46,7 @@ function Appointments() {
             setFormMsgError('Campos inválidos, debes ingresar como mímimo 4 caractéres!');
             setFormMsgSucce(null);
         } else {
-            (flagIDUpdate.current) ?  methodUpdate() : methodCreate();
+            (flagIDUpdate.current) ? methodUpdate() : methodCreate();
         }
     };
 
@@ -62,7 +65,7 @@ function Appointments() {
         }
     };
 
-    //** CRUD Methods :
+    // ** API REST -> CRUD Methods :
 
     const methodCreate = async () => {
         const data = await createAppointment(form, userData.jwt);
@@ -76,7 +79,7 @@ function Appointments() {
         }
     };
 
-    const methodDelete = async (id: number) => {
+    const methodDelete = async (id:number) => {
         const data = await deleteAppointment(id, userData.jwt);
         if (!data.error) {
             fetchAppointments();
@@ -86,7 +89,7 @@ function Appointments() {
         }
     };
 
-    const methodEdit = async (id: number) => {
+    const methodEdit = async (id:number) => {
         const data = await editAppointment(id, userData.jwt);
         if (!data.error) {
             flagIDUpdate.current = id;
@@ -107,24 +110,21 @@ function Appointments() {
         } else {
             setFormMsgError(data.messages.error);
         }
-    }
+    };
 
-    const methodPatch = async (id: number) => {
-        // let params:object = {"status":"Activo"};
-        const data = await patchAppointment(id);
-        console.log(data);
-        /*
+    const methodPatch = async (id:number, status:string) => {
+        let params:object = { "status": (status == 'Pendiente') ? 'Activo' : 'Pendiente' };
+        const data = await patchAppointment(id, params, userData.jwt);
         if (!data.error) {
             fetchAppointments();
             setFormMsgSucce(data);
         } else {
             setAppoMsg(data.messages.error);
         }
-            */
     };
 
     useEffect(() => {
-       fetchAppointments();
+        fetchAppointments();
     }, []);
 
     return (
@@ -217,9 +217,11 @@ function Appointments() {
                 <AppointmentsList
                     appoMsg={appoMsg}
                     appointments={appointments}
+                    roles={userData.roles}
                     methodDelete={methodDelete}
                     methodEdit={methodEdit}
-                    methodPatch={methodPatch} />
+                    methodPatch={methodPatch} 
+                />
             </div>
         </MainLayout>
     );

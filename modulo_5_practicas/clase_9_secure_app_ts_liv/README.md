@@ -17,7 +17,7 @@ https://capacitaenlinea.cl/demohospitalapi/public/api
 
 Todo ello para tener persistencia de datos, creación y validación de JWT (mediante backend), validación de x-api-key, recursos de aplicación, registro de acceso, etc.
 
-He integrado solicitudes GET, POST, PUT, DELETE, por ejemplo, en vista Appointments.tsx rol "administrador" y "guest" tienen acceso al CRUD de citas, entre otros.
+He integrado solicitudes GET, POST, PUT, PATCH, DELETE, por ejemplo, en vista Appointments.tsx rol "administrador" y "guest" tienen acceso al CRUD de citas, entre otros.
 
 ## 2 Integración de TypeScript en Componentes:
 

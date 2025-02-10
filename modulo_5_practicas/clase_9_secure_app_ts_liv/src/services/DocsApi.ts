@@ -200,14 +200,20 @@ export const updateAppointment = async (id:number  | unknown, userInputData: obj
 
 // ** Function to toogle appointment pendiente/activo, requires ID, user input & JWT (validations from the backend) :
 
-export const patchAppointment = async (id:number) => {
+export const patchAppointment = async (id:number  | unknown, userInputData: object, jwt:string | unknown) => {
     try {
-        await fetch(`${API_BASE_URL}appointments/patch/${id}/`, {
-            method: 'PATCH',
-            headers: { Accept: "application/json", 'Content-Type':'application/x-www-form-urlencoded'},
-            body: 'id=12&day=1'
-        });
-    } catch(ex) {
-        console.error('ex:', ex);
+        const response = await api.patch(`appointments/patch/${id}`,
+            userInputData, {
+                headers: {
+                    'Accept': 'application/json, text/plain, */*',
+                    'Content-Type': 'application/json',
+                    'Authorization': `Bearer ${jwt}` 
+                }
+            }
+        )
+        return response.data;
+    } catch (error) {
+        const axiosError = error as AxiosError;
+        return axiosError.response?.data;
     }
 };

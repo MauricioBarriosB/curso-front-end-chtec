@@ -6,16 +6,16 @@ type LoginTypes = {
     name: string | null;
     roles: string | null;
     jwt: string | null;
-}
-
-type ContextTypes = {
-    children: React.JSX.Element | React.JSX.Element[] 
-}
+};
 
 interface IAuthContext {
     userData: LoginTypes,
     login(userData: LoginTypes): void,
     logout(): void,
+};
+
+type ContextTypes = {
+    children: React.JSX.Element | React.JSX.Element[] 
 };
 
 const iniValues:LoginTypes = { id: null, name: null, roles: null, jwt: null }
