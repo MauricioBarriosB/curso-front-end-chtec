@@ -101,7 +101,7 @@ const MainLayout = ({ children }: MainLayoutTypes) => {
 
             </footer>
 
-            <div className="footer" style={{ backgroundColor: "#151521", marginTop: 0, paddingBottom: 20 }}>
+            <div className="footer" style={{ backgroundColor: "#002157", marginTop: 0, paddingBottom: 20 }}>
                 <p>© 2025 LIV Hospital<span className="px-2">•</span>www.livhospital.com<span className="px-2">•</span>Derechos Reservados.</p>
             </div>
         </>

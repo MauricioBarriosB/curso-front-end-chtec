@@ -54,38 +54,43 @@ const Login = () => {
 
                 {error && <p className="text-danger text-center">{error}</p>}
 
-                <div className="card-body d-flex justify-content-center">
-                    <form className="contact-form" autoComplete="off" onSubmit={handleSubmit}>
-                        <input
-                            id="username"
-                            name="username"
-                            type="text"
-                            placeholder="Usuario"
-                            className="form-control my-4"
-                            value={username}
-                            onChange={handleChange}
-                            required
-                        />
+                <div className="d-flex justify-content-center pb-5">
+                    <div className="card">
+                        <div className="card-body d-flex justify-content-center" style={{ paddingBottom: 0, paddingTop: 0 }}>
+                            <form className="contact-form" autoComplete="off" onSubmit={handleSubmit}>
+                                <input
+                                    id="username"
+                                    name="username"
+                                    type="text"
+                                    placeholder="Usuario"
+                                    className="form-control mb-4 my-3"
+                                    value={username}
+                                    onChange={handleChange}
+                                    required
+                                />
 
-                        <input
-                            id="password"
-                            name="password"
-                            type="password"
-                            placeholder="Contraseña"
-                            className="form-control my-4"
-                            value={password}
-                            onChange={handleChange}
-                            required
-                        />
+                                <input
+                                    id="password"
+                                    name="password"
+                                    type="password"
+                                    placeholder="Contraseña"
+                                    className="form-control my-4"
+                                    value={password}
+                                    onChange={handleChange}
+                                    required
+                                />
 
-                        <div className="py-4 text-center">
-                            <input
-                                type="submit"
-                                className="btn btn-primary"
-                                value=" &raquo; Iniciar Sesión"
-                            />
+                                <div className="pb-3 text-center">
+                                    <input
+                                        type="submit"
+                                        className="btn btn-primary"
+                                        value="Iniciar Sesión &raquo;"
+                                        style={{ width: "100%" }}
+                                    />
+                                </div>
+                            </form>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </MainLayout>

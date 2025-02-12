@@ -11,7 +11,7 @@ https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_5_pra
 
 ## 1 Consumo de APIs usando Axios:
 
-Todos los recursos son consumidos mediante Axios para lo cual implemente el servicio DocsApi.ts el cual se conecta con API REST desarrollada en PHP+MySQL a medida para el proyecto:
+Todos los recursos son consumidos mediante Axios para lo cual implemente el servicio DocsApi.ts el cual se conecta con API REST desarrollada a medida en PHP+SQLite3:
 
 https://capacitaenlinea.cl/demohospitalapi/public/api
 
@@ -26,6 +26,8 @@ He utilizado TS y validado los tipos en todos los compoenentes, estados, estruct
 ## 3 Mejoras en la Seguridad del Front-End:
 
 He implementado API REST con validación de JWT (formato, fecha de expiración, etc.) y validación de x-api-key, los datos de acceso a la API fueron seteados mediante variables de entorno.
+
+Los datos almacenados en LocalStorage han sido encriptados mediante CryptoJS.
 
 ## 4 Optimización con Hooks y Manejo de Errores:
 
