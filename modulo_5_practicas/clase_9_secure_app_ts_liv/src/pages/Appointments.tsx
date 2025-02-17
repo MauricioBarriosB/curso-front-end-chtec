@@ -101,7 +101,7 @@ function Appointments() {
 
     const methodUpdate = async () => {
         const data = await updateAppointment(flagIDUpdate.current, form, userData.jwt);
-        console.log(data);
+        // console.log(data);
         if (!data.error) {
             setFormMsgSucce(data);
             resetForm();

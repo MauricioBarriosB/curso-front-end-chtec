@@ -127,7 +127,7 @@ export const getAppointmentsByUserId = async (id:number | unknown) => {
         )
         return response.data;
     } catch (error: any) {
-        console.log(error);
+        // console.log(error);
         return(error.response.data.messages.error);
     }
 };
@@ -174,7 +174,7 @@ export const editAppointment = async (id:number, jwt:string  | unknown) => {
         )
         return response.data;
     } catch (error: any) {
-        console.log(error);
+        // console.log(error);
         return(error.response.data.messages.error);
     }
 };

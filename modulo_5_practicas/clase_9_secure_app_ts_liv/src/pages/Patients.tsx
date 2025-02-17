@@ -34,7 +34,7 @@ const Patients = () => {
 
     useEffect(() => {
         fetchPatients();
-        console.log(userData.jwt);
+        // console.log(userData.jwt);
     }, []);
 
     const handleOnChange = (event: React.ChangeEvent<HTMLInputElement>) => {
