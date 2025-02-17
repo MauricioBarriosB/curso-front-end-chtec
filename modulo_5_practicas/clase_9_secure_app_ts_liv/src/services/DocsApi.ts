@@ -4,7 +4,7 @@ import qs from "qs";
 
 const API_HASH_KEY = import.meta.env.VITE_APP_API_KEY_HASHED;
 const API_BASE_URL = import.meta.env.VITE_APP_API_URL;
-const api = axios.create({ baseURL: API_BASE_URL, timeout: 1000 });
+const api = axios.create({ baseURL: API_BASE_URL, timeout: 9000 });
 
 // ** ################ USERS API REQUEST ################ ** //
 
