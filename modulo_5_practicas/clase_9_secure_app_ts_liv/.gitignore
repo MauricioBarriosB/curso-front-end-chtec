@@ -12,7 +12,10 @@ node_modules
 dist-ssr
 *.local
 
-.env
+*.env
+*.env.example
+*.env.local
+*.env.staging
 
 *.local
 
