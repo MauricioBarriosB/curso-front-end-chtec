@@ -1,19 +1,22 @@
-/_info
 
-/modulo_2_practicas/clase_2/.vscode
 
-/modulo_2_practicas/clase_3/.vscode
+modulo_2_practicas/clase_2/.vscode
 
-/modulo_2_practicas/clase_3_v2/
+modulo_2_practicas/clase_3/.vscode
 
-/modulo_2_practicas/clase_4/.vscode
+modulo_2_practicas/clase_3_v2/
 
-/modulo_3_practicas/clase_5/.vscode
+modulo_2_practicas/clase_4/.vscode
 
-/modulo_3_practicas/clase_6/.vscode
+modulo_3_practicas/clase_5/.vscode
 
+modulo_3_practicas/clase_6/.vscode
+
+modulo_3_practicas/clase_7/.vscode
 
 *.env
 *.env.example
 *.env.local
 *.env.staging
+
+modulo_5_practicas/clase_9_secure_app_ts_liv/.env
