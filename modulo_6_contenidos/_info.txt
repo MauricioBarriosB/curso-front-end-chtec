@@ -1,1 +1,7 @@
 info.txt
+
+
+npm install -g serve // instalar servidor global en puerto 3.000
+chrome:/apps
+https://github.com/adalid-cl/ESPECIALIZACION_FRONTEND_M6_AE1
+npm install vite-plugin-pwa --save-dev
