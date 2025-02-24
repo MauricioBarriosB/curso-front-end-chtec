@@ -8,6 +8,6 @@ URL Github pública acceso archivos fuente React JS :
 
 https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_6_practicas/clase_2_pwa_sec_app_ts_liv
 
-URL Documento PDF Resporte Depuración PWA (informe_pwa_liv_hospital.pdf):
+URL Documento PDF Reporte Depuración PWA (informe_pwa_liv_hospital.pdf):
 
 https://github.com/MauricioBarriosB/curso-front-end-chtec/tree/main/modulo_6_practicas/clase_2_pwa_sec_app_ts_liv/informe_pwa_liv_hospital.pdf
