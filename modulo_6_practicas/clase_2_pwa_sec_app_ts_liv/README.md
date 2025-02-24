@@ -1,6 +1,6 @@
 # Modulo 6 / Ejercicio Práctico 1 - PWA / Fecha entrega 24-02-25
 
-URL Github pública acceso compilación para distribución React JS (sitio PWA productivo) :
+URL Github pública acceso distribución React JS (sitio PWA para ser instalado directamente en dispositivos) :
 
 https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_6_practicas/clase_2_pwa_sec_app_ts_liv/dist
 

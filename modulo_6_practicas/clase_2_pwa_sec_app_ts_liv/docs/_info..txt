@@ -1,2 +1,10 @@
 
 npm i vite-plugin-pwa
+
+
+Configurar rutas SW en GITHub para:
+
+modulo_6_practicas\clase_2_pwa_sec_app_ts_liv\dist\index.html
+modulo_6_practicas\clase_2_pwa_sec_app_ts_liv\dist\registerSW.js
+modulo_6_practicas\clase_2_pwa_sec_app_ts_liv\dist\manifest.webmanifest
+modulo_6_practicas\clase_2_pwa_sec_app_ts_liv\dist\assets\index-CPKkTYPV.js    ->    register("./sw.js")
