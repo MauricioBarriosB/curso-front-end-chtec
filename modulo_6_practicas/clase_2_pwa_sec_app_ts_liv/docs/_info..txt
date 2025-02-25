@@ -13,3 +13,13 @@ modulo_6_practicas\clase_2_pwa_sec_app_ts_liv\dist\assets\index-CPKkTYPV.js    -
 PWA INFORMES:
 
 https://developer.chrome.com/docs/devtools/progressive-web-apps?hl=es-419
+
+
+const videoRef = useRef(null); useEffect(() => { 
+    // Acceder a la cámara navigator.mediaDevices .getUserMedia({ video: true }) .then((stream) =>
+     { if (videoRef.current) { videoRef.current.srcObject = stream; } }) .catch((error) =>
+     console.log("Error al acceder a la cámara:", error)); return () => 
+     { // Detener la cámara al desmontar el componente if(videoRef.current 
+     && videoRef.current.srcObject) { let tracks = videoRef.current.srcObject.getTracks(); 
+     tracks.forEach(track => track.stop()); } }; }, []); 
+     return ( <div> <h1>Acceso a la Cámara</h1> <video ref={videoRef}autoPlay width="500"></video> </div> );
