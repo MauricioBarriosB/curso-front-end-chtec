@@ -23,4 +23,7 @@ const videoRef = useRef(null); useEffect(() => {
      { // Detener la cámara al desmontar el componente if(videoRef.current 
      && videoRef.current.srcObject) { let tracks = videoRef.current.srcObject.getTracks(); 
      tracks.forEach(track => track.stop()); } }; }, []); 
+
+
+
      return ( <div> <h1>Acceso a la Cámara</h1> <video ref={videoRef}autoPlay width="500"></video> </div> );
