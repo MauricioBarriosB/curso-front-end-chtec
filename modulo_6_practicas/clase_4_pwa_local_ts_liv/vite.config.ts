@@ -51,44 +51,8 @@ export default defineConfig({
                 runtimeCaching: [
 
 
-                  {
-                    urlPattern: /^https:\/\/fonts\.googleapis\.com\/.*/i,   // https://fonts.googleapis.com
-                    handler: 'CacheFirst',
-                    options: {
-                      cacheName: 'google-fonts-cache',
-                      expiration: {
-                        maxEntries: 10,
-                        maxAgeSeconds: 31536000 // => 60 * 60 * 24 * 365 => 365 days
-                      },
-                      cacheableResponse: {
-                        statuses: [0, 200]
-                      }
-                    }
-                  },
 
-
-
-                  {
-                    urlPattern: /^https:\/\/fonts\.gstatic\.com\/s\/lato\/v24\/.*/i,   //  https://fonts.gstatic.com/s/lato/v24/
-                    handler: 'CacheFirst',
-                    options: {
-                      cacheName: 'lato-fonts-cache',
-                      expiration: {
-                        maxEntries: 10,
-                        maxAgeSeconds: 31536000
-                      },
-                      cacheableResponse: {
-                        statuses: [0, 200]
-                      }
-                    }
-                  },
-
-
-
-
-                 
-
-
+                
 
                   {
                     urlPattern: /^https:\/\/cdnjs\.cloudflare\.com\/ajax\/libs\/line-awesome\/1.3.0\/line-awesome\/css\/.*/i,    // https://cdnjs.cloudflare.com/ajax/libs/line-awesome/1.3.0/line-awesome/css/

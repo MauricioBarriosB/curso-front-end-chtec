@@ -10,7 +10,7 @@ chrome://apps
 https://medium.com/@foyemc/implementation-of-service-worker-using-reactjs-application-to-build-pwa-6366fd9a0527
 https://vite-pwa-org.netlify.app/workbox/generate-sw.html 
 
-Para publicación en GitHub agregar el ./ a las rutas relativas en dist/sw.js
+Para publicación en GitHub agregar el ./ a las rutas relativas en dist/sw.js (rev exp 31536000), dist/manifest.webmanifest y a la ruta de la font en el css
 
 Para publicación en GitHub agregar ruta absoluta sw.js y scope ./ en registerSW.js
 
