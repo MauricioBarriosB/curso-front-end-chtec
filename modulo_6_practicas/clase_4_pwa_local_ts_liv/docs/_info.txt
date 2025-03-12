@@ -1,0 +1,283 @@
+https://www.reddit.com/r/moodle/comments/m2mhs8/headless_moodle_iframe_authentication/?rdt=405
+https://moodledev.io/docs/5.0/category/subsystems
+chrome://apps
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+*** Para almacenar en cache recursos externos API, Imagenes, Fuetnes, etc:
+
+https://medium.com/@foyemc/implementation-of-service-worker-using-reactjs-application-to-build-pwa-6366fd9a0527
+https://vite-pwa-org.netlify.app/workbox/generate-sw.html 
+
+Para publicación en GitHub agregar el ./ a las rutas relativas en dist/sw.js
+
+Para publicación en GitHub agregar ruta absoluta sw.js y scope ./ en registerSW.js
+
+Revizar rel="preconnect" crossorigin="anonymous" en CSS externo
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+*** Para Utilizar indexed BD - DEXIE:
+
+luego revisar  https://dexie.org/  -------> https://www.youtube.com/watch?v=WnEc1JbmWVI  (haciendo tutorial)
+
+https://dexie.org/docs/Tutorial/React -----------> ok con TS   
+
+npm install dexie
+npm install dexie-react-hooks
+
+https://dexie.org/docs/Table/Table.bulkAdd()
+https://app.studyraid.com/en/read/11356/355126/configuring-database-indexes
+
+---------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------
+
+Integrating IndexedDB into a React app to enable offline functionality when data is coming from an external API involves several steps. Here's a high-level overview of the process:
+
+1. **Set up a React app**: If you haven't already, create a React app using `create-react-app` or any other method.
+
+2. **Install a library to work with IndexedDB**: While you can work with IndexedDB directly, it's often easier to use a library that provides a more convenient API. One popular choice is `idb` (https://github.com/jakearchibald/idb).
+
+3. **Create a service to handle IndexedDB operations**: Create a service that will handle all the interactions with IndexedDB. This service should include methods for opening the database, storing data, retrieving data, and clearing data.
+
+4. **Modify your API service to work with IndexedDB**: Modify your existing API service to first check if data is available in IndexedDB. If it is, use that data. If not, make a request to the external API and then store the data in IndexedDB for future use.
+
+5. **Handle offline/online events**: Use the `navigator.onLine` property and the `online` and `offline` events to detect when the user's network status changes. When the user goes offline, switch to using data from IndexedDB. When the user comes back online, you might want to sync the data with the external API.
+
+6. **Update your components**: Update your React components to use the new service. They should be able to work with data from IndexedDB when offline and from the external API when online.
+
+Here's a simple example of how you might implement this:
+
+```javascript
+// db.js
+import { openDB } from 'idb';
+
+const dbPromise = openDB('my-database', 1, {
+  upgrade(db) {
+    if (!db.objectStoreNames.contains('my-store')) {
+      db.createObjectStore('my-store');
+    }
+  },
+});
+
+export const saveData = async (key, data) => {
+  const db = await dbPromise;
+  const tx = db.transaction('my-store', 'readwrite');
+  tx.store.put(data, key);
+  await tx.done;
+};
+
+export const getData = async (key) => {
+  const db = await dbPromise;
+  return db.transaction('my-store').store.get(key);
+};
+
+// api.js
+import { saveData, getData } from './db';
+
+export const fetchData = async () => {
+  if (navigator.onLine) {
+    const response = await fetch('https://api.example.com/data');
+    const data = await response.json();
+    await saveData('my-data', data);
+    return data;
+  } else {
+    return getData('my-data');
+  }
+};
+
+// MyComponent.js
+import React, { useEffect, useState } from 'react';
+import { fetchData } from './api';
+
+const MyComponent = () => {
+  const [data, setData] = useState(null);
+
+  useEffect(() => {
+    fetchData().then(setData);
+  }, []);
+
+  if (!data) {
+    return <div>Loading...</div>;
+  }
+
+  return (
+    <div>
+      {/* Render your data here */}
+    </div>
+  );
+};
+
+export default MyComponent;
+```
+
+This is a basic example and might need to be adjusted based on your specific requirements. For example, you might want to add error handling, implement more complex data syncing logic, or use a state management library like Redux or Context API to manage your data.
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+To enable a React application to work offline using Dexie.js, you can follow these steps:
+
+1. **Set Up Dexie.js**: First, you need to set up Dexie.js in your React application. Dexie.js is a wrapper around IndexedDB, which is a low-level API for storing significant amounts of structured data, including files/blobs, in the browser.
+
+2. **Sync Data from Server to Local**: You need to create a mechanism to sync data from your server to the local Dexie.js database. This can be done by fetching data from the server and then storing it in the local database.
+
+3. **Use Local Data When Offline**: When the application is offline, it should use the data stored in the local Dexie.js database.
+
+Here’s a step-by-step guide:
+
+### Step 1: Install Dexie.js
+
+First, install Dexie.js in your React project:
+
+```bash
+npm install dexie
+```
+
+### Step 2: Create a Dexie Database
+
+Create a file `db.js` to define your Dexie database schema:
+
+```javascript
+import Dexie from 'dexie';
+
+const db = new Dexie('MyAppDatabase');
+db.version(1).stores({
+  items: '++id, name, description' // Define your schema here
+});
+
+export default db;
+```
+
+### Step 3: Sync Data from Server to Local
+
+Create a function to fetch data from the server and store it in the local Dexie database:
+
+```javascript
+import db from './db';
+
+export const syncData = async () => {
+  try {
+    // Fetch data from the server
+    const response = await fetch('https://api.example.com/items');
+    const items = await response.json();
+
+    // Clear existing data in the local database
+    await db.items.clear();
+
+    // Store the new data in the local database
+    await db.items.bulkAdd(items);
+  } catch (error) {
+    console.error('Failed to sync data:', error);
+  }
+};
+```
+
+### Step 4: Use Local Data in Your React Components
+
+In your React components, you can now use the local data when the application is offline:
+
+```javascript
+import React, { useEffect, useState } from 'react';
+import db from './db';
+
+const ItemList = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      // Check if online
+      if (navigator.onLine) {
+        // Sync data from server to local
+        await syncData();
+      }
+
+      // Get data from local database
+      const localItems = await db.items.toArray();
+      setItems(localItems);
+    };
+
+    fetchData();
+  }, []);
+
+  return (
+    <div>
+      <h1>Items</h1>
+      <ul>
+        {items.map(item => (
+          <li key={item.id}>{item.name} - {item.description}</li>
+        ))}
+      </ul>
+    </div>
+  );
+};
+
+export default ItemList;
+```
+
+### Step 5: Handle Offline Status
+
+You can also add event listeners to detect when the application goes offline or online and update the UI accordingly:
+
+```javascript
+import React, { useEffect, useState } from 'react';
+
+const OfflineStatus = () => {
+  const [isOnline, setIsOnline] = useState(navigator.onLine);
+
+  useEffect(() => {
+    const handleOnline = () => setIsOnline(true);
+    const handleOffline = () => setIsOnline(false);
+
+    window.addEventListener('online', handleOnline);
+    window.addEventListener('offline', handleOffline);
+
+    return () => {
+      window.removeEventListener('online', handleOnline);
+      window.removeEventListener('offline', handleOffline);
+    };
+  }, []);
+
+  return (
+    <div>
+      {isOnline ? 'Online' : 'Offline'}
+    </div>
+  );
+};
+
+export default OfflineStatus;
+```
+
+### Step 6: Combine Everything
+
+Finally, combine everything in your main `App` component:
+
+```javascript
+import React from 'react';
+import ItemList from './ItemList';
+import OfflineStatus from './OfflineStatus';
+
+const App = () => {
+  return (
+    <div>
+      <OfflineStatus />
+      <ItemList />
+    </div>
+  );
+};
+
+export default App;
+```
+
+### Summary
+
+- **Dexie.js** is used to create a local database in the browser.
+- Data is synced from the server to the local database when the application is online.
+- The React application uses the local database when offline.
+- The application detects online/offline status and updates the UI accordingly.
+
+This setup allows your React application to work offline by leveraging the local Dexie.js database.

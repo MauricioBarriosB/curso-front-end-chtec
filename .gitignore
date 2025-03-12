@@ -1,4 +1,7 @@
-
+*.env
+*.env.example
+*.env.local
+*.env.staging
 
 modulo_2_practicas/clase_2/.vscode
 
@@ -14,13 +17,12 @@ modulo_3_practicas/clase_6/.vscode
 
 modulo_3_practicas/clase_7/.vscode
 
-*.env
-*.env.example
-*.env.local
-*.env.staging
-
 modulo_5_practicas/clase_9_secure_app_ts_liv/.env
 
 modulo_5_practicas/clase_8_secure_app_hook_liv/.env
 
 modulo_6_practicas/clase_2_pwa_sec_app_ts_liv/.env
+
+modulo_6_practicas/clase_4_pwa_local_ts_liv/.env
+
+modulo_6_practicas/clase_4_pwa_local_ts_liv.rar

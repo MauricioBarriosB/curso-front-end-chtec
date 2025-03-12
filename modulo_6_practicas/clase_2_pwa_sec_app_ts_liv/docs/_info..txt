@@ -1,6 +1,7 @@
 
 npm i vite-plugin-pwa
 
+https://cuicui.day/hooks
 
 Configurar rutas SW en GITHub para:
 
