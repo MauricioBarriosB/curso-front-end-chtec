@@ -2,7 +2,7 @@
     "name": "Liv Hospital",
     "short_name": "LivHospital",
     "description": "Liv Hospital PWA",
-    "start_url": "/",
+    "start_url": "https://mauriciobarriosb.github.io/curso-front-end-chtec/modulo_6_practicas/clase_5_pwa_local_abp_ts_liv/dist",
     "display": "standalone",
     "background_color": "#ffffff",
     "theme_color": "#ffffff",

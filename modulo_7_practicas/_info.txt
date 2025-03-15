@@ -1,1 +1,17 @@
 info.txt
+
+SCRUM DIAGSSS
+
+https://www.figma.com/board/E7Bpe5ohHWMjZynAX58Zkf/Scrum---Template-(with-Daily-Cycles)-(Community)?node-id=3018-200&t=9q5woCfgfGXa1Zmg-0
+
+
+
+
+Cada equipo debe redactar 4 historias de usuario siguiendo la estructura: "Como [usuario], quiero [acción] para [beneficio]."
+Ejemplo: "Como capitán de un yate, quiero poder reservar un muelle en línea para evitar esperas innecesarias al llegar al puerto."
+● Independiente: Puede desarrollarse sin depender de otras funcionalidades.
+● Negociable: Puede modificarse antes de desarrollarse.
+● Valiosa: Aporta beneficio a un usuario específico.
+● Estimable: Se puede medir el esfuerzo requerido.
+● Pequeña: Debe completarse en un solo sprint.
+● Testeable: Se pueden definir pruebas para validar la funcionalidad.

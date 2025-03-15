@@ -19,27 +19,13 @@ const MyProfile = () => {
 
                     <p className="text-center">A continuación puedes acceder a la camara de tu dispositivo.</p>
 
-
-
-
-               
-
-
-
-
-                    <div className="row">
-    <div className="col-md-8 offset-md-2">
-    <Webcam />
-    </div>
-  </div>
-
-
-
+                    <div className="row text-center">
+                        <div className="col-md-8 offset-md-2">
+                            <Webcam />
+                        </div>
+                    </div>
 
                 </div>
-
-
-
 
 
             </div>

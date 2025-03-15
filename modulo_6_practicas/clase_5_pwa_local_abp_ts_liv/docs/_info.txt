@@ -33,6 +33,7 @@ https://app.studyraid.com/en/read/11356/355126/configuring-database-indexes
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------------------------------------------------------------------------
+npm i react-webcam
 
 Integrating IndexedDB into a React app to enable offline functionality when data is coming from an external API involves several steps. Here's a high-level overview of the process:
 
