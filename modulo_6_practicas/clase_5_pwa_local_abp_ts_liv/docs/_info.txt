@@ -8,6 +8,7 @@ chrome://apps
 *** Para almacenar en cache recursos externos API, Imagenes, Fuentes, etc 1592000 :
 
 https://medium.com/@foyemc/implementation-of-service-worker-using-reactjs-application-to-build-pwa-6366fd9a0527
+https://dev.to/alexgurr/turning-a-react-app-into-a-pwa-with-offline-detection-service-workers-and-theming-142i
 https://vite-pwa-org.netlify.app/workbox/generate-sw.html 
 
 Para publicación en GitHub agregar el ./ a las rutas relativas en index-XXXX.js (register worker ./sw.js), dist/sw.js (rev exp 31536000), dist/manifest.webmanifest y a la ruta de la font "./" en el css
