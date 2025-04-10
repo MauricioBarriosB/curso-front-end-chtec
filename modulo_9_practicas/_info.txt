@@ -1,0 +1,14 @@
+contenido para portafolio publico github pages
+
+
+ok // app busca pelis // github pages // api ext
+
+ok // app clima  // github pages // api ext
+
+no // app todo list //  cenlinea // node express
+
+ok // app hospital // github pages // sqlite3 external (pasar json a tablas)
+
+
+
+https://www.youtube.com/watch?v=gk-rkcwpu1c        cpanel + node js app deploy!
